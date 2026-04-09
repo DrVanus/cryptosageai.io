@@ -240,8 +240,8 @@
       border-bottom: 1px solid var(--border);
     }
     .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; }
-    .nav-logo img { width: 30px; height: 30px; border-radius: 50%; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.01em; }
+    .nav-logo img { width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 0 12px rgba(208,153,69,0.15); }
     .nav-links { display: flex; gap: 32px; align-items: center; }
     .nav-links a { font-size: 0.85rem; color: var(--muted-fg); transition: color 0.2s; font-weight: 500; }
     .nav-links a:hover { color: var(--fg); }
@@ -261,17 +261,28 @@
     }
     .hero-layout {
       display: flex; flex-direction: column; align-items: center;
+      transition: all 0.4s ease;
+    }
+    .hero-text {
+      transition: all 0.4s ease;
+    }
+    .hero-screenshot {
+      transition: margin 0.4s ease, width 0.4s ease;
     }
     @media (min-width: 1024px) {
       .hero-layout {
-        flex-direction: row; align-items: center; gap: 48px; text-align: left;
+        flex-direction: row; align-items: center; gap: 56px; text-align: left;
       }
-      .hero-text { flex: 1; }
+      .hero-text { flex: 1; min-width: 0; }
       .hero-screenshot { margin-top: 0 !important; flex-shrink: 0; }
       .hero h1 { margin: 0; }
       .hero .subtitle { margin: 20px 0 0; }
       .hero-buttons { justify-content: flex-start; }
       .hero .platform-badge { display: inline-flex; }
+    }
+    @media (min-width: 1024px) and (max-width: 1150px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero-phone-frame img { max-height: 460px; }
     }
     .hero::before {
       content: ''; position: absolute; top: calc(30% - var(--parallax, 0px)); left: 50%;
@@ -576,7 +587,7 @@
       }
       .nav-toggle { display: block; }
       .hero h1 { font-size: 2.25rem; }
-      .hero-phone-wrap img { max-height: 420px; }
+      .hero-phone-frame img { max-height: 420px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .ai-grid { grid-template-columns: 1fr; gap: 32px; }
