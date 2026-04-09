@@ -519,7 +519,7 @@
     <div class="stats-grid">
       <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">Exchanges</div></div>
       <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">Coins Tracked</div></div>
-      <div class="stat-item"><div class="stat-number gradient-text-gold">$0K</div><div class="stat-label">Paper Trading</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold">24/7</div><div class="stat-label">AI Monitoring</div></div>
       <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">AI Tools</div></div>
     </div>
   </div>
@@ -638,7 +638,7 @@
       <div class="feature-card anim anim-d2">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg></div>
         <h3>Professional Charting</h3>
-        <p>TradingView-powered charts with 100+ indicators — RSI, MACD, Bollinger Bands, volume profiles, and order book depth visualizations.</p>
+        <p>Custom-built charts and TradingView integration with 100+ indicators — RSI, MACD, Bollinger Bands, volume profiles, and order book depth visualizations.</p>
       </div>
       <div class="feature-card anim anim-d3">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
@@ -825,7 +825,7 @@
         var nums = entry.target.querySelectorAll('.stat-number');
         if (nums[0]) animateCounter(nums[0], 10, '', '');
         if (nums[1]) animateCounter(nums[1], 500, '', '+');
-        if (nums[2]) animateCounter(nums[2], 100, '$', 'K');
+        // nums[2] is "24/7" — skip animation
         if (nums[3]) animateCounter(nums[3], 30, '', '+');
         statsObserver.unobserve(entry.target);
       }
