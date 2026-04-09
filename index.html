@@ -198,16 +198,8 @@
       display: none;
     }
 
-    /* Mode label — positioned below the phone frame */
-    .mode-label {
-      position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
-      padding: 4px 14px; border-radius: 20px;
-      background: rgba(208,153,69,0.12); border: 1px solid rgba(208,153,69,0.2);
-      backdrop-filter: blur(8px);
-      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: #d4b068;
-      z-index: 3; transition: all 0.5s;
-    }
+    /* Mode label — hidden */
+    .mode-label { display: none; }
 
     /* Scroll to top */
     .scroll-top {
@@ -310,7 +302,6 @@
     }
     .hero-phone-wrap {
       position: relative; display: inline-block;
-      animation: float 8s ease-in-out infinite;
     }
     /* Gold glow behind phone */
     .hero-phone-wrap::before {
