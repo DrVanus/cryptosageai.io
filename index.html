@@ -64,6 +64,12 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .gradient-text-silver {
+      background: linear-gradient(135deg, #e8e8e8 0%, silver 50%, #a8a9ad 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
     .btn-gold {
       display: inline-flex; align-items: center; gap: 8px;
@@ -175,6 +181,65 @@
       background-size: 24px 24px;
     }
 
+    /* Platform badge */
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 16px; border-radius: 20px;
+      background: rgba(208,153,69,0.05);
+      border: 1px solid var(--border);
+      font-size: 0.78rem; font-weight: 500; color: var(--muted-fg);
+      margin-bottom: 20px;
+      animation: fade-in-up 0.8s ease both;
+    }
+    .platform-badge span { color: #d4b068; }
+
+    /* Screenshot vignette */
+    .phone-vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, var(--bg) 70%);
+      pointer-events: none; z-index: 2; border-radius: 24px;
+    }
+
+    /* Mode label */
+    .mode-label {
+      position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+      padding: 4px 12px; border-radius: 6px;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted-fg);
+      z-index: 3; transition: opacity 1s;
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 50;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(208,153,69,0.15); border: 1px solid var(--border);
+      border-radius: 10px; cursor: pointer;
+      opacity: 0; transform: translateY(10px);
+      transition: all 0.3s ease; pointer-events: none;
+    }
+    .scroll-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover { background: rgba(208,153,69,0.25); }
+    .scroll-top svg { width: 18px; height: 18px; color: var(--primary); stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* Pricing toggle */
+    .pricing-toggle {
+      display: flex; gap: 4px; justify-content: center; margin-top: 20px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 4px; display: inline-flex;
+    }
+    .pricing-toggle-wrap { text-align: center; margin-top: 20px; }
+    .toggle-btn {
+      padding: 8px 20px; border-radius: 8px; border: none;
+      background: transparent; color: var(--muted-fg);
+      font-size: 0.85rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .toggle-btn.active { background: linear-gradient(135deg, #e8b84b, #c48a2a); color: #000; }
+    .toggle-save { font-size: 0.7rem; color: #d4b068; font-weight: 600; opacity: 0.8; }
+
     /* ── Navbar ── */
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -233,25 +298,31 @@
       animation: fade-in-up 0.8s ease 0.3s both;
       position: relative;
     }
+    @keyframes crossfade {
+      0%, 42% { opacity: 1; }
+      50%, 92% { opacity: 0; }
+      100% { opacity: 1; }
+    }
     .hero-screenshot {
-      margin-top: 56px; display: flex; justify-content: center; gap: 24px; align-items: flex-end;
+      margin-top: 56px; display: flex; justify-content: center;
       animation: fade-in-up 0.8s ease 0.45s both;
       position: relative;
     }
-    .hero-screenshot img {
-      border-radius: 24px;
+    .hero-phone-wrap {
+      position: relative; display: inline-block;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-phone-wrap img {
+      max-height: 540px; border-radius: 24px;
       box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(208,153,69,0.08), 0 0 60px rgba(208,153,69,0.06);
     }
-    .hero-screenshot .phone-primary {
-      max-height: 520px;
-      animation: float 8s ease-in-out infinite;
-      z-index: 2;
+    .hero-phone-wrap .phone-back {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: 24px;
     }
-    .hero-screenshot .phone-secondary {
-      max-height: 440px;
-      animation: float 8s ease-in-out 1.5s infinite;
-      opacity: 0.85;
-      z-index: 1;
+    .hero-phone-wrap .phone-front {
+      position: relative; z-index: 1;
+      animation: crossfade 10s ease-in-out infinite;
     }
 
     /* ── Stats ── */
@@ -466,8 +537,7 @@
       }
       .nav-toggle { display: block; }
       .hero h1 { font-size: 2.25rem; }
-      .hero-screenshot .phone-secondary { display: none; }
-      .hero-screenshot .phone-primary { max-height: 440px; }
+      .hero-phone-wrap img { max-height: 420px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .ai-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -495,7 +565,7 @@
   <div class="container">
     <a href="#" class="nav-logo">
       <img src="owl-logo.jpg" alt="CryptoSage AI">
-      <span><span class="gradient-text-gold">Crypto</span>Sage AI</span>
+      <span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span>
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#ai">AI</a>
@@ -514,6 +584,7 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
+    <div class="platform-badge">iOS App <span>+</span> Discord, Telegram, X &amp; YouTube</div>
     <h1>AI-Powered Crypto<br><span class="shimmer-text">Portfolio Intelligence</span></h1>
     <p class="subtitle">Track your portfolio across 15+ exchanges and 40+ blockchains, with AI insights personalized to your holdings and real-time market intelligence.</p>
     <div class="hero-buttons">
@@ -521,8 +592,12 @@
       <a href="#features" class="btn-outline">Explore Features</a>
     </div>
     <div class="hero-screenshot">
-      <img src="app-dark.png" alt="CryptoSage AI dark mode" class="phone-primary" loading="lazy">
-      <img src="app-light.png" alt="CryptoSage AI light mode" class="phone-secondary" loading="lazy">
+      <div class="hero-phone-wrap">
+        <img src="app-light.png" alt="CryptoSage AI light mode" class="phone-back" loading="lazy">
+        <img src="app-dark.png" alt="CryptoSage AI dark mode" class="phone-front" loading="lazy">
+        <div class="mode-label" id="modeLabel">Dark Mode</div>
+        <div class="phone-vignette"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -701,6 +776,12 @@
       <span class="section-label">Pricing</span>
       <h2 class="section-title">Choose Your <span class="gradient-text-gold">Plan</span></h2>
       <p class="section-desc" style="margin:14px auto 0">Start free. Upgrade when you need more power.</p>
+      <div class="pricing-toggle-wrap">
+        <div class="pricing-toggle">
+          <button class="toggle-btn active" id="toggleMonthly" onclick="setPricing('monthly')">Monthly</button>
+          <button class="toggle-btn" id="toggleYearly" onclick="setPricing('yearly')">Yearly <span class="toggle-save">Save 25%</span></button>
+        </div>
+      </div>
     </div>
     <div class="pricing-grid">
       <div class="price-card anim">
@@ -777,12 +858,17 @@
   </div>
 </section>
 
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
 <!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="nav-logo"><img src="owl-logo.jpg" alt="CryptoSage AI" style="width:30px;height:30px;border-radius:50%"><span><span class="gradient-text-gold">Crypto</span>Sage AI</span></a>
+        <a href="#" class="nav-logo"><img src="owl-logo.jpg" alt="CryptoSage AI" style="width:30px;height:30px;border-radius:50%"><span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span></a>
         <p>AI-powered crypto portfolio intelligence. Track across exchanges, get personalized insights, and practice with paper trading.</p>
       </div>
       <div class="footer-col"><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#exchanges">Exchanges</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
@@ -854,6 +940,43 @@
   }, { threshold: 0.3 });
   var statsGrid = document.querySelector('.stats-grid');
   if (statsGrid) statsObserver.observe(statsGrid);
+
+  // Screenshot crossfade mode label
+  var modeLabel = document.getElementById('modeLabel');
+  var phoneFront = document.querySelector('.phone-front');
+  if (modeLabel && phoneFront) {
+    setInterval(function() {
+      var op = parseFloat(getComputedStyle(phoneFront).opacity);
+      modeLabel.textContent = op > 0.5 ? 'Dark Mode' : 'Light Mode';
+    }, 500);
+  }
+
+  // Scroll to top button
+  var scrollBtn = document.getElementById('scrollTop');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+      scrollBtn.classList.toggle('show', window.scrollY > 400);
+    }, { passive: true });
+  }
+
+  // Pricing toggle
+  var monthlyPrices = ['$0', '$9.99', '$19.99'];
+  var yearlyPrices = ['$0', '$6.99', '$14.99'];
+  var monthlyPeriods = ['forever', '/month', '/month'];
+  var yearlyPeriods = ['forever', '/month (billed yearly)', '/month (billed yearly)'];
+  function setPricing(mode) {
+    var cards = document.querySelectorAll('.price-card');
+    var prices = mode === 'yearly' ? yearlyPrices : monthlyPrices;
+    var periods = mode === 'yearly' ? yearlyPeriods : monthlyPeriods;
+    cards.forEach(function(card, i) {
+      var amt = card.querySelector('.price-amount');
+      var per = card.querySelector('.price-period');
+      if (amt) amt.textContent = prices[i];
+      if (per) per.textContent = periods[i];
+    });
+    document.getElementById('toggleMonthly').classList.toggle('active', mode === 'monthly');
+    document.getElementById('toggleYearly').classList.toggle('active', mode === 'yearly');
+  }
 
   // Parallax-lite on hero glow
   var hero = document.querySelector('.hero');
