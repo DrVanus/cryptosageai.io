@@ -68,14 +68,15 @@
     .btn-gold {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 12px 24px;
-      background: linear-gradient(135deg, var(--primary), #b8860b);
-      color: var(--primary-fg);
-      font-weight: 600; font-size: 0.9rem; font-family: inherit;
+      background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000000;
+      font-weight: 700; font-size: 0.9rem; font-family: inherit;
       border-radius: 12px; border: none; cursor: pointer;
       box-shadow: 0 4px 20px rgba(208,153,69,0.25);
       transition: all 0.2s ease;
+      letter-spacing: 0.01em;
     }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(208,153,69,0.35); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(208,153,69,0.4); background: linear-gradient(135deg, #f0c65a, #d09945); }
     .btn-gold svg { width: 16px; height: 16px; }
 
     .btn-outline {
@@ -138,7 +139,7 @@
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      50% { transform: translateY(-5px); }
     }
     @keyframes shimmer {
       0% { background-position: -200% center; }
@@ -189,11 +190,11 @@
     .nav-links a { font-size: 0.85rem; color: var(--muted-fg); transition: color 0.2s; font-weight: 500; }
     .nav-links a:hover { color: var(--fg); }
     .nav-cta {
-      padding: 8px 18px; background: linear-gradient(135deg, var(--primary), #b8860b);
-      color: var(--primary-fg); font-weight: 600; font-size: 0.8rem;
+      padding: 8px 18px; background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000000; font-weight: 700; font-size: 0.8rem;
       border-radius: 8px; transition: all 0.2s;
     }
-    .nav-cta:hover { box-shadow: 0 4px 16px rgba(208,153,69,0.3); }
+    .nav-cta:hover { box-shadow: 0 4px 16px rgba(208,153,69,0.3); background: linear-gradient(135deg, #f0c65a, #d09945); }
     .nav-toggle { display: none; background: none; border: none; color: var(--fg); cursor: pointer; padding: 4px; }
     .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
 
@@ -233,14 +234,24 @@
       position: relative;
     }
     .hero-screenshot {
-      margin-top: 56px; display: flex; justify-content: center;
+      margin-top: 56px; display: flex; justify-content: center; gap: 24px; align-items: flex-end;
       animation: fade-in-up 0.8s ease 0.45s both;
       position: relative;
     }
     .hero-screenshot img {
-      max-height: 540px; border-radius: 24px;
+      border-radius: 24px;
       box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(208,153,69,0.08), 0 0 60px rgba(208,153,69,0.06);
-      animation: float 6s ease-in-out infinite;
+    }
+    .hero-screenshot .phone-primary {
+      max-height: 520px;
+      animation: float 8s ease-in-out infinite;
+      z-index: 2;
+    }
+    .hero-screenshot .phone-secondary {
+      max-height: 440px;
+      animation: float 8s ease-in-out 1.5s infinite;
+      opacity: 0.85;
+      z-index: 1;
     }
 
     /* ── Stats ── */
@@ -455,6 +466,8 @@
       }
       .nav-toggle { display: block; }
       .hero h1 { font-size: 2.25rem; }
+      .hero-screenshot .phone-secondary { display: none; }
+      .hero-screenshot .phone-primary { max-height: 440px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .ai-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -508,7 +521,8 @@
       <a href="#features" class="btn-outline">Explore Features</a>
     </div>
     <div class="hero-screenshot">
-      <img src="app-dark.png" alt="CryptoSage AI app" loading="lazy">
+      <img src="app-dark.png" alt="CryptoSage AI dark mode" class="phone-primary" loading="lazy">
+      <img src="app-light.png" alt="CryptoSage AI light mode" class="phone-secondary" loading="lazy">
     </div>
   </div>
 </section>
