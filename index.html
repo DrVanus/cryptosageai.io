@@ -108,7 +108,13 @@
 
     .section-divider {
       height: 1px; max-width: 768px; margin: 0 auto;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      background: linear-gradient(90deg, transparent, rgba(208,153,69,0.2), transparent);
+      position: relative;
+    }
+    .section-divider::after {
+      content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 16px;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.08), transparent);
     }
 
     /* Icons */
@@ -123,11 +129,50 @@
 
     /* Animations */
     @keyframes fade-in-up {
-      from { opacity: 0; transform: translateY(24px); }
+      from { opacity: 0; transform: translateY(32px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .anim { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.3; transform: translate(-50%,-50%) scale(1); }
+      50% { opacity: 0.55; transform: translate(-50%,-50%) scale(1.05); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .anim { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
     .anim.visible { opacity: 1; transform: translateY(0); }
+    .anim-d1 { transition-delay: 0.1s; }
+    .anim-d2 { transition-delay: 0.2s; }
+    .anim-d3 { transition-delay: 0.3s; }
+    .anim-d4 { transition-delay: 0.4s; }
+    .anim-d5 { transition-delay: 0.5s; }
+    .anim-d6 { transition-delay: 0.6s; }
+    .anim-d7 { transition-delay: 0.7s; }
+
+    /* Shimmer on gradient text */
+    .shimmer-text {
+      background: linear-gradient(90deg, #f5d98e 0%, #d09945 40%, #f5d98e 60%, #d09945 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    /* Dot grid background */
+    .dot-grid {
+      background-image: radial-gradient(rgba(208,153,69,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
 
     /* ── Navbar ── */
     .navbar {
@@ -157,32 +202,45 @@
       padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden;
     }
     .hero::before {
-      content: ''; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
-      width: 700px; height: 500px;
-      background: radial-gradient(ellipse, rgba(208,153,69,0.06), transparent 70%);
+      content: ''; position: absolute; top: calc(30% - var(--parallax, 0px)); left: 50%;
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.07), transparent 65%);
       pointer-events: none;
+      animation: pulse-glow 5s ease-in-out infinite;
+    }
+    .hero::after {
+      content: ''; position: absolute; top: 60%; left: 30%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(208,153,69,0.04), transparent 60%);
+      pointer-events: none;
+      animation: pulse-glow 7s ease-in-out 1s infinite;
     }
     .hero h1 {
       font-size: 3.5rem; font-weight: 800; line-height: 1.1;
       letter-spacing: -0.03em; max-width: 800px; margin: 0 auto;
       animation: fade-in-up 0.8s ease both;
+      position: relative;
     }
     .hero .subtitle {
       font-size: 1.1rem; color: var(--muted-fg); max-width: 580px;
       margin: 20px auto 0; line-height: 1.7;
       animation: fade-in-up 0.8s ease 0.15s both;
+      position: relative;
     }
     .hero-buttons {
       display: flex; gap: 14px; justify-content: center; margin-top: 32px; flex-wrap: wrap;
       animation: fade-in-up 0.8s ease 0.3s both;
+      position: relative;
     }
     .hero-screenshot {
       margin-top: 56px; display: flex; justify-content: center;
       animation: fade-in-up 0.8s ease 0.45s both;
+      position: relative;
     }
     .hero-screenshot img {
       max-height: 540px; border-radius: 24px;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(208,153,69,0.08);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(208,153,69,0.08), 0 0 60px rgba(208,153,69,0.06);
+      animation: float 6s ease-in-out infinite;
     }
 
     /* ── Stats ── */
@@ -205,10 +263,20 @@
     }
 
     /* ── AI Section ── */
-    .ai-section { position: relative; }
+    .ai-section {
+      position: relative;
+      background-image: radial-gradient(rgba(208,153,69,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
     .ai-section::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse at 20% 50%, rgba(208,153,69,0.04), transparent 60%);
+      background: radial-gradient(ellipse at 20% 50%, rgba(208,153,69,0.06), transparent 55%);
+      pointer-events: none;
+    }
+    .ai-section::after {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(208,153,69,0.04), transparent 60%);
       pointer-events: none;
     }
     .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 48px; }
@@ -220,6 +288,7 @@
     .ai-chat-preview {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; padding: 24px; position: relative;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.4), 0 0 40px rgba(208,153,69,0.04);
     }
     .chat-label {
       font-size: 0.65rem; color: var(--muted-fg); text-transform: uppercase;
@@ -249,7 +318,7 @@
       border-radius: var(--radius); padding: 20px 12px; text-align: center;
       transition: all 0.2s;
     }
-    .exchange-card:hover { border-color: rgba(208,153,69,0.3); transform: translateY(-2px); box-shadow: 0 0 30px rgba(208,153,69,0.08); }
+    .exchange-card:hover { border-color: rgba(208,153,69,0.3); transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 30px rgba(208,153,69,0.1); }
     .exchange-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
     .exchange-card p { font-size: 0.7rem; color: var(--muted-fg); }
     .exchange-card .ex-icon {
@@ -267,13 +336,20 @@
     }
 
     /* ── Features ── */
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
     .feature-card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 12px; padding: 28px 24px;
-      transition: all 0.2s;
+      transition: all 0.3s ease;
+      position: relative;
     }
-    .feature-card:hover { border-color: rgba(208,153,69,0.3); transform: translateY(-2px); box-shadow: 0 0 30px rgba(208,153,69,0.08); }
+    .feature-card::before {
+      content: ''; position: absolute; inset: -1px; border-radius: 13px;
+      background: linear-gradient(135deg, transparent, rgba(208,153,69,0.2), transparent);
+      opacity: 0; transition: opacity 0.3s; z-index: -1;
+    }
+    .feature-card:hover { border-color: rgba(208,153,69,0.3); transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 40px rgba(208,153,69,0.1), 0 0 0 1px rgba(208,153,69,0.15); }
+    .feature-card:hover::before { opacity: 1; }
     .feature-card .icon-box { margin-bottom: 18px; }
     .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .feature-card p { font-size: 0.85rem; color: var(--muted-fg); line-height: 1.6; }
@@ -296,7 +372,11 @@
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; padding: 32px 24px; position: relative;
     }
-    .price-card.featured { border-color: var(--primary); box-shadow: 0 0 50px rgba(208,153,69,0.08); }
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 0 50px rgba(208,153,69,0.1), 0 0 100px rgba(208,153,69,0.04);
+      background: linear-gradient(180deg, rgba(208,153,69,0.04), var(--card) 40%);
+    }
     .price-badge {
       position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
       padding: 4px 14px; background: linear-gradient(135deg, var(--primary), #b8860b);
@@ -379,7 +459,7 @@
       .stat-item:nth-child(2) { border-right: none; }
       .ai-grid { grid-template-columns: 1fr; gap: 32px; }
       .ai-chat-preview { order: -1; }
-      .features-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: 1fr; gap: 24px; }
       .pricing-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -387,6 +467,7 @@
       .section-title { font-size: 1.85rem; }
     }
     @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
       .exchanges-grid { grid-template-columns: repeat(3, 1fr); }
       .hero-buttons { flex-direction: column; align-items: center; }
       .signup-form { flex-direction: column; align-items: center; }
@@ -420,7 +501,7 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>AI-Powered Crypto<br><span class="gradient-text-gold">Portfolio Intelligence</span></h1>
+    <h1>AI-Powered Crypto<br><span class="shimmer-text">Portfolio Intelligence</span></h1>
     <p class="subtitle">Track your portfolio across 10 exchanges, get AI insights personalized to your holdings, and sharpen your edge with $100K in paper trading.</p>
     <div class="hero-buttons">
       <a href="#signup" class="btn-gold">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -436,10 +517,10 @@
 <div class="stats">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item"><div class="stat-number gradient-text-gold">10</div><div class="stat-label">Exchanges</div></div>
-      <div class="stat-item"><div class="stat-number gradient-text-gold">500+</div><div class="stat-label">Coins Tracked</div></div>
-      <div class="stat-item"><div class="stat-number gradient-text-gold">$100K</div><div class="stat-label">Paper Trading</div></div>
-      <div class="stat-item"><div class="stat-number gradient-text-gold">30+</div><div class="stat-label">AI Tools</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">Exchanges</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">Coins Tracked</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold">$0K</div><div class="stat-label">Paper Trading</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">AI Tools</div></div>
     </div>
   </div>
 </div>
@@ -526,38 +607,48 @@
     <div style="text-align:center" class="anim">
       <span class="section-label">Features</span>
       <h2 class="section-title">Everything You Need to<br><span class="gradient-text-gold">Understand the Market</span></h2>
-      <p class="section-desc" style="margin:14px auto 0">Portfolio management, AI predictions, paper trading, whale tracking, professional charting, and more.</p>
+      <p class="section-desc" style="margin:14px auto 0">From real-time market sentiment to AI-powered signals — tools that give you an edge.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card anim">
+      <div class="feature-card anim anim-d1">
         <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
         <h3>AI Predictions & Signals</h3>
-        <p>Price forecasts with confidence scores across multiple timeframes. Entry/exit points, support/resistance levels, and risk-reward analysis.</p>
+        <p>Multi-timeframe price forecasts with confidence scores. AI-generated entry/exit points, support/resistance, and risk-reward ratios for any coin.</p>
       </div>
-      <div class="feature-card anim">
-        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 9 7 12 7s5-3 7.5-3a2.5 2.5 0 0 1 0 5H18"/><path d="M6 12H4.5a2.5 2.5 0 0 0 0 5C7 17 9 14 12 14s5 3 7.5 3a2.5 2.5 0 0 0 0-5H18"/><path d="M6 15H4.5a2.5 2.5 0 0 1 0-5"/></svg></div>
+      <div class="feature-card anim anim-d2">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
         <h3>Paper Trading & Leaderboard</h3>
-        <p>$100K virtual funds with market, limit, and stop orders at live prices. Compete on the leaderboard by P&L, Sharpe ratio, and win rate.</p>
+        <p>Practice with $100K in virtual funds using market, limit, and stop orders at live prices. Compete globally ranked by P&L, Sharpe ratio, and win rate.</p>
       </div>
-      <div class="feature-card anim">
+      <div class="feature-card anim anim-d3">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12l7-7"/><path d="M16 2h6v6"/></svg></div>
+        <h3>Market Sentiment</h3>
+        <p>Real-time Fear & Greed index, market mood scoring, and trend direction indicators. See whether the market is fearful or euphoric before making moves.</p>
+      </div>
+      <div class="feature-card anim anim-d4">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3>Market Heat Maps</h3>
+        <p>Visual treemap of the entire crypto market color-coded by performance. Spot top gainers, losers, and volume spikes at a glance across any timeframe.</p>
+      </div>
+      <div class="feature-card anim anim-d1">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         <h3>Smart Alerts</h3>
-        <p>Price, whale movement, and AI-powered alerts delivered to Discord, Telegram, or Twitter. Custom thresholds or AI-suggested.</p>
+        <p>Price, whale movement, and AI-powered alerts delivered to Discord, Telegram, or Twitter. Set your own thresholds or let AI suggest them for you.</p>
       </div>
-      <div class="feature-card anim">
+      <div class="feature-card anim anim-d2">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg></div>
         <h3>Professional Charting</h3>
-        <p>TradingView integration with 100+ indicators — RSI, MACD, Bollinger Bands, ATR, volume analysis, and order book heatmaps.</p>
+        <p>TradingView-powered charts with 100+ indicators — RSI, MACD, Bollinger Bands, volume profiles, and order book depth visualizations.</p>
       </div>
-      <div class="feature-card anim">
+      <div class="feature-card anim anim-d3">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
         <h3>DeFi & Multi-Chain</h3>
-        <p>Track DeFi positions, NFTs, and hardware wallets across 100+ blockchains. Yield farming and liquidity monitoring built in.</p>
+        <p>Track DeFi positions, NFTs, and hardware wallets across 100+ blockchains. Monitor yield farming, liquidity pools, and staking rewards.</p>
       </div>
-      <div class="feature-card anim">
+      <div class="feature-card anim anim-d4">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
         <h3>Tax Reports</h3>
-        <p>Tax-ready transaction exports with multi-currency support. Tax-loss harvesting suggestions and compliance for US, EU, and global markets.</p>
+        <p>Generate tax-ready exports with multi-currency compliance. Tax-loss harvesting suggestions for US, EU, and global markets.</p>
       </div>
     </div>
   </div>
@@ -712,6 +803,47 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.anim').forEach(function(el) { observer.observe(el); });
+
+  // Animated stat counters
+  function animateCounter(el, target, prefix, suffix) {
+    var start = 0;
+    var duration = 1500;
+    var startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      var current = Math.floor(ease * target);
+      el.textContent = (prefix || '') + current + (suffix || '');
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var nums = entry.target.querySelectorAll('.stat-number');
+        if (nums[0]) animateCounter(nums[0], 10, '', '');
+        if (nums[1]) animateCounter(nums[1], 500, '', '+');
+        if (nums[2]) animateCounter(nums[2], 100, '$', 'K');
+        if (nums[3]) animateCounter(nums[3], 30, '', '+');
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  var statsGrid = document.querySelector('.stats-grid');
+  if (statsGrid) statsObserver.observe(statsGrid);
+
+  // Parallax-lite on hero glow
+  var hero = document.querySelector('.hero');
+  if (hero) {
+    window.addEventListener('scroll', function() {
+      var y = window.scrollY;
+      if (y < 800) {
+        hero.style.setProperty('--parallax', (y * 0.15) + 'px');
+      }
+    }, { passive: true });
+  }
 
   // Signup
   function handleSignup(e) {
