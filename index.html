@@ -20,6 +20,16 @@
   <link rel="icon" href="favicon.ico" sizes="256x256" type="image/x-icon">
   <link rel="icon" href="cs-icon.jpg">
   <link rel="apple-touch-icon" href="owl-logo-text.jpg">
+
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -947,7 +957,20 @@
   </div>
 </footer>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script>
+  // Init Firebase
+  firebase.initializeApp({
+    apiKey: "AIzaSyBqoKxfNM1EBp5j_c5s7ocdWRfuCmijfX0",
+    authDomain: "cryptosage-ai.firebaseapp.com",
+    projectId: "cryptosage-ai",
+    storageBucket: "cryptosage-ai.firebasestorage.app",
+    messagingSenderId: "554507965330",
+    appId: "1:554507965330:ios:e43a62b0f7bce75c33e79f"
+  });
+  var db = firebase.firestore();
+
   // Mobile nav
   document.getElementById('navToggle').addEventListener('click', function() {
     document.getElementById('navLinks').classList.toggle('open');
@@ -1058,17 +1081,38 @@
   // Signup
   function handleSignup(e) {
     e.preventDefault();
+    var email = document.getElementById('signupEmail').value.trim();
     var btn = e.target.querySelector('button');
-    btn.textContent = "You're on the list!";
-    btn.style.background = 'rgba(208,153,69,0.15)';
-    btn.style.color = '#d4b068';
-    btn.style.boxShadow = 'none';
+    if (!email) return;
+
+    btn.textContent = 'Saving...';
+    btn.style.opacity = '0.7';
+
+    db.collection('early_access').add({
+      email: email,
+      source: 'website',
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent
+    }).then(function() {
+      btn.textContent = "You're on the list!";
+      btn.style.background = 'rgba(208,153,69,0.15)';
+      btn.style.color = '#d4b068';
+      btn.style.boxShadow = 'none';
+      btn.style.opacity = '1';
+      document.getElementById('signupEmail').value = '';
+      if (typeof gtag === 'function') gtag('event', 'sign_up', { method: 'email' });
+    }).catch(function(err) {
+      console.error('Signup error:', err);
+      btn.textContent = 'Error — try again';
+      btn.style.opacity = '1';
+    });
+
     setTimeout(function() {
       btn.innerHTML = 'Get Early Access <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
       btn.style.background = '';
       btn.style.color = '';
       btn.style.boxShadow = '';
-    }, 3000);
+    }, 4000);
   }
 </script>
 
