@@ -259,6 +259,20 @@
     .hero {
       padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden;
     }
+    .hero-layout {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-layout {
+        flex-direction: row; align-items: center; gap: 48px; text-align: left;
+      }
+      .hero-text { flex: 1; }
+      .hero-screenshot { margin-top: 0 !important; flex-shrink: 0; }
+      .hero h1 { margin: 0; }
+      .hero .subtitle { margin: 20px 0 0; }
+      .hero-buttons { justify-content: flex-start; }
+      .hero .platform-badge { display: inline-flex; }
+    }
     .hero::before {
       content: ''; position: absolute; top: calc(30% - var(--parallax, 0px)); left: 50%;
       width: 800px; height: 600px;
@@ -609,22 +623,25 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <div class="platform-badge">iOS App <span>+</span> Discord, Telegram, X &amp; YouTube</div>
-    <h1>AI-Powered Crypto<br><span class="shimmer-text">Portfolio Intelligence</span></h1>
-    <p class="subtitle">An AI that actually understands your portfolio. Personalized insights, real-time market intelligence, and the tools to stay ahead.</p>
-    <div class="hero-buttons">
-      <a href="#signup" class="btn-gold">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a href="#features" class="btn-outline">Explore Features</a>
-    </div>
-    <div class="hero-screenshot">
-      <div class="hero-phone-wrap">
-        <div class="hero-phone-frame">
-          <div class="phone-screen">
-            <img src="app-light.png" alt="CryptoSage AI light mode" class="phone-back" loading="lazy">
-            <img src="app-dark.png" alt="CryptoSage AI dark mode" class="phone-front" loading="lazy">
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="platform-badge">iOS App <span>+</span> Discord, Telegram, X &amp; YouTube</div>
+        <h1>AI-Powered Crypto<br><span class="shimmer-text">Portfolio Intelligence</span></h1>
+        <p class="subtitle">An AI that actually understands your portfolio. Personalized insights, real-time market intelligence, and the tools to stay ahead.</p>
+        <div class="hero-buttons">
+          <a href="#signup" class="btn-gold">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#features" class="btn-outline">Explore Features</a>
+        </div>
+      </div>
+      <div class="hero-screenshot">
+        <div class="hero-phone-wrap">
+          <div class="hero-phone-frame">
+            <div class="phone-screen">
+              <img src="app-light.png" alt="CryptoSage AI light mode" class="phone-back" loading="lazy">
+              <img src="app-dark.png" alt="CryptoSage AI dark mode" class="phone-front" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="mode-label" id="modeLabel">Dark Mode</div>
       </div>
     </div>
   </div>
