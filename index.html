@@ -621,7 +621,23 @@
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
       .section-title { font-size: 1.85rem; }
       section { padding: 64px 0; }
+      .ai-smart-grid { grid-template-columns: 1fr 1fr !important; }
     }
+
+    /* Comparison table */
+    .cmp-tbl { width:100%; border-collapse:collapse; }
+    .cmp-tbl thead th { padding:16px 12px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted-fg); text-align:center; border-bottom:1px solid var(--border); }
+    .cmp-tbl thead th:first-child { text-align:left; padding-left:20px; }
+    .cmp-tbl thead th.hl { color:var(--primary); background:rgba(208,153,69,0.04); }
+    .cmp-tbl tbody td { padding:13px 12px; font-size:0.84rem; text-align:center; border-bottom:1px solid rgba(255,255,255,0.03); color:var(--muted-fg); }
+    .cmp-tbl tbody td:first-child { text-align:left; padding-left:20px; font-weight:600; color:#ccc; }
+    .cmp-tbl tbody td.hl { background:rgba(208,153,69,0.03); }
+    .cmp-tbl tbody tr:last-child td { border-bottom:none; }
+    .ck { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; font-weight:700; }
+    .ck-g { background:linear-gradient(135deg,rgba(208,153,69,0.28),rgba(208,153,69,0.14)); color:#F3D36D; box-shadow:0 0 10px rgba(208,153,69,0.15); font-size:0.85rem; }
+    .ck-y { background:rgba(74,200,120,0.15); color:#4ac878; font-size:0.8rem; }
+    .ck-n { background:rgba(200,74,74,0.08); color:#c84a4a; font-size:0.68rem; }
+    .ck-p { background:rgba(255,255,255,0.04); color:#777; font-size:0.48rem; font-weight:700; }
 
     /* Large phone / small tablet (max-width: 767px) */
     @media (max-width: 767px) {
@@ -629,11 +645,15 @@
       .hero { padding: 120px 0 60px; }
       .pricing-grid { max-width: 380px; }
       .stat-number { font-size: 1.85rem; }
+      .ai-smart-grid { grid-template-columns: 1fr !important; }
+      #ai-compare table { font-size: 0.75rem; }
+      #ai-compare th, #ai-compare td { padding: 10px 8px !important; }
     }
 
     /* Small phone (max-width: 480px) */
     @media (max-width: 480px) {
       .features-grid { grid-template-columns: 1fr; }
+      #ai-compare table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .exchanges-pills { gap: 8px; }
       .hero-buttons { flex-direction: column; align-items: center; }
       .signup-form { flex-direction: column; align-items: center; }
@@ -742,6 +762,88 @@
         <div class="chat-bubble chat-user">Give me a price prediction for SOL this week</div>
         <div class="chat-bubble chat-ai"><strong>SOL 7-Day Forecast:</strong> Bullish bias. RSI at 58 with room to run, MACD crossing positive. Support <strong>$142</strong>, resistance <strong>$168</strong>. Confidence: <strong>72%</strong>.<br><br>Your SOL is 34% of your portfolio — consider taking partial profits if it hits resistance.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Deep Dive: What Makes It Smart + Comparison -->
+<section id="ai-compare" style="padding-top:48px; padding-bottom:96px;">
+  <div class="container">
+    <!-- What Makes It Smart -->
+    <div style="text-align:center" class="anim">
+      <span class="section-label">Under the Hood</span>
+      <h2 class="section-title">What makes our AI<br><span class="gradient-text-gold">actually smart</span></h2>
+      <p class="section-desc" style="margin:14px auto 0">Every response is built from live data. Here's what powers the intelligence behind every answer.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:40px;" class="anim ai-smart-grid">
+      <div class="feature-card" style="padding:22px;">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3 style="color:#F3D36D;">Live Web Search</h3>
+        <p>Ask about news or events and the AI searches the internet in real-time. Current answers, not stale data.</p>
+      </div>
+      <div class="feature-card" style="padding:22px;">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 12l4-5 4 3 5-6"/></svg></div>
+        <h3 style="color:#F3D36D;">Technical Analysis</h3>
+        <p>RSI, MACD, Bollinger Bands, Stochastic RSI, ADX — calculated live and woven into every response.</p>
+      </div>
+      <div class="feature-card" style="padding:22px;">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3c-1.2 0-2.4.6-3 1.5A3.5 3.5 0 0 0 5 8c0 6 7 13 7 13s7-7 7-13a3.5 3.5 0 0 0-4-3.5C14.4 3.6 13.2 3 12 3z"/></svg></div>
+        <h3 style="color:#F3D36D;">Whale Tracking</h3>
+        <p>On-chain whale accumulation and smart money flows analyzed as contrarian signals in recommendations.</p>
+      </div>
+      <div class="feature-card" style="padding:22px;">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3 style="color:#F3D36D;">Fear &amp; Greed Sentiment</h3>
+        <p>Real-time market sentiment index with AI interpretation woven into every trading recommendation.</p>
+      </div>
+      <div class="feature-card" style="padding:22px;">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+        <h3 style="color:#F3D36D;">Strategy Scoring</h3>
+        <p>Describe your trading approach and the AI scores it out of 100, identifies weaknesses, and tells you exactly how to improve.</p>
+      </div>
+      <div class="feature-card" style="padding:22px;">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3 style="color:#F3D36D;">Portfolio &amp; Market Insights</h3>
+        <p>AI-generated insights on your homepage, portfolio, and coin details — personalized to your holdings, not generic.</p>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div style="text-align:center; margin-top:56px;" class="anim">
+      <span class="section-label">How We Compare</span>
+      <h2 class="section-title">Not all crypto AI is<br><span class="gradient-text-gold">created equal</span></h2>
+      <p class="section-desc" style="margin:14px auto 0">Most apps wrapped a chatbot and called it AI. Here's what CryptoSage actually offers.</p>
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; overflow-x:auto; margin-top:36px;" class="anim">
+      <table class="cmp-tbl">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="hl">CryptoSage</th>
+            <th>CoinStats</th>
+            <th>Coinbase</th>
+            <th>Binance</th>
+            <th>Others</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AI Chat with live market data</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-y">&#10003;</span></td><td><span class="ck ck-p">BETA</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>Knows your portfolio &amp; holdings</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-y">&#10003;</span></td><td><span class="ck ck-p">LTD</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI sets up trades for you</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI sets up alerts for you</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI price predictions &amp; targets</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI scores &amp; improves your strategy</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>Live web search built in</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>Sentiment &amp; whale intelligence</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI builds trading bots</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>Paper trading simulator</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-p">TEST</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI portfolio risk analysis</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-p">LTD</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI-powered portfolio &amp; market insights</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>Free to use</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-p">$3.99+</span></td><td><span class="ck ck-p">WAIT</span></td><td><span class="ck ck-p">N/A</span></td><td><span class="ck ck-p">VARIES</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
