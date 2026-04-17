@@ -742,7 +742,7 @@
       <div class="hero-text">
         <div class="platform-badge">iOS App <span>+</span> Discord, Telegram, X &amp; YouTube</div>
         <h1>AI-Powered Crypto<br><span class="shimmer-text">Portfolio Intelligence</span></h1>
-        <p class="subtitle">An AI that actually understands your portfolio. Personalized insights, real-time market intelligence, and the tools to stay ahead.</p>
+        <p class="subtitle">Track 10+ exchanges, get AI insights tuned to your actual holdings, and sharpen your edge with $100K paper trading &mdash; all in one iOS app.</p>
         <div class="hero-buttons">
           <a href="#signup" class="btn-gold">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="#features" class="btn-outline">Explore Features</a>
@@ -766,10 +766,10 @@
 <div class="stats">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">Exchanges</div></div>
-      <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">Coins Tracked</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold" data-target="10" data-suffix="+">10+</div><div class="stat-label">Exchanges</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold" data-target="5000" data-suffix="+">5,000+</div><div class="stat-label">Coins Tracked</div></div>
       <div class="stat-item"><div class="stat-number gradient-text-gold">24/7</div><div class="stat-label">AI Monitoring</div></div>
-      <div class="stat-item"><div class="stat-number gradient-text-gold">0</div><div class="stat-label">AI Tools</div></div>
+      <div class="stat-item"><div class="stat-number gradient-text-gold" data-target="30" data-suffix="+">30+</div><div class="stat-label">AI Tools</div></div>
     </div>
   </div>
 </div>
@@ -1096,7 +1096,7 @@
       <div class="pricing-toggle-wrap">
         <div class="pricing-toggle">
           <button class="toggle-btn active" id="toggleMonthly" onclick="setPricing('monthly')">Monthly</button>
-          <button class="toggle-btn" id="toggleYearly" onclick="setPricing('yearly')">Yearly <span class="toggle-save">Save 25%</span></button>
+          <button class="toggle-btn" id="toggleYearly" onclick="setPricing('yearly')">Yearly <span class="toggle-save">Save up to 30%</span></button>
         </div>
       </div>
     </div>
@@ -1189,7 +1189,7 @@
         <p>AI-powered crypto portfolio intelligence. Track across exchanges, get personalized insights, and practice with paper trading.</p>
       </div>
       <div class="footer-col"><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#exchanges">Exchanges</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div class="footer-col"><h4>Community</h4><ul><li><a href="https://twitter.com/cryptosageai" target="_blank" rel="noopener">Twitter / X</a></li><li><a href="https://discord.gg/cryptosage" target="_blank" rel="noopener">Discord</a></li><li><a href="https://t.me/cryptosageal" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://youtube.com/@cryptosageal" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+      <div class="footer-col"><h4>Community</h4><ul><li><a href="https://twitter.com/cryptosageai" target="_blank" rel="noopener">Twitter / X</a></li><li><a href="https://discord.gg/cryptosage" target="_blank" rel="noopener">Discord</a></li><li><a href="https://t.me/cryptosageai" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://youtube.com/@cryptosageai" target="_blank" rel="noopener">YouTube</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 CryptoSage AI. All rights reserved.</p>
@@ -1241,9 +1241,9 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.anim').forEach(function(el) { observer.observe(el); });
 
-  // Animated stat counters
-  function animateCounter(el, target, prefix, suffix) {
-    var start = 0;
+  // Animated stat counters — reads target from data-target, leaves HTML
+  // value as the final state so the page never shows "0" if JS is delayed.
+  function animateCounter(el, target, suffix) {
     var duration = 1500;
     var startTime = null;
     function step(ts) {
@@ -1251,7 +1251,7 @@
       var progress = Math.min((ts - startTime) / duration, 1);
       var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
       var current = Math.floor(ease * target);
-      el.textContent = (prefix || '') + current + (suffix || '');
+      el.textContent = current.toLocaleString() + (suffix || '');
       if (progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -1259,27 +1259,17 @@
   var statsObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        var nums = entry.target.querySelectorAll('.stat-number');
-        if (nums[0]) animateCounter(nums[0], 10, '', '+');
-        if (nums[1]) animateCounter(nums[1], 500, '', '+');
-        // nums[2] is "24/7" — skip animation
-        if (nums[3]) animateCounter(nums[3], 30, '', '+');
+        entry.target.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
+          var target = parseInt(el.dataset.target, 10);
+          var suffix = el.dataset.suffix || '';
+          if (!isNaN(target)) animateCounter(el, target, suffix);
+        });
         statsObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.3 });
   var statsGrid = document.querySelector('.stats-grid');
   if (statsGrid) statsObserver.observe(statsGrid);
-
-  // Screenshot crossfade mode label
-  var modeLabel = document.getElementById('modeLabel');
-  var phoneFront = document.querySelector('.phone-front');
-  if (modeLabel && phoneFront) {
-    setInterval(function() {
-      var op = parseFloat(getComputedStyle(phoneFront).opacity);
-      modeLabel.textContent = op > 0.5 ? 'Dark Mode' : 'Light Mode';
-    }, 500);
-  }
 
   // Scroll to top button
   var scrollBtn = document.getElementById('scrollTop');
