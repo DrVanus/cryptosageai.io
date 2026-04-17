@@ -373,6 +373,54 @@
       animation: crossfade 10s ease-in-out infinite;
     }
 
+    /* ── Showcase ── */
+    #showcase { padding: 96px 0; position: relative; }
+    .showcase-header { text-align: center; }
+    .showcase-header h2 {
+      font-size: 2.5rem; font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.15;
+      margin-top: 10px;
+    }
+    .showcase-header .section-desc {
+      margin-left: auto; margin-right: auto; text-align: center;
+    }
+    .phones-grid {
+      display: flex; justify-content: center; align-items: flex-end;
+      gap: 36px; flex-wrap: wrap; margin-top: 64px;
+    }
+    .phone-card { display: flex; flex-direction: column; align-items: center; }
+    .phone-card .hero-phone-frame { max-width: 240px; }
+    .phone-card.featured { transform: translateY(-24px); }
+    .phone-card.featured .hero-phone-frame {
+      max-width: 264px;
+      border-color: rgba(208,153,69,0.45);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(208,153,69,0.18), 0 0 100px rgba(208,153,69,0.14);
+    }
+    .phone-card .hero-phone-frame img { max-height: 480px; }
+    .phone-caption { margin-top: 24px; text-align: center; max-width: 240px; }
+    .phone-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; margin-bottom: 12px;
+      border: 1px solid rgba(208,153,69,0.25);
+      background: rgba(208,153,69,0.08);
+      color: #d4b068;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      border-radius: 999px;
+    }
+    .phone-card.featured .phone-tag {
+      background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000; border-color: transparent;
+      box-shadow: 0 4px 14px rgba(208,153,69,0.35);
+    }
+    .phone-tag svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .phone-caption p { color: var(--muted-fg); font-size: 0.88rem; line-height: 1.55; }
+    @media (max-width: 720px) {
+      .phone-card.featured { transform: none; }
+      .phones-grid { gap: 28px; }
+      .showcase-header h2 { font-size: 2rem; }
+    }
+
     /* ── Stats ── */
     .stats {
       padding: 0;
@@ -725,6 +773,66 @@
     </div>
   </div>
 </div>
+
+<div class="section-divider"></div>
+
+<!-- Showcase: 3 phones (Light / Live Trading / Dark) -->
+<section id="showcase">
+  <div class="container">
+    <div class="showcase-header anim">
+      <span class="section-label">See It In Action</span>
+      <h2>Three Modes.<br><span class="gradient-text-gold">One Powerful App.</span></h2>
+      <p class="section-desc">From a quick portfolio glance to live BTC charts and paper trading &mdash; CryptoSage adapts to how you trade.</p>
+    </div>
+
+    <div class="phones-grid anim">
+      <div class="phone-card">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-light.png" alt="CryptoSage AI Light Mode" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            Light Mode
+          </div>
+          <p>Clean, glanceable dashboard for everyday tracking.</p>
+        </div>
+      </div>
+
+      <div class="phone-card featured">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-trading.png" alt="CryptoSage AI Live Trading - BTC Charts &amp; Paper Trading" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-7"/></svg>
+            Live Trading
+          </div>
+          <p>Real-time order books, paper trading, and live BTC charts.</p>
+        </div>
+      </div>
+
+      <div class="phone-card">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-dark.png" alt="CryptoSage AI Dark Mode" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            Dark Mode
+          </div>
+          <p>AI insights, watchlists, and predictions &mdash; built for traders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="section-divider"></div>
 
