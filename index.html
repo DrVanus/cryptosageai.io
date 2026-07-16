@@ -461,6 +461,11 @@
     .phone-fade-2 { animation-delay: -3s; }
     .phone-fade-3 { animation-delay: -6s; }
     .phone-fade-4 { animation-delay: -9s; }
+    .phone-fade-5 { animation-delay: -1.5s; }
+    .phone-fade-6 { animation-delay: -4.5s; }
+    .phone-fade-7 { animation-delay: -7.5s; }
+    .phone-fade-8 { animation-delay: -10.5s; }
+    .phones-grid + .phones-grid { margin-top: 44px; }
     @media (prefers-reduced-motion: reduce) {
       .phone-card .phone-front { animation: none; opacity: 1; }
     }
@@ -835,8 +840,8 @@
         <div class="hero-phone-wrap">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-light.png" alt="CryptoSage AI light mode" class="phone-back" loading="lazy">
-              <img src="app-dark.png" alt="CryptoSage AI dark mode" class="phone-front" loading="lazy">
+              <img src="app-light.webp" alt="CryptoSage AI light mode" class="phone-back" loading="lazy">
+              <img src="app-dark.webp" alt="CryptoSage AI dark mode" class="phone-front" loading="lazy">
             </div>
           </div>
         </div>
@@ -859,8 +864,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-market-light.png" alt="CryptoSage AI live market list with sparklines and 24h change" class="phone-back" loading="lazy">
-            <img src="app-market-dark.png" alt="CryptoSage AI live market list (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+            <img src="app-market-light.webp" alt="CryptoSage AI live market list with sparklines and 24h change" class="phone-back" loading="lazy">
+            <img src="app-market-dark.webp" alt="CryptoSage AI live market list (dark theme)" class="phone-front phone-fade-1" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -876,8 +881,8 @@
       <div class="phone-card featured">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-trading-light.png" alt="CryptoSage AI BTC chart with order book and paper trading" class="phone-back" loading="lazy">
-            <img src="app-trading-dark.png" alt="CryptoSage AI BTC chart (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img src="app-trading-light.webp" alt="CryptoSage AI BTC chart with order book and paper trading" class="phone-back" loading="lazy">
+            <img src="app-trading-dark.webp" alt="CryptoSage AI BTC chart (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -893,8 +898,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-ai-light.png" alt="CryptoSage AI chat sizing a BTC position from your portfolio" class="phone-back" loading="lazy">
-            <img src="app-ai-dark.png" alt="CryptoSage AI chat (dark theme)" class="phone-front phone-fade-3" loading="lazy">
+            <img src="app-ai-light.webp" alt="CryptoSage AI chat sizing a BTC position from your portfolio" class="phone-back" loading="lazy">
+            <img src="app-ai-dark.webp" alt="CryptoSage AI chat (dark theme)" class="phone-front phone-fade-3" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -902,7 +907,7 @@
             <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             AI That Knows You
           </div>
-          <p>Sizes positions, scores your strategy, and answers questions about your real portfolio.</p>
+          <p>Reads your real holdings, builds the rebalancing plan &mdash; then sets up the trade for you.</p>
         </div>
       </div>
 
@@ -910,8 +915,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-portfolio-light.png" alt="CryptoSage AI portfolio overview with allocation, bots and DeFi" class="phone-back" loading="lazy">
-            <img src="app-portfolio-dark.png" alt="CryptoSage AI portfolio overview (dark theme)" class="phone-front phone-fade-4" loading="lazy">
+            <img src="app-portfolio-light.webp" alt="CryptoSage AI portfolio overview with allocation, bots and DeFi" class="phone-back" loading="lazy">
+            <img src="app-portfolio-dark.webp" alt="CryptoSage AI portfolio overview (dark theme)" class="phone-front phone-fade-4" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -920,6 +925,76 @@
             Full Portfolio
           </div>
           <p>Allocation, open orders, bots, DeFi, taxes &mdash; every position in one view.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="phones-grid anim">
+      <!-- AI Predictions -->
+      <div class="phone-card">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-prediction-light.webp" alt="CryptoSage AI price prediction for BTC with forecast chart, target and confidence" class="phone-back" loading="lazy">
+            <img src="app-prediction-dark.webp" alt="CryptoSage AI price prediction (dark theme)" class="phone-front phone-fade-5" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            AI Predictions
+          </div>
+          <p>On-demand forecasts with price targets, expiry, and confidence &mdash; for any coin.</p>
+        </div>
+      </div>
+
+      <!-- Market Sentiment -->
+      <div class="phone-card">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-sentiment-light.webp" alt="CryptoSage AI Fear and Greed gauge with AI market summary" class="phone-back" loading="lazy">
+            <img src="app-sentiment-dark.webp" alt="CryptoSage AI market sentiment (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12l7-7"/><path d="M16 2h6v6"/></svg>
+            Sentiment &amp; Heat Map
+          </div>
+          <p>Real-time Fear &amp; Greed with an AI summary of what's actually moving the market.</p>
+        </div>
+      </div>
+
+      <!-- Smart Alerts -->
+      <div class="phone-card">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-alerts-light.webp" alt="CryptoSage AI price alerts with AI market monitoring" class="phone-back" loading="lazy">
+            <img src="app-alerts-dark.webp" alt="CryptoSage AI smart alerts (dark theme)" class="phone-front phone-fade-7" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Smart Alerts
+          </div>
+          <p>Price targets plus AI monitoring for market shifts, news, and sentiment changes.</p>
+        </div>
+      </div>
+
+      <!-- Order Book -->
+      <div class="phone-card">
+        <div class="hero-phone-frame">
+          <div class="phone-screen">
+            <img src="app-orderbook-light.webp" alt="CryptoSage AI live order book with depth and buy/sell pressure" class="phone-back" loading="lazy">
+            <img src="app-orderbook-dark.webp" alt="CryptoSage AI order book (dark theme)" class="phone-front phone-fade-8" loading="lazy">
+          </div>
+        </div>
+        <div class="phone-caption">
+          <div class="phone-tag">
+            <svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            Order Book Depth
+          </div>
+          <p>A real order book with live depth, spread, and buy/sell pressure at a glance.</p>
         </div>
       </div>
     </div>
@@ -958,9 +1033,9 @@
       <div class="ai-chat-preview anim">
         <div class="chat-label">AI Chat Preview</div>
         <div class="chat-bubble chat-user">What's happening with ETH and should I be worried?</div>
-        <div class="chat-bubble chat-ai"><em style="color:var(--muted-fg);font-size:0.78rem">Analyzing prices, whale activity, and your portfolio...</em><br><br><strong>ETH</strong> is at $3,847 (+2.4% today). Whale wallets accumulated 140K ETH this week — the largest inflow since March. Your 1.8 ETH position (28% of portfolio) has solid support at $3,600. No action needed.</div>
+        <div class="chat-bubble chat-ai"><em style="color:var(--muted-fg);font-size:0.78rem">Analyzing prices, whale activity, and your portfolio...</em><br><br><strong>ETH</strong> is at $1,800 (-2.2% today). Whale wallets accumulated 140K ETH this week — the largest inflow since March. Your 12 ETH position (20% of portfolio) has solid support at $1,720. No action needed.</div>
         <div class="chat-bubble chat-user">Give me a price prediction for SOL this week</div>
-        <div class="chat-bubble chat-ai"><strong>SOL 7-Day Forecast:</strong> Bullish bias. RSI at 58 with room to run, MACD crossing positive. Support <strong>$142</strong>, resistance <strong>$168</strong>. Confidence: <strong>72%</strong>.<br><br>Your SOL is 34% of your portfolio — consider taking partial profits if it hits resistance.</div>
+        <div class="chat-bubble chat-ai"><strong>SOL 7-Day Forecast:</strong> Bullish bias. RSI at 58 with room to run, MACD crossing positive. Support <strong>$71</strong>, resistance <strong>$84</strong>. Confidence: <strong>72%</strong>.<br><br>Your SOL is up +46% — consider taking partial profits if it hits resistance.</div>
       </div>
     </div>
   </div>
