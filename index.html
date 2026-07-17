@@ -1170,6 +1170,10 @@
     #ai-chat .chat-grid { grid-template-columns: 1fr; gap:44px; }
     #ai-chat .chat-phones .phone-card:nth-child(2) { transform:none; }
   }
+  @media (max-width: 520px) {
+    #ai-chat .chat-phones { flex-direction: column; align-items: center; gap: 32px; }
+    #ai-chat .chat-phones .phone-card { max-width: 240px; }
+  }
 </style>
 <section id="ai-chat" style="padding:96px 0;">
   <div class="container">
@@ -1407,6 +1411,10 @@
     #news .news-grid { grid-template-columns: 1fr; gap:44px; }
     #news .news-phones .phone-card:nth-child(2) { transform:none; }
     #news .news-phones { order:-1; }
+  }
+  @media (max-width: 520px) {
+    #news .news-phones { flex-direction: column; align-items: center; gap: 32px; }
+    #news .news-phones .phone-card { max-width: 240px; }
   }
 </style>
 <section id="news" style="padding:96px 0;">
