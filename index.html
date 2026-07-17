@@ -401,33 +401,35 @@
       animation: crossfade 10s ease-in-out infinite;
     }
 
-    /* Hero rotator: 4 slides (home + demo portfolio, dark & light), 24s cycle.
+    /* Hero rotator: 8-slide tour of the app's best screens (40s cycle).
        hs-1 is an ALWAYS-OPAQUE base layer in normal flow (it sizes the
-       aspect-ratio box); hs-2..4 are overlays that each fade in above it for
-       a quarter of the cycle. Because the base never fades, no combination
-       of animation states can show a blank frame. */
+       aspect-ratio box); the others are overlays that each fade in above it
+       for ~5s. Because the base never fades, no combination of animation
+       states can show a blank frame. */
     .hero-rotator .hero-slide {
       position: absolute; inset: 0;
       width: 100%; height: 100%; object-fit: cover;
       border-radius: 2rem;
     }
     .hero-rotator .hs-1 { position: relative; }
-    .hero-rotator .hs-2,
-    .hero-rotator .hs-3,
-    .hero-rotator .hs-4 {
+    .hero-rotator .hero-slide:not(.hs-1) {
       opacity: 0;
-      animation: hero-overlay 24s ease-in-out infinite;
+      animation: hero-overlay 40s ease-in-out infinite;
     }
     @keyframes hero-overlay {
       0% { opacity: 0; }
-      4%, 27% { opacity: 1; }
-      31%, 100% { opacity: 0; }
+      2.5%, 10.5% { opacity: 1; }
+      13%, 100% { opacity: 0; }
     }
-    .hero-rotator .hs-2 { animation-delay: 5s; }
-    .hero-rotator .hs-3 { animation-delay: 11s; }
-    .hero-rotator .hs-4 { animation-delay: 17s; }
+    .hero-rotator .hs-2 { animation-delay: 4s; }
+    .hero-rotator .hs-3 { animation-delay: 9s; }
+    .hero-rotator .hs-4 { animation-delay: 14s; }
+    .hero-rotator .hs-5 { animation-delay: 19s; }
+    .hero-rotator .hs-6 { animation-delay: 24s; }
+    .hero-rotator .hs-7 { animation-delay: 29s; }
+    .hero-rotator .hs-8 { animation-delay: 34s; }
     @media (prefers-reduced-motion: reduce) {
-      .hero-rotator .hs-2, .hero-rotator .hs-3, .hero-rotator .hs-4 { animation: none; }
+      .hero-rotator .hero-slide:not(.hs-1) { animation: none; }
     }
 
     /* ── Showcase ── */
@@ -874,10 +876,14 @@
         <div class="hero-phone-wrap">
           <div class="hero-phone-frame">
             <div class="phone-screen hero-rotator">
-              <img src="app-dark.webp?v=20260718b" alt="CryptoSage AI home dashboard (dark mode)" class="hero-slide hs-1" loading="eager">
-              <img src="app-light.webp?v=20260718b" alt="CryptoSage AI home dashboard (light mode)" class="hero-slide hs-2" loading="eager">
-              <img src="app-portfolio-line-dark.webp?v=20260718b" alt="CryptoSage AI portfolio with value chart, open orders and bots (dark mode)" class="hero-slide hs-3" loading="eager">
-              <img src="app-portfolio-line-light.webp?v=20260718b" alt="CryptoSage AI portfolio (light mode)" class="hero-slide hs-4" loading="eager">
+              <img src="app-dark.webp?v=20260719a" alt="CryptoSage AI home dashboard (dark mode)" class="hero-slide hs-1" loading="eager">
+              <img src="app-portfolio-line-dark.webp?v=20260719a" alt="CryptoSage AI portfolio with rising value chart, open orders and bots" class="hero-slide hs-2" loading="eager">
+              <img src="app-ai-card-dark.webp?v=20260719a" alt="CryptoSage AI chat staging a trade with a one-tap action card" class="hero-slide hs-3" loading="eager">
+              <img src="app-tradingview-dark.webp?v=20260719a" alt="CryptoSage AI TradingView chart on the trading screen" class="hero-slide hs-4" loading="eager">
+              <img src="app-heatmap-7d-dark.webp?v=20260719a" alt="CryptoSage AI market heat map, 7-day view" class="hero-slide hs-5" loading="eager">
+              <img src="app-prediction-dark.webp?v=20260719a" alt="CryptoSage AI price prediction result on the home screen" class="hero-slide hs-6" loading="eager">
+              <img src="app-light.webp?v=20260719a" alt="CryptoSage AI home dashboard (light mode)" class="hero-slide hs-7" loading="eager">
+              <img src="app-portfolio-line-light.webp?v=20260719a" alt="CryptoSage AI portfolio (light mode)" class="hero-slide hs-8" loading="eager">
             </div>
           </div>
         </div>
@@ -901,8 +907,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-market-light.webp?v=20260718b" alt="CryptoSage AI live market list with sparklines and 24h change" class="phone-back" loading="lazy">
-            <img src="app-market-dark.webp?v=20260718b" alt="CryptoSage AI live market list (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+            <img src="app-market-light.webp?v=20260719a" alt="CryptoSage AI live market list with sparklines and 24h change" class="phone-back" loading="lazy">
+            <img src="app-market-dark.webp?v=20260719a" alt="CryptoSage AI live market list (dark theme)" class="phone-front phone-fade-1" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -918,8 +924,8 @@
       <div class="phone-card featured">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-trading-light.webp?v=20260718b" alt="CryptoSage AI BTC chart with order book and paper trading" class="phone-back" loading="lazy">
-            <img src="app-trading-dark.webp?v=20260718b" alt="CryptoSage AI BTC chart (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img src="app-trading-light.webp?v=20260719a" alt="CryptoSage AI BTC chart with order book and paper trading" class="phone-back" loading="lazy">
+            <img src="app-trading-dark.webp?v=20260719a" alt="CryptoSage AI BTC chart (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -935,8 +941,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-portfolio-light.webp?v=20260718b" alt="CryptoSage AI portfolio allocation pie with open orders and active bots" class="phone-back" loading="lazy">
-            <img src="app-portfolio-dark.webp?v=20260718b" alt="CryptoSage AI portfolio allocation (dark theme)" class="phone-front phone-fade-3" loading="lazy">
+            <img src="app-portfolio-light.webp?v=20260719a" alt="CryptoSage AI portfolio allocation pie with open orders and active bots" class="phone-back" loading="lazy">
+            <img src="app-portfolio-dark.webp?v=20260719a" alt="CryptoSage AI portfolio allocation (dark theme)" class="phone-front phone-fade-3" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -952,8 +958,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-ai-analysis-light.webp?v=20260718b" alt="CryptoSage AI chat analyzing Bitcoin with the user's portfolio concentration and P/L in context" class="phone-back" loading="lazy">
-            <img src="app-ai-analysis-dark.webp?v=20260718b" alt="CryptoSage AI portfolio-aware market analysis (dark theme)" class="phone-front phone-fade-4" loading="lazy">
+            <img src="app-ai-analysis-light.webp?v=20260719a" alt="CryptoSage AI chat analyzing Bitcoin with the user's portfolio concentration and P/L in context" class="phone-back" loading="lazy">
+            <img src="app-ai-analysis-dark.webp?v=20260719a" alt="CryptoSage AI portfolio-aware market analysis (dark theme)" class="phone-front phone-fade-4" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -994,16 +1000,16 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-prediction-detail-light.webp?v=20260718b" alt="CryptoSage AI Bitcoin price prediction with target, confidence ring and timeframes" class="phone-back" loading="lazy">
-              <img src="app-prediction-detail-dark.webp?v=20260718b" alt="CryptoSage AI price prediction detail (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+              <img src="app-prediction-detail-light.webp?v=20260719a" alt="CryptoSage AI Bitcoin price prediction with target, confidence ring and timeframes" class="phone-back" loading="lazy">
+              <img src="app-prediction-detail-dark.webp?v=20260719a" alt="CryptoSage AI price prediction detail (dark theme)" class="phone-front phone-fade-1" loading="lazy">
             </div>
           </div>
         </div>
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-prediction-analysis-light.webp?v=20260718b" alt="CryptoSage AI prediction analysis with price range, AI summary and signal overview" class="phone-back" loading="lazy">
-              <img src="app-prediction-analysis-dark.webp?v=20260718b" alt="CryptoSage AI prediction analysis (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+              <img src="app-prediction-analysis-light.webp?v=20260719a" alt="CryptoSage AI prediction analysis with price range, AI summary and signal overview" class="phone-back" loading="lazy">
+              <img src="app-prediction-analysis-dark.webp?v=20260719a" alt="CryptoSage AI prediction analysis (dark theme)" class="phone-front phone-fade-6" loading="lazy">
             </div>
           </div>
         </div>
@@ -1064,8 +1070,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-sentiment-sources-light.webp?v=20260718b" alt="CryptoSage AI market sentiment card with the alternative.me Fear and Greed feed selected as source" class="phone-back" loading="lazy">
-            <img src="app-sentiment-sources-dark.webp?v=20260718b" alt="CryptoSage AI sentiment card with alternative.me source (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img src="app-sentiment-sources-light.webp?v=20260719a" alt="CryptoSage AI market sentiment card with the alternative.me Fear and Greed feed selected as source" class="phone-back" loading="lazy">
+            <img src="app-sentiment-sources-dark.webp?v=20260719a" alt="CryptoSage AI sentiment card with alternative.me source (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1076,8 +1082,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-sentiment-detail-light.webp?v=20260718b" alt="CryptoSage AI full sentiment analysis with large Fear and Greed gauge and AI explanation" class="phone-back" loading="lazy">
-            <img src="app-sentiment-detail-dark.webp?v=20260718b" alt="CryptoSage AI full sentiment analysis (dark theme)" class="phone-front phone-fade-7" loading="lazy">
+            <img src="app-sentiment-detail-light.webp?v=20260719a" alt="CryptoSage AI full sentiment analysis with large Fear and Greed gauge and AI explanation" class="phone-back" loading="lazy">
+            <img src="app-sentiment-detail-dark.webp?v=20260719a" alt="CryptoSage AI full sentiment analysis (dark theme)" class="phone-front phone-fade-7" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1088,8 +1094,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-sentiment-deriv-light.webp?v=20260718b" alt="CryptoSage AI sentiment timeline and derivatives positioning with funding rates and long/short ratios" class="phone-back" loading="lazy">
-            <img src="app-sentiment-deriv-dark.webp?v=20260718b" alt="CryptoSage AI sentiment timeline and derivatives (dark theme)" class="phone-front phone-fade-12" loading="lazy">
+            <img src="app-sentiment-deriv-light.webp?v=20260719a" alt="CryptoSage AI sentiment timeline and derivatives positioning with funding rates and long/short ratios" class="phone-back" loading="lazy">
+            <img src="app-sentiment-deriv-dark.webp?v=20260719a" alt="CryptoSage AI sentiment timeline and derivatives (dark theme)" class="phone-front phone-fade-12" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1191,16 +1197,16 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-ai-rebalance-light.webp?v=20260718b" alt="CryptoSage AI chat reviewing portfolio allocation, overexposure risks and a rebalancing plan" class="phone-back" loading="lazy">
-              <img src="app-ai-rebalance-dark.webp?v=20260718b" alt="CryptoSage AI portfolio rebalancing chat (dark theme)" class="phone-front phone-fade-3" loading="lazy">
+              <img src="app-ai-rebalance-light.webp?v=20260719a" alt="CryptoSage AI chat reviewing portfolio allocation, overexposure risks and a rebalancing plan" class="phone-back" loading="lazy">
+              <img src="app-ai-rebalance-dark.webp?v=20260719a" alt="CryptoSage AI portfolio rebalancing chat (dark theme)" class="phone-front phone-fade-3" loading="lazy">
             </div>
           </div>
         </div>
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-ai-light.webp?v=20260718b" alt="CryptoSage AI chat staging a Bitcoin buy with a one-tap execute action card" class="phone-back" loading="lazy">
-              <img src="app-ai-dark.webp?v=20260718b" alt="CryptoSage AI trade action card (dark theme)" class="phone-front phone-fade-8" loading="lazy">
+              <img src="app-ai-light.webp?v=20260719a" alt="CryptoSage AI chat staging a Bitcoin buy with a one-tap execute action card" class="phone-back" loading="lazy">
+              <img src="app-ai-dark.webp?v=20260719a" alt="CryptoSage AI trade action card (dark theme)" class="phone-front phone-fade-8" loading="lazy">
             </div>
           </div>
         </div>
@@ -1343,8 +1349,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-ta-chart-light.webp?v=20260718b" alt="CryptoSage AI native BTC chart with volume, RSI and MACD indicator panes" class="phone-back" loading="lazy">
-            <img src="app-ta-chart-dark.webp?v=20260718b" alt="CryptoSage AI chart with RSI and MACD (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+            <img src="app-ta-chart-light.webp?v=20260719a" alt="CryptoSage AI native BTC chart with volume, RSI and MACD indicator panes" class="phone-back" loading="lazy">
+            <img src="app-ta-chart-dark.webp?v=20260719a" alt="CryptoSage AI chart with RSI and MACD (dark theme)" class="phone-front phone-fade-1" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1355,8 +1361,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-ta-technicals-light.webp?v=20260718b" alt="CryptoSage AI technicals consensus gauge with overall, moving average and oscillator buy/sell readings" class="phone-back" loading="lazy">
-            <img src="app-ta-technicals-dark.webp?v=20260718b" alt="CryptoSage AI technicals consensus gauge (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+            <img src="app-ta-technicals-light.webp?v=20260719a" alt="CryptoSage AI technicals consensus gauge with overall, moving average and oscillator buy/sell readings" class="phone-back" loading="lazy">
+            <img src="app-ta-technicals-dark.webp?v=20260719a" alt="CryptoSage AI technicals consensus gauge (dark theme)" class="phone-front phone-fade-6" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1367,8 +1373,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-ta-tradingview-light.webp?v=20260718b" alt="CryptoSage AI TradingView candlestick chart with RSI and MACD studies applied" class="phone-back" loading="lazy">
-            <img src="app-ta-tradingview-dark.webp?v=20260718b" alt="CryptoSage AI TradingView chart with studies (dark theme)" class="phone-front phone-fade-11" loading="lazy">
+            <img src="app-ta-tradingview-light.webp?v=20260719a" alt="CryptoSage AI TradingView candlestick chart with RSI and MACD studies applied" class="phone-back" loading="lazy">
+            <img src="app-ta-tradingview-dark.webp?v=20260719a" alt="CryptoSage AI TradingView chart with studies (dark theme)" class="phone-front phone-fade-11" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1455,16 +1461,16 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-news-light.webp?v=20260718b" alt="CryptoSage AI crypto news feed with category chips and article cards from top outlets" class="phone-back" loading="lazy">
-              <img src="app-news-dark.webp?v=20260718b" alt="CryptoSage AI crypto news feed (dark theme)" class="phone-front phone-fade-4" loading="lazy">
+              <img src="app-news-light.webp?v=20260719a" alt="CryptoSage AI crypto news feed with category chips and article cards from top outlets" class="phone-back" loading="lazy">
+              <img src="app-news-dark.webp?v=20260719a" alt="CryptoSage AI crypto news feed (dark theme)" class="phone-front phone-fade-4" loading="lazy">
             </div>
           </div>
         </div>
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-news-bitcoin-light.webp?v=20260718b" alt="CryptoSage AI news feed filtered to the Bitcoin category" class="phone-back" loading="lazy">
-              <img src="app-news-bitcoin-dark.webp?v=20260718b" alt="CryptoSage AI Bitcoin news filter (dark theme)" class="phone-front phone-fade-9" loading="lazy">
+              <img src="app-news-bitcoin-light.webp?v=20260719a" alt="CryptoSage AI news feed filtered to the Bitcoin category" class="phone-back" loading="lazy">
+              <img src="app-news-bitcoin-dark.webp?v=20260719a" alt="CryptoSage AI Bitcoin news filter (dark theme)" class="phone-front phone-fade-9" loading="lazy">
             </div>
           </div>
         </div>
@@ -1498,8 +1504,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-heatmap-light.webp?v=20260718b" alt="CryptoSage AI treemap heat map sized by market cap and colored by 24h change" class="phone-back" loading="lazy">
-            <img src="app-heatmap-dark.webp?v=20260718b" alt="CryptoSage AI treemap heat map (dark theme)" class="phone-front phone-fade-5" loading="lazy">
+            <img src="app-heatmap-light.webp?v=20260719a" alt="CryptoSage AI treemap heat map sized by market cap and colored by 24h change" class="phone-back" loading="lazy">
+            <img src="app-heatmap-dark.webp?v=20260719a" alt="CryptoSage AI treemap heat map (dark theme)" class="phone-front phone-fade-5" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1510,8 +1516,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-heatmap-grid-light.webp?v=20260718b" alt="CryptoSage AI grid heat map with equal tiles per coin" class="phone-back" loading="lazy">
-            <img src="app-heatmap-grid-dark.webp?v=20260718b" alt="CryptoSage AI grid heat map (dark theme)" class="phone-front phone-fade-10" loading="lazy">
+            <img src="app-heatmap-grid-light.webp?v=20260719a" alt="CryptoSage AI grid heat map with equal tiles per coin" class="phone-back" loading="lazy">
+            <img src="app-heatmap-grid-dark.webp?v=20260719a" alt="CryptoSage AI grid heat map (dark theme)" class="phone-front phone-fade-10" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1522,8 +1528,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img src="app-heatmap-bar-light.webp?v=20260718b" alt="CryptoSage AI bar heat map ranking coins by percent change" class="phone-back" loading="lazy">
-            <img src="app-heatmap-bar-dark.webp?v=20260718b" alt="CryptoSage AI bar heat map (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img src="app-heatmap-bar-light.webp?v=20260719a" alt="CryptoSage AI bar heat map ranking coins by percent change" class="phone-back" loading="lazy">
+            <img src="app-heatmap-bar-dark.webp?v=20260719a" alt="CryptoSage AI bar heat map (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1574,8 +1580,8 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-coin-light.webp?v=20260718b" alt="CryptoSage AI Bitcoin coin page with price chart, AI trading signal and key levels" class="phone-back" loading="lazy">
-              <img src="app-coin-dark.webp?v=20260718b" alt="CryptoSage AI coin detail page (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+              <img src="app-coin-light.webp?v=20260719a" alt="CryptoSage AI Bitcoin coin page with price chart, AI trading signal and key levels" class="phone-back" loading="lazy">
+              <img src="app-coin-dark.webp?v=20260719a" alt="CryptoSage AI coin detail page (dark theme)" class="phone-front phone-fade-6" loading="lazy">
             </div>
           </div>
         </div>
@@ -1586,8 +1592,8 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-alerts-light.webp?v=20260718b" alt="CryptoSage AI price alerts with AI market monitoring" class="phone-back" loading="lazy">
-              <img src="app-alerts-dark.webp?v=20260718b" alt="CryptoSage AI smart alerts (dark theme)" class="phone-front phone-fade-11" loading="lazy">
+              <img src="app-alerts-light.webp?v=20260719a" alt="CryptoSage AI price alerts with AI market monitoring" class="phone-back" loading="lazy">
+              <img src="app-alerts-dark.webp?v=20260719a" alt="CryptoSage AI smart alerts (dark theme)" class="phone-front phone-fade-11" loading="lazy">
             </div>
           </div>
         </div>
