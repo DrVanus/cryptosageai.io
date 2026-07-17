@@ -401,29 +401,33 @@
       animation: crossfade 10s ease-in-out infinite;
     }
 
-    /* Hero rotator: 4 slides (home + demo portfolio, dark & light), 24s cycle */
+    /* Hero rotator: 4 slides (home + demo portfolio, dark & light), 24s cycle.
+       hs-1 is an ALWAYS-OPAQUE base layer in normal flow (it sizes the
+       aspect-ratio box); hs-2..4 are overlays that each fade in above it for
+       a quarter of the cycle. Because the base never fades, no combination
+       of animation states can show a blank frame. */
     .hero-rotator .hero-slide {
       position: absolute; inset: 0;
       width: 100%; height: 100%; object-fit: cover;
       border-radius: 2rem;
+    }
+    .hero-rotator .hs-1 { position: relative; }
+    .hero-rotator .hs-2,
+    .hero-rotator .hs-3,
+    .hero-rotator .hs-4 {
       opacity: 0;
-      animation: hero-rotate 24s ease-in-out infinite;
+      animation: hero-overlay 24s ease-in-out infinite;
     }
-    /* First slide stays in normal flow so the aspect-ratio box has an
-       intrinsic width — absolute-only children collapse the frame. */
-    .hero-rotator .hero-slide.hs-1 { position: relative; }
-    @keyframes hero-rotate {
-      0%, 21% { opacity: 1; }
-      29%, 92% { opacity: 0; }
-      100% { opacity: 1; }
+    @keyframes hero-overlay {
+      0% { opacity: 0; }
+      4%, 27% { opacity: 1; }
+      31%, 100% { opacity: 0; }
     }
-    .hs-1 { animation-delay: 0s; }
-    .hs-2 { animation-delay: -18s; }
-    .hs-3 { animation-delay: -12s; }
-    .hs-4 { animation-delay: -6s; }
+    .hero-rotator .hs-2 { animation-delay: 5s; }
+    .hero-rotator .hs-3 { animation-delay: 11s; }
+    .hero-rotator .hs-4 { animation-delay: 17s; }
     @media (prefers-reduced-motion: reduce) {
-      .hero-rotator .hero-slide { animation: none; }
-      .hero-rotator .hs-1 { opacity: 1; }
+      .hero-rotator .hs-2, .hero-rotator .hs-3, .hero-rotator .hs-4 { animation: none; }
     }
 
     /* ── Showcase ── */
@@ -1540,6 +1544,55 @@
       <div class="feature-card" style="padding:20px;">
         <h3 style="color:#F3D36D; font-size:0.92rem; margin-bottom:6px;">Tap Into Anything</h3>
         <p>Every tile opens the full coin page &mdash; chart, AI signal, technicals and news.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Coin Pages & Smart Alerts (compact duo) -->
+<style>
+  #coin-alerts .duo-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:40px; margin-top:52px; max-width:760px; margin-left:auto; margin-right:auto; }
+  #coin-alerts .duo-item { display:flex; flex-direction:column; align-items:center; text-align:center; }
+  #coin-alerts .duo-item .phone-card { max-width:230px; width:100%; }
+  #coin-alerts .duo-item h3 { font-size:1.05rem; font-weight:700; margin-top:22px; }
+  #coin-alerts .duo-item p { font-size:0.88rem; color:var(--muted-fg); line-height:1.55; margin-top:6px; max-width:300px; }
+  @media (max-width: 600px) {
+    #coin-alerts .duo-grid { grid-template-columns: 1fr; gap:44px; }
+  }
+</style>
+<section id="coin-alerts" style="padding:96px 0;">
+  <div class="container">
+    <div style="text-align:center" class="anim">
+      <span class="section-label">Research &amp; React</span>
+      <h2 class="section-title">Know every coin.<br><span class="gradient-text-gold">Miss nothing.</span></h2>
+      <p class="section-desc" style="margin:14px auto 0">A full research page for every coin &mdash; and alerts that watch the market when you're not looking.</p>
+    </div>
+    <div class="duo-grid anim">
+      <div class="duo-item">
+        <div class="phone-card">
+          <div class="hero-phone-frame">
+            <div class="phone-screen">
+              <img src="app-coin-light.webp?v=20260718b" alt="CryptoSage AI Bitcoin coin page with price chart, AI trading signal and key levels" class="phone-back" loading="lazy">
+              <img src="app-coin-dark.webp?v=20260718b" alt="CryptoSage AI coin detail page (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <h3>Coin Pages</h3>
+        <p>Chart, stats, AI trading signal, technicals, key levels and news &mdash; every coin's full story in one place.</p>
+      </div>
+      <div class="duo-item">
+        <div class="phone-card">
+          <div class="hero-phone-frame">
+            <div class="phone-screen">
+              <img src="app-alerts-light.webp?v=20260718b" alt="CryptoSage AI price alerts with AI market monitoring" class="phone-back" loading="lazy">
+              <img src="app-alerts-dark.webp?v=20260718b" alt="CryptoSage AI smart alerts (dark theme)" class="phone-front phone-fade-11" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <h3>Smart Alerts</h3>
+        <p>Price targets plus AI monitoring for market shifts, news and sentiment changes &mdash; delivered the moment they matter.</p>
       </div>
     </div>
   </div>
