@@ -409,6 +409,9 @@
       opacity: 0;
       animation: hero-rotate 24s ease-in-out infinite;
     }
+    /* First slide stays in normal flow so the aspect-ratio box has an
+       intrinsic width — absolute-only children collapse the frame. */
+    .hero-rotator .hero-slide.hs-1 { position: relative; }
     @keyframes hero-rotate {
       0%, 21% { opacity: 1; }
       29%, 92% { opacity: 0; }
