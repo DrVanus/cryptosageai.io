@@ -414,20 +414,26 @@
     .hero-rotator .hs-1 { position: relative; }
     .hero-rotator .hero-slide:not(.hs-1) {
       opacity: 0;
-      animation: hero-overlay 40s ease-in-out infinite;
+      animation: hero-overlay 40s linear infinite;
     }
+    /* Each overlay owns a contiguous 5s slot and crossfades directly into the
+       next one, so the tour never snaps back to the base between slides. The
+       base (hs-1) is always opaque underneath as a blank-frame guarantee and
+       gets its own turn during the 0-5s slot at the loop point.
+       Slot math (40s cycle): opaque 0.5s-5s of local time = 1.25%-12.5%,
+       fade out by 6s = 15%; the next slide (delay +5s) fades in over that gap. */
     @keyframes hero-overlay {
       0% { opacity: 0; }
-      2.5%, 10.5% { opacity: 1; }
-      13%, 100% { opacity: 0; }
+      1.25%, 12.5% { opacity: 1; }
+      15%, 100% { opacity: 0; }
     }
-    .hero-rotator .hs-2 { animation-delay: 4s; }
-    .hero-rotator .hs-3 { animation-delay: 9s; }
-    .hero-rotator .hs-4 { animation-delay: 14s; }
-    .hero-rotator .hs-5 { animation-delay: 19s; }
-    .hero-rotator .hs-6 { animation-delay: 24s; }
-    .hero-rotator .hs-7 { animation-delay: 29s; }
-    .hero-rotator .hs-8 { animation-delay: 34s; }
+    .hero-rotator .hs-2 { animation-delay: 5s; }
+    .hero-rotator .hs-3 { animation-delay: 10s; }
+    .hero-rotator .hs-4 { animation-delay: 15s; }
+    .hero-rotator .hs-5 { animation-delay: 20s; }
+    .hero-rotator .hs-6 { animation-delay: 25s; }
+    .hero-rotator .hs-7 { animation-delay: 30s; }
+    .hero-rotator .hs-8 { animation-delay: 35s; }
     @media (prefers-reduced-motion: reduce) {
       .hero-rotator .hero-slide:not(.hs-1) { animation: none; }
     }
