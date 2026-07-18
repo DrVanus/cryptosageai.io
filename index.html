@@ -427,13 +427,18 @@
       1.25%, 12.5% { opacity: 1; }
       15%, 100% { opacity: 0; }
     }
-    .hero-rotator .hs-2 { animation-delay: 5s; }
-    .hero-rotator .hs-3 { animation-delay: 10s; }
-    .hero-rotator .hs-4 { animation-delay: 15s; }
-    .hero-rotator .hs-5 { animation-delay: 20s; }
-    .hero-rotator .hs-6 { animation-delay: 25s; }
-    .hero-rotator .hs-7 { animation-delay: 30s; }
-    .hero-rotator .hs-8 { animation-delay: 35s; }
+    /* NOTE: these must match the specificity of the shorthand rule above
+       (.hero-rotator .hero-slide:not(.hs-1), which is 3 classes) or the
+       shorthand `animation:` resets animation-delay back to 0s and every
+       overlay animates in lockstep — collapsing the tour to 2 visible frames.
+       Including .hero-slide gives equal specificity; later source order wins. */
+    .hero-rotator .hero-slide.hs-2 { animation-delay: 5s; }
+    .hero-rotator .hero-slide.hs-3 { animation-delay: 10s; }
+    .hero-rotator .hero-slide.hs-4 { animation-delay: 15s; }
+    .hero-rotator .hero-slide.hs-5 { animation-delay: 20s; }
+    .hero-rotator .hero-slide.hs-6 { animation-delay: 25s; }
+    .hero-rotator .hero-slide.hs-7 { animation-delay: 30s; }
+    .hero-rotator .hero-slide.hs-8 { animation-delay: 35s; }
     @media (prefers-reduced-motion: reduce) {
       .hero-rotator .hero-slide:not(.hs-1) { animation: none; }
     }
