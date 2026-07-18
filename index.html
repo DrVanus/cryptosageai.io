@@ -513,6 +513,8 @@
     .phone-fade-11 { animation-delay: -8s; }
     .phone-fade-12 { animation-delay: -11s; }
     .phones-grid + .phones-grid { margin-top: 44px; }
+    /* Single-image phones (no light/dark pair) stay static — no crossfade to fade into. */
+    .phone-card .phone-front.phone-solo { animation: none; opacity: 1; }
     @media (prefers-reduced-motion: reduce) {
       .phone-card .phone-front { animation: none; opacity: 1; }
     }
@@ -1011,16 +1013,18 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-prediction-detail-light.webp?v=20260719a" alt="CryptoSage AI Bitcoin price prediction with target, confidence ring and timeframes" class="phone-back" loading="lazy">
-              <img src="app-prediction-detail-dark.webp?v=20260719a" alt="CryptoSage AI price prediction detail (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+              <!-- Dark-only: prediction screens generate fresh data per capture, so the
+                   light/dark pair would show mismatched forecasts. Single theme keeps it consistent. -->
+              <img src="app-prediction-detail-dark.webp?v=20260719a" alt="CryptoSage AI Bitcoin price prediction with target, confidence ring and timeframes" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img src="app-prediction-analysis-light.webp?v=20260719a" alt="CryptoSage AI prediction analysis with price range, AI summary and signal overview" class="phone-back" loading="lazy">
-              <img src="app-prediction-analysis-dark.webp?v=20260719a" alt="CryptoSage AI prediction analysis (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+              <!-- Dark-only: prediction screens generate fresh data per capture, so the
+                   light/dark pair would show mismatched forecasts. Single theme keeps it consistent. -->
+              <img src="app-prediction-analysis-dark.webp?v=20260719a" alt="CryptoSage AI prediction analysis with price range, AI summary and signal overview" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
