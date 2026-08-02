@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support &amp; Help — CryptoSage AI</title>
+  <meta name="description" content="Help with CryptoSage AI: fix sync and connection problems, restore a subscription, request a refund through Apple, report a bug, and see where your data goes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cryptosageai.io/support.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Support &amp; Help — CryptoSage AI">
+  <meta property="og:description" content="Fix a problem, restore a subscription, report a bug, or reach a human at hypersageai@gmail.com.">
+  <meta property="og:url" content="https://cryptosageai.io/support.html">
+  <meta property="og:site_name" content="CryptoSage AI">
+  <meta property="og:image" content="https://cryptosageai.io/banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CryptoSage AI — Support">
+  <meta name="twitter:description" content="Help, troubleshooting, billing and privacy for CryptoSage AI.">
+  <meta name="twitter:image" content="https://cryptosageai.io/banner.jpg">
+  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+
+  <!-- Google Analytics GA4 — replace G-BEYDD9LHM1 with your measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEYDD9LHM1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BEYDD9LHM1');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #010100;
+      --fg: #eeeeee;
+      --card: #060403;
+      --card-fg: #eeeeee;
+      --primary: #d09945;
+      --primary-fg: #030303;
+      --muted: #110c09;
+      --muted-fg: gray;
+      --accent: #251804;
+      --accent-fg: #eeeeee;
+      --border: rgba(208,153,69,0.12);
+      --gold-glow: rgba(208,153,69,0.08);
+      --radius: 0.625rem;
+    }
+
+    /* overflow-x: clip clips horizontal overflow WITHOUT turning <html>/<body> into a
+       scroll container — plain overflow-x:hidden does, which causes janky/stuttery
+       scrolling in Chromium-based browsers (notably Brave). scroll-behavior:smooth is
+       intentionally NOT set here: it stutters on anchor jumps in Brave. Smooth anchor
+       scrolling is handled in JS below (honouring prefers-reduced-motion). */
+    html { overflow-x: clip; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #f5d98e 0%, #d09945 50%, #b8860b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 0.12em;
+      margin-bottom: -0.12em;
+    }
+    .gradient-text-silver {
+      background: linear-gradient(135deg, #e8e8e8 0%, silver 50%, #a8a9ad 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 0.12em;
+      margin-bottom: -0.12em;
+    }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000000;
+      font-weight: 700; font-size: 0.9rem; font-family: inherit;
+      border-radius: 12px; border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(208,153,69,0.25);
+      transition: all 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(208,153,69,0.4); background: linear-gradient(135deg, #f0c65a, #d09945); }
+    .btn-gold svg { width: 16px; height: 16px; }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      background: rgba(208,153,69,0.05);
+      color: #d4b068;
+      font-weight: 600; font-size: 0.9rem; font-family: inherit;
+      border-radius: 12px; border: 1px solid var(--border); cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover { background: rgba(208,153,69,0.1); border-color: rgba(208,153,69,0.3); }
+
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--primary); margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.5rem; font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .section-desc {
+      font-size: 1.05rem; color: var(--muted-fg);
+      max-width: 600px; margin-top: 14px; line-height: 1.65;
+    }
+
+    section { padding: 96px 0; }
+
+    .section-divider {
+      height: 1px; max-width: 768px; margin: 0 auto;
+      background: linear-gradient(90deg, transparent, rgba(208,153,69,0.2), transparent);
+      position: relative;
+    }
+    .section-divider::after {
+      content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 16px;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.08), transparent);
+    }
+
+    /* Icons */
+    .icon-box {
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(208,153,69,0.08);
+      border: 1px solid var(--border);
+      border-radius: 10px; flex-shrink: 0;
+    }
+    .icon-box svg { width: 20px; height: 20px; color: var(--primary); stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Animations */
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.3; transform: translate(-50%,-50%) scale(1); }
+      50% { opacity: 0.55; transform: translate(-50%,-50%) scale(1.05); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .anim { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .anim.visible { opacity: 1; transform: translateY(0); }
+    .anim-d1 { transition-delay: 0.1s; }
+    .anim-d2 { transition-delay: 0.2s; }
+    .anim-d3 { transition-delay: 0.3s; }
+    .anim-d4 { transition-delay: 0.4s; }
+    .anim-d5 { transition-delay: 0.5s; }
+    .anim-d6 { transition-delay: 0.6s; }
+    .anim-d7 { transition-delay: 0.7s; }
+
+    /* Shimmer on gradient text */
+    .shimmer-text {
+      background: linear-gradient(90deg, #f5d98e 0%, #d09945 40%, #f5d98e 60%, #d09945 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 0.12em;
+      margin-bottom: -0.12em;
+      animation: shimmer 4s linear infinite;
+    }
+
+    /* Dot grid background */
+    .dot-grid {
+      background-image: radial-gradient(rgba(208,153,69,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Platform badge */
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 16px; border-radius: 20px;
+      background: rgba(208,153,69,0.05);
+      border: 1px solid var(--border);
+      font-size: 0.78rem; font-weight: 500; color: var(--muted-fg);
+      margin-bottom: 20px;
+      animation: fade-in-up 0.8s ease both;
+    }
+    .platform-badge span { color: #d4b068; }
+
+    /* Screenshot vignette — disabled */
+    .phone-vignette {
+      display: none;
+    }
+
+    /* Mode label — hidden */
+    .mode-label { display: none; }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 50;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(208,153,69,0.15); border: 1px solid var(--border);
+      border-radius: 10px; cursor: pointer;
+      opacity: 0; transform: translateY(10px);
+      transition: all 0.3s ease; pointer-events: none;
+    }
+    .scroll-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover { background: rgba(208,153,69,0.25); }
+    .scroll-top svg { width: 18px; height: 18px; color: var(--primary); stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* Pricing toggle */
+    .pricing-toggle {
+      display: flex; gap: 4px; justify-content: center; margin-top: 20px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 4px; display: inline-flex;
+    }
+    .pricing-toggle-wrap { text-align: center; margin-top: 20px; }
+    .toggle-btn {
+      padding: 8px 20px; border-radius: 8px; border: none;
+      background: transparent; color: var(--muted-fg);
+      font-size: 0.85rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .toggle-btn.active { background: linear-gradient(135deg, #e8b84b, #c48a2a); color: #000; }
+    .toggle-save { font-size: 0.7rem; color: #d4b068; font-weight: 600; opacity: 0.8; }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(1,1,0,0.7);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid var(--border);
+      /* Promote to its own compositing layer so the backdrop-filter blur doesn't force
+         the whole page to re-composite on every scroll frame (major Brave scroll-jank fix). */
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.01em; }
+    .nav-logo img { width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 0 12px rgba(208,153,69,0.15); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--muted-fg); transition: color 0.2s; font-weight: 500; }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-links a.nav-cta {
+      padding: 8px 18px; background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000000; font-weight: 700; font-size: 0.8rem;
+      border-radius: 8px; transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(208,153,69,0.3);
+    }
+    .nav-links a.nav-cta:hover { color: #000000; box-shadow: 0 4px 16px rgba(208,153,69,0.4); background: linear-gradient(135deg, #f0c65a, #d09945); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--fg); cursor: pointer; padding: 4px; }
+    .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero-layout {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-text { }
+    .hero-screenshot { }
+    /* Hero goes 2-column from iPad portrait up */
+    @media (min-width: 768px) {
+      .hero-layout {
+        flex-direction: row; align-items: center; gap: 40px; text-align: left;
+      }
+      .hero-text { flex: 1; min-width: 0; }
+      .hero-screenshot { margin-top: 0 !important; flex-shrink: 0; }
+      .hero h1 { margin: 0; }
+      .hero .subtitle { margin: 20px 0 0; }
+      .hero-buttons { justify-content: flex-start; }
+      .hero .platform-badge { display: inline-flex; }
+    }
+    /* Tablet portrait tuning (768–1099px): tighter type, smaller phone */
+    @media (min-width: 768px) and (max-width: 1099px) {
+      .hero { padding: 120px 0 60px; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero .subtitle { font-size: 0.98rem; max-width: none; }
+      .hero-phone-frame { max-width: 240px; }
+    }
+    @media (min-width: 1100px) {
+      .hero-layout { gap: 56px; }
+      .hero-phone-frame { max-width: 320px; }
+    }
+    @media (min-width: 1100px) and (max-width: 1250px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero-phone-frame { max-width: 280px; }
+      .hero-layout { gap: 40px; }
+    }
+    .hero::before {
+      content: ''; position: absolute; top: calc(30% - var(--parallax, 0px)); left: 50%;
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.07), transparent 65%);
+      pointer-events: none;
+      animation: pulse-glow 5s ease-in-out infinite;
+    }
+    .hero::after {
+      content: ''; position: absolute; top: 60%; left: 30%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(208,153,69,0.04), transparent 60%);
+      pointer-events: none;
+      animation: pulse-glow 7s ease-in-out 1s infinite;
+    }
+    .hero h1 {
+      font-size: 3.5rem; font-weight: 800; line-height: 1.16;
+      letter-spacing: -0.03em; max-width: 800px; margin: 0 auto;
+      animation: fade-in-up 0.8s ease both;
+      position: relative;
+    }
+    .hero .subtitle {
+      font-size: 1.1rem; color: var(--muted-fg); max-width: 580px;
+      margin: 20px auto 0; line-height: 1.7;
+      animation: fade-in-up 0.8s ease 0.15s both;
+      position: relative;
+    }
+    .hero-buttons {
+      display: flex; gap: 14px; justify-content: center; margin-top: 32px; flex-wrap: wrap;
+      animation: fade-in-up 0.8s ease 0.3s both;
+      position: relative;
+    }
+    @keyframes crossfade {
+      0%, 42% { opacity: 1; }
+      50%, 92% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .hero-screenshot {
+      margin-top: 56px; display: flex; justify-content: center;
+      animation: fade-in-up 0.8s ease 0.45s both;
+      position: relative;
+    }
+    .hero-phone-wrap {
+      position: relative; display: inline-block;
+    }
+    /* Gold glow behind phone */
+    .hero-phone-wrap::before {
+      content: ''; position: absolute; inset: -32px;
+      border-radius: 3rem;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.12), transparent 70%);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+    /* Phone frame container */
+    .hero-phone-frame {
+      position: relative;
+      border-radius: 2.5rem;
+      border: 2.5px solid rgba(208,153,69,0.25);
+      background: #000;
+      padding: 8px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(208,153,69,0.1), 0 0 80px rgba(208,153,69,0.06);
+      overflow: hidden;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .hero-phone-frame .phone-screen {
+      position: relative;
+      border-radius: 2rem;
+      overflow: hidden;
+      aspect-ratio: 1320 / 2868;  /* iPhone 16 Pro Max — locks natural phone aspect */
+    }
+    .hero-phone-frame img {
+      width: 100%; height: 100%; display: block;
+      object-fit: cover;
+      border-radius: 2rem;
+    }
+    .hero-phone-frame .phone-back {
+      position: absolute; top: 0; left: 0;
+    }
+    .hero-phone-frame .phone-front {
+      position: relative; z-index: 1;
+      animation: crossfade 10s ease-in-out infinite;
+    }
+
+    /* Hero rotator: 8-slide tour of the app's best screens (40s cycle).
+       hs-1 is an ALWAYS-OPAQUE base layer in normal flow (it sizes the
+       aspect-ratio box); the others are overlays that each fade in above it
+       for ~5s. Because the base never fades, no combination of animation
+       states can show a blank frame. */
+    .hero-rotator .hero-slide {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 2rem;
+    }
+    .hero-rotator .hs-1 { position: relative; }
+    .hero-rotator .hero-slide:not(.hs-1) {
+      opacity: 0;
+      animation: hero-overlay 40s linear infinite;
+    }
+    /* Each overlay owns a contiguous 5s slot and crossfades directly into the
+       next one, so the tour never snaps back to the base between slides. The
+       base (hs-1) is always opaque underneath as a blank-frame guarantee and
+       gets its own turn during the 0-5s slot at the loop point.
+       Slot math (40s cycle): opaque 0.5s-5s of local time = 1.25%-12.5%,
+       fade out by 6s = 15%; the next slide (delay +5s) fades in over that gap. */
+    @keyframes hero-overlay {
+      0% { opacity: 0; }
+      1.25%, 12.5% { opacity: 1; }
+      15%, 100% { opacity: 0; }
+    }
+    /* NOTE: these must match the specificity of the shorthand rule above
+       (.hero-rotator .hero-slide:not(.hs-1), which is 3 classes) or the
+       shorthand `animation:` resets animation-delay back to 0s and every
+       overlay animates in lockstep — collapsing the tour to 2 visible frames.
+       Including .hero-slide gives equal specificity; later source order wins. */
+    .hero-rotator .hero-slide.hs-2 { animation-delay: 5s; }
+    .hero-rotator .hero-slide.hs-3 { animation-delay: 10s; }
+    .hero-rotator .hero-slide.hs-4 { animation-delay: 15s; }
+    .hero-rotator .hero-slide.hs-5 { animation-delay: 20s; }
+    .hero-rotator .hero-slide.hs-6 { animation-delay: 25s; }
+    .hero-rotator .hero-slide.hs-7 { animation-delay: 30s; }
+    .hero-rotator .hero-slide.hs-8 { animation-delay: 35s; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-rotator .hero-slide:not(.hs-1) { animation: none; }
+    }
+
+    /* ── Showcase ── */
+    #showcase { padding: 96px 0; position: relative; }
+    .showcase-header { text-align: center; }
+    .showcase-header h2 {
+      font-size: 2.5rem; font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.15;
+      margin-top: 10px;
+    }
+    .showcase-header .section-desc {
+      margin-left: auto; margin-right: auto; text-align: center;
+    }
+    .phones-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: end;
+      gap: 24px; margin-top: 64px;
+    }
+    .phone-card { display: flex; flex-direction: column; align-items: center; }
+    .phone-card .hero-phone-frame { max-width: 220px; width: 100%; }
+    .phone-card.featured { transform: translateY(-20px); }
+    .phone-card.featured .hero-phone-frame {
+      max-width: 240px;
+      border-color: rgba(208,153,69,0.45);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(208,153,69,0.18), 0 0 100px rgba(208,153,69,0.14);
+    }
+    /* phone-card images now sized via aspect-ratio on .phone-screen */
+    .phone-caption { margin-top: 24px; text-align: center; max-width: 240px; }
+    .phone-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; margin-bottom: 12px;
+      border: 1px solid rgba(208,153,69,0.25);
+      background: rgba(208,153,69,0.08);
+      color: #d4b068;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      border-radius: 999px;
+    }
+    .phone-card.featured .phone-tag {
+      background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000; border-color: transparent;
+      box-shadow: 0 4px 14px rgba(208,153,69,0.35);
+    }
+    .phone-tag svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .phone-caption p { color: var(--muted-fg); font-size: 0.88rem; line-height: 1.55; }
+
+    /* Per-phone crossfade — same keyframes, staggered with negative delays
+       so all four phones flip themes at different times. */
+    .phone-card .phone-screen { position: relative; }
+    .phone-card .phone-back {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 2rem;
+    }
+    .phone-card .phone-front {
+      position: relative; z-index: 1;
+      animation: crossfade 12s ease-in-out infinite;
+    }
+    .phone-fade-1 { animation-delay: 0s; }
+    .phone-fade-2 { animation-delay: -3s; }
+    .phone-fade-3 { animation-delay: -6s; }
+    .phone-fade-4 { animation-delay: -9s; }
+    .phone-fade-5 { animation-delay: -1.5s; }
+    .phone-fade-6 { animation-delay: -4.5s; }
+    .phone-fade-7 { animation-delay: -7.5s; }
+    .phone-fade-8 { animation-delay: -10.5s; }
+    .phone-fade-9 { animation-delay: -2s; }
+    .phone-fade-10 { animation-delay: -5s; }
+    .phone-fade-11 { animation-delay: -8s; }
+    .phone-fade-12 { animation-delay: -11s; }
+    .phones-grid + .phones-grid { margin-top: 44px; }
+    /* Single-image phones (no light/dark pair) stay static — no crossfade to fade into. */
+    .phone-card .phone-front.phone-solo { animation: none; opacity: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      .phone-card .phone-front { animation: none; opacity: 1; }
+    }
+
+    /* Responsive: 4-across -> 2x2 -> stacked
+       4-col stays until 1149 so iPad-Pro-12.9 portrait (1024) and
+       iPad-mini landscape (1133) both drop to 2x2 instead of squeezing */
+    @media (max-width: 1149px) {
+      .phones-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; max-width: 560px; margin-left: auto; margin-right: auto; }
+      .phone-card.featured { transform: none; }
+      .phone-card.featured .hero-phone-frame { max-width: 220px; }
+    }
+    @media (max-width: 520px) {
+      .phones-grid { grid-template-columns: 1fr; max-width: 280px; gap: 36px; }
+      .showcase-header h2 { font-size: 2rem; }
+    }
+
+    /* ── Stats ── */
+    .stats {
+      padding: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, rgba(208,153,69,0.03), transparent, rgba(208,153,69,0.03));
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item {
+      padding: 40px 16px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; }
+    .stat-label {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--muted-fg); margin-top: 8px; line-height: 1.4;
+    }
+
+    /* ── AI Section ── */
+    .ai-section {
+      position: relative;
+      background-image: radial-gradient(rgba(208,153,69,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .ai-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(208,153,69,0.06), transparent 55%);
+      pointer-events: none;
+    }
+    .ai-section::after {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(208,153,69,0.04), transparent 60%);
+      pointer-events: none;
+    }
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 48px; }
+    .ai-features { display: flex; flex-direction: column; gap: 28px; }
+    .ai-feature { display: flex; gap: 16px; align-items: flex-start; }
+    .ai-feature h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; }
+    .ai-feature p { font-size: 0.85rem; color: var(--muted-fg); line-height: 1.55; }
+
+    .ai-chat-preview {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px; position: relative;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.4), 0 0 40px rgba(208,153,69,0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .chat-label {
+      font-size: 0.65rem; color: var(--muted-fg); text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 16px; font-weight: 600;
+      opacity: 0.6;
+    }
+    .chat-bubble {
+      padding: 12px 16px; border-radius: 12px; font-size: 0.85rem;
+      line-height: 1.55; margin-bottom: 10px; max-width: 88%;
+    }
+    .chat-user {
+      background: rgba(208,153,69,0.1); border: 1px solid var(--border);
+      margin-left: auto; color: #d4b068;
+    }
+    .chat-ai {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    }
+    .chat-ai strong { color: #d4b068; }
+
+    /* ── Exchanges ── */
+    .exchanges-pills {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 40px;
+    }
+    .exchange-pill {
+      padding: 12px 24px; background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border); border-radius: 12px;
+      font-size: 0.88rem; font-weight: 600; color: var(--fg);
+      transition: all 0.25s ease; display: inline-flex; align-items: center;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      letter-spacing: 0.01em;
+    }
+    .exchange-pill:hover { border-color: rgba(208,153,69,0.35); background: rgba(208,153,69,0.08); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(208,153,69,0.06); }
+
+    .chain-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+    .chain-tag {
+      padding: 5px 14px; background: rgba(208,153,69,0.04);
+      border: 1px solid var(--border); border-radius: 20px;
+      font-size: 0.75rem; color: var(--muted-fg); font-weight: 500;
+    }
+
+    /* ── Features ── */
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
+    .feature-card {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .feature-card::before {
+      content: ''; position: absolute; inset: -1px; border-radius: 17px;
+      background: linear-gradient(135deg, rgba(208,153,69,0.25), transparent 50%, rgba(208,153,69,0.15));
+      opacity: 0; transition: opacity 0.3s; z-index: -1;
+    }
+    .feature-card:hover { border-color: rgba(208,153,69,0.3); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(208,153,69,0.08), 0 0 60px rgba(208,153,69,0.04); }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card .icon-box { margin-bottom: 14px; }
+    .feature-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { font-size: 0.82rem; color: var(--muted-fg); line-height: 1.55; }
+
+    /* ── Steps ── */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+    .step { text-align: center; }
+    .step-num {
+      width: 44px; height: 44px; margin: 0 auto 16px;
+      background: linear-gradient(135deg, var(--primary), #b8860b);
+      color: var(--primary-fg); font-weight: 800; font-size: 1rem;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+    .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 0.85rem; color: var(--muted-fg); max-width: 260px; margin: 0 auto; line-height: 1.55; }
+
+    /* ── Pricing ── */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .price-card {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 24px; position: relative;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+    .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 0 50px rgba(208,153,69,0.1), 0 0 100px rgba(208,153,69,0.04);
+      background: linear-gradient(180deg, rgba(208,153,69,0.06), rgba(255,255,255,0.02) 40%);
+      transform: scale(1.02);
+    }
+    .price-card.featured:hover { transform: scale(1.02) translateY(-4px); box-shadow: 0 0 60px rgba(208,153,69,0.15), 0 12px 40px rgba(0,0,0,0.3); }
+    .price-badge {
+      position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+      padding: 4px 14px; background: linear-gradient(135deg, var(--primary), #b8860b);
+      color: var(--primary-fg); font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px;
+    }
+    .price-card h3 { font-size: 1.15rem; font-weight: 700; }
+    .price-card .price-sub { font-size: 0.8rem; color: var(--muted-fg); margin-top: 4px; }
+    .price-amount { font-size: 2.5rem; font-weight: 800; margin: 20px 0 2px; letter-spacing: -0.02em; }
+    .price-period { font-size: 0.8rem; color: var(--muted-fg); }
+    .price-features { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .price-features li {
+      font-size: 0.82rem; color: var(--muted-fg);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .price-features li::before { content: '\2713'; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+    .price-features li.off { color: rgba(128,128,128,0.4); text-decoration: line-through; }
+    .price-features li.off::before { content: '\2715'; color: rgba(128,128,128,0.3); }
+    .price-card .btn-gold, .price-card .btn-outline { width: 100%; justify-content: center; margin-top: 24px; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 680px; margin: 40px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .faq-item:hover { background: rgba(208,153,69,0.02); }
+    .faq-q {
+      width: 100%; background: none; border: none; color: var(--fg);
+      font-size: 0.95rem; font-weight: 600; text-align: left;
+      padding: 20px 0; cursor: pointer; display: flex;
+      justify-content: space-between; align-items: center; font-family: inherit;
+    }
+    .faq-q .faq-icon { flex-shrink: 0; margin-left: 16px; color: var(--primary); font-size: 1.2rem; transition: transform 0.2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a p { padding: 0 0 20px; font-size: 0.88rem; color: var(--muted-fg); line-height: 1.65; }
+
+    /* ── CTA ── */
+    .cta-section { text-align: center; position: relative; overflow: hidden; }
+    .cta-section::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.08), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); width: 500px; height: 300px;
+      background: radial-gradient(ellipse, rgba(208,153,69,0.05), transparent 70%);
+      pointer-events: none;
+    }
+    .signup-form { display: flex; gap: 10px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+    .signup-form input {
+      padding: 12px 18px; background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--fg); font-size: 0.9rem; font-family: inherit;
+      width: 300px; outline: none; transition: border-color 0.2s;
+    }
+    .signup-form input:focus { border-color: var(--primary); }
+    .signup-form input::placeholder { color: rgba(128,128,128,0.5); }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 48px 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-brand p { font-size: 0.82rem; color: var(--muted-fg); margin-top: 12px; max-width: 280px; line-height: 1.55; }
+    .footer-col h4 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(128,128,128,0.6); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { font-size: 0.82rem; color: var(--muted-fg); transition: color 0.2s; }
+    .footer-col a:hover { color: #d4b068; }
+    .footer-bottom {
+      margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.72rem; color: rgba(128,128,128,0.5);
+    }
+
+    /* ── Responsive ── */
+
+    /* Tablet landscape / small desktop (901px–1099px) */
+    @media (max-width: 1099px) {
+      .section-title { font-size: 2.15rem; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+      .ai-grid { gap: 40px; }
+      section { padding: 72px 0; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.8rem; }
+    }
+
+    /* AI section stacks at iPad-Pro-12.9-portrait and below — 2-col was
+       too cramped at 901–1024 (chat bubbles 358px, feature card 406px) */
+    @media (max-width: 1023px) {
+      .ai-grid { grid-template-columns: 1fr; gap: 32px; }
+      .ai-chat-preview { order: -1; }
+    }
+
+    /* Tablet portrait and below (max-width: 900px) */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(1,1,0,0.95); backdrop-filter: blur(16px);
+        padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border);
+      }
+      .nav-toggle { display: block; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      /* 2x2 stats: add horizontal divider between rows */
+      .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .section-title { font-size: 1.85rem; }
+      section { padding: 64px 0; }
+      .ai-smart-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+
+    /* Phone-only single-col layouts — pulled out of the (max-width: 900px)
+       block so iPad portrait (768–900) keeps its own multi-col tuning */
+    @media (max-width: 767px) {
+      .hero .subtitle { font-size: 1rem; }
+      .steps { grid-template-columns: 1fr; gap: 24px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* iPad portrait tier (768–900): keep desktop multi-col layouts that
+       look empty stacked, but tuned to fit narrower viewport */
+    @media (min-width: 768px) and (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; max-width: 640px; margin-left: auto; margin-right: auto; gap: 16px; }
+      .pricing-grid .price-card.featured { transform: none; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    /* Comparison table */
+    .cmp-tbl { width:100%; border-collapse:collapse; min-width: 720px; }
+    .cmp-tbl thead th { padding:16px 12px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted-fg); text-align:center; border-bottom:1px solid var(--border); }
+    .cmp-tbl thead th:first-child { text-align:left; padding-left:20px; }
+    .cmp-tbl thead th.hl { color:var(--primary); background:rgba(208,153,69,0.04); }
+    .cmp-tbl tbody td { padding:13px 12px; font-size:0.84rem; text-align:center; border-bottom:1px solid rgba(255,255,255,0.03); color:var(--muted-fg); }
+    .cmp-tbl tbody td:first-child { text-align:left; padding-left:20px; font-weight:600; color:#ccc; }
+    .cmp-tbl tbody td.hl { background:rgba(208,153,69,0.03); }
+    .cmp-tbl tbody tr:last-child td { border-bottom:none; }
+    .ck { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; font-weight:700; }
+    .ck-g { background:linear-gradient(135deg,rgba(208,153,69,0.28),rgba(208,153,69,0.14)); color:#F3D36D; box-shadow:0 0 10px rgba(208,153,69,0.15); font-size:0.85rem; }
+    .ck-y { background:rgba(74,200,120,0.15); color:#4ac878; font-size:0.8rem; }
+    .ck-n { background:rgba(200,74,74,0.08); color:#c84a4a; font-size:0.68rem; }
+    .ck-p { background:rgba(255,255,255,0.04); color:#777; font-size:0.48rem; font-weight:700; }
+
+    /* Large phone / small tablet (max-width: 767px) */
+    @media (max-width: 767px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero { padding: 120px 0 60px; }
+      .pricing-grid { max-width: 380px; }
+      .stat-number { font-size: 1.25rem; }
+      .ai-smart-grid { grid-template-columns: 1fr !important; }
+      #ai-compare table { font-size: 0.75rem; }
+      #ai-compare th, #ai-compare td { padding: 10px 8px !important; }
+    }
+
+    /* Small phone (max-width: 480px) */
+    /* Stack signup form earlier — was lopsided 481-520 with input on
+       row 1 and button on row 2 (different widths, awkward) */
+    @media (max-width: 600px) {
+      .signup-form { flex-direction: column; align-items: center; }
+      .signup-form input { width: 100%; max-width: 360px; }
+      .signup-form button { width: 100%; max-width: 360px; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      #ai-compare table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .exchanges-pills { gap: 8px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .hero h1 { font-size: 1.85rem; }
+      .hero { padding: 110px 0 48px; }
+      .hero-phone-frame { max-width: 220px; }
+      .container { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="owl-logo-72.webp" alt="CryptoSage AI" width="34" height="34" fetchpriority="high">
+      <span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#ai">AI</a>
+      <a href="index.html#exchanges">Exchanges</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Support%20Request" class="nav-cta">Email Support</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Page-scoped styling, in the same per-section <style> pattern index.html uses -->
+<style>
+  #sup-hero { padding-bottom: 48px; }
+  .sup-stack { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 40px; max-width: 860px; }
+  .sup-stack.wide { max-width: 100%; }
+  .sup-card p { font-size: 0.88rem; color: var(--muted-fg); line-height: 1.7; }
+  .sup-card p + p { margin-top: 10px; }
+  .sup-card h3 { font-size: 1rem; }
+  .sup-card ul { list-style: none; margin-top: 10px; }
+  .sup-card li {
+    font-size: 0.88rem; color: var(--muted-fg); line-height: 1.7;
+    padding-left: 18px; position: relative; margin-bottom: 6px;
+  }
+  .sup-card li::before {
+    content: ''; position: absolute; left: 0; top: 0.62em;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--primary); opacity: 0.7;
+  }
+  .sup-card ol { counter-reset: sup; list-style: none; margin-top: 10px; }
+  .sup-card ol li { padding-left: 28px; }
+  .sup-card ol li::before {
+    counter-increment: sup; content: counter(sup);
+    width: 19px; height: 19px; border-radius: 50%;
+    background: rgba(208,153,69,0.12); color: var(--primary);
+    font-size: 0.7rem; font-weight: 700; opacity: 1; top: 0.28em;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sup-card strong { color: var(--fg); font-weight: 600; }
+  /* Grid items default to min-width:auto, so an unwrappable child can push a card
+     wider than the viewport — and html{overflow-x:clip} would silently cut it off
+     instead of letting it scroll. Allow the tracks to shrink, and let the path
+     chips wrap (box-decoration-break keeps the pill looking right across lines). */
+  .sup-stack > * { min-width: 0; }
+  .sup-path {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.82rem; color: #d4b068;
+    background: rgba(208,153,69,0.07); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1px 7px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  }
+  .sup-mail { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .sup-meta { font-size: 0.78rem; color: var(--muted-fg); margin-top: 28px; }
+  @media (min-width: 768px) { .sup-stack.two { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<!-- Hero -->
+<section class="hero" id="sup-hero">
+  <div class="container">
+    <div class="platform-badge">Support <span>&middot;</span> We reply within 24&ndash;48 hours</div>
+    <h1>How can we <span class="gradient-text-gold">help?</span></h1>
+    <p class="subtitle">Fix a problem, restore a subscription, report a bug, or find out exactly where your data goes. If the answer isn&rsquo;t below, email us &mdash; a real person reads every message.</p>
+    <div class="hero-buttons">
+      <a href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Support%20Request" class="btn-gold">
+        hypersageai@gmail.com
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#data" class="btn-outline">Where your data goes</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- First steps -->
+<section id="first-steps">
+  <div class="container">
+    <span class="section-label">Start here</span>
+    <h2 class="section-title">If the app <span class="gradient-text-gold">isn&rsquo;t working</span></h2>
+    <p class="section-desc">Most reports we receive are resolved by the first four steps. CryptoSage AI requires iPhone running iOS&nbsp;17 or later.</p>
+
+    <div class="sup-stack">
+      <div class="feature-card sup-card">
+        <h3>Work through these in order</h3>
+        <ol>
+          <li><strong>Update the app.</strong> Open the App Store, search CryptoSage AI, and install any pending update. Several reported issues are already fixed in a newer build.</li>
+          <li><strong>Force-quit and reopen.</strong> Swipe up from the bottom of the screen, swipe CryptoSage away, then launch it again.</li>
+          <li><strong>Check your connection, then pull to refresh.</strong> Pull down on Home, Market or Portfolio to force a fresh fetch. If you are on a VPN, try turning it off &mdash; some market-data providers rate-limit VPN exit nodes.</li>
+          <li><strong>Clear the cache.</strong> <span class="sup-path">Settings &rsaquo; Data Management &rsaquo; Clear Cache</span>, then restart the app. This removes temporary data only &mdash; your linked accounts and settings are kept.</li>
+          <li><strong>Restart your iPhone,</strong> and make sure iOS itself is up to date and you have free storage.</li>
+          <li><strong>Reinstall as a last resort.</strong> Deleting the app removes its local data. Your subscription is tied to your Apple&nbsp;Account and can be restored, and exchange credentials held in the iOS Keychain are not erased by an app delete.</li>
+        </ol>
+        <p>Still stuck? Email <a class="sup-mail" href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Support%20Request">hypersageai@gmail.com</a> and include your device model, iOS version and app version.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Common issues -->
+<section id="common-issues">
+  <div class="container">
+    <span class="section-label">Troubleshooting</span>
+    <h2 class="section-title">Common <span class="gradient-text-gold">issues</span></h2>
+    <p class="section-desc">Specific fixes for the things that go wrong most often.</p>
+
+    <div class="sup-stack two wide">
+
+      <div class="feature-card sup-card">
+        <h3>My portfolio isn&rsquo;t updating</h3>
+        <p>Open <span class="sup-path">Settings &rsaquo; Linked Accounts</span> and check the status of each connection.</p>
+        <ul>
+          <li>Use <strong>Test Connection</strong> to see the exact error a connection is returning.</li>
+          <li>OAuth connections (such as Coinbase, Kraken and Gemini) use tokens that expire. Disconnect and reconnect to re-authorise.</li>
+          <li>API-key connections stop working if the key was revoked or rotated on the exchange, or if the key has an IP allow-list that blocks mobile networks.</li>
+          <li>Holdings you entered by hand, and stocks and ETFs added manually, do not sync from an exchange &mdash; they update in price only.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>I can&rsquo;t connect an exchange or wallet</h3>
+        <p>CryptoSage connects for <strong>read-only portfolio tracking</strong>. When you create an API key on your exchange, enable read permissions only.</p>
+        <ul>
+          <li>Never enable withdrawal or transfer permissions. CryptoSage does not need them and will never ask for them.</li>
+          <li>Check that you copied both the API key and the secret with no trailing spaces.</li>
+          <li>Public wallet addresses are tracked by address alone &mdash; paste the address, not a seed phrase or private key. CryptoSage will never ask for a seed phrase, and no one who does is us.</li>
+          <li>Hardware wallets are tracked read-only from their public addresses. CryptoSage cannot sign transactions or move funds.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Price alerts aren&rsquo;t arriving</h3>
+        <ul>
+          <li>Check <span class="sup-path">iOS Settings &rsaquo; Notifications &rsaquo; CryptoSage</span> and confirm alerts are allowed.</li>
+          <li>Confirm Focus mode or Do Not Disturb isn&rsquo;t suppressing them.</li>
+          <li>On the free plan you can keep <strong>three active price alerts</strong> at a time. Delete an old alert or upgrade for more.</li>
+          <li>Alerts you already deleted will not re-fire &mdash; recreate them from the coin page.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>The AI assistant won&rsquo;t answer</h3>
+        <p>The assistant needs a live internet connection because your question is answered by a hosted AI model, not on-device.</p>
+        <ul>
+          <li>If a reply stalls, close the chat and try again &mdash; the request may have timed out.</li>
+          <li>How many questions you can ask, and which model answers them, depends on your plan.</li>
+          <li>The assistant is informational. It does not place orders and it is not financial advice.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Widgets are stale or blank</h3>
+        <p>CryptoSage offers Portfolio, Price Ticker and Fear&nbsp;&amp; Greed widgets. iOS &mdash; not the app &mdash; decides how often a widget is allowed to refresh, so a widget can lag behind the app.</p>
+        <ul>
+          <li>Open the app once to give the widget fresh data to read.</li>
+          <li>Low Power Mode reduces widget refreshes.</li>
+          <li>If a widget stays blank, remove it from the Home Screen and add it again.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>I&rsquo;m locked out by Face ID or my PIN</h3>
+        <p>App-lock is optional and enforced on your device. If Face&nbsp;ID or Touch&nbsp;ID fails repeatedly, iOS falls back to your PIN.</p>
+        <ul>
+          <li>If you cannot get past the app lock, deleting and reinstalling the app clears the lock &mdash; it also clears local app data.</li>
+          <li>We cannot recover or reset a device PIN for you; it never leaves your iPhone.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Subscriptions & billing -->
+<section id="billing">
+  <div class="container">
+    <span class="section-label">Purchases</span>
+    <h2 class="section-title">Subscriptions, restoring <span class="gradient-text-gold">and refunds</span></h2>
+    <p class="section-desc">CryptoSage AI is free to use, with optional Pro and Premium subscriptions available monthly or annually. All purchases are handled by Apple.</p>
+
+    <div class="sup-stack two wide">
+
+      <div class="feature-card sup-card">
+        <h3>Restore a purchase</h3>
+        <p>If you reinstalled the app or switched to a new iPhone and your plan isn&rsquo;t showing:</p>
+        <ol>
+          <li>Open <span class="sup-path">Settings &rsaquo; Subscription</span> in CryptoSage.</li>
+          <li>Tap <strong>Restore Purchases</strong>.</li>
+          <li>Sign in with your Apple&nbsp;Account if prompted, and wait for confirmation.</li>
+        </ol>
+        <p>Restore only works when you are signed in with the same Apple&nbsp;Account that made the purchase. You can confirm the subscription is still active in <span class="sup-path">iOS Settings &rsaquo; Apple&nbsp;Account &rsaquo; Subscriptions</span>.</p>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Change or cancel</h3>
+        <p>Subscriptions renew automatically until cancelled. Manage everything from Apple:</p>
+        <ol>
+          <li>Open <span class="sup-path">iOS Settings</span> and tap your name at the top.</li>
+          <li>Tap <strong>Subscriptions</strong>.</li>
+          <li>Select CryptoSage AI, then upgrade, downgrade or cancel.</li>
+        </ol>
+        <p>Cancelling stops the next renewal. Your plan stays active until the end of the period you already paid for. We cannot cancel a subscription on your behalf.</p>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Refunds and billing</h3>
+        <p>Apple processes every payment for CryptoSage AI, so Apple &mdash; not us &mdash; issues refunds. We have no access to your payment details and cannot refund a charge.</p>
+        <p>To request a refund, go to <a class="sup-mail" href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, sign in with your Apple&nbsp;Account, find the CryptoSage AI purchase and choose <strong>Request a refund</strong>.</p>
+        <p>If you believe you were charged in error, email us anyway &mdash; we&rsquo;ll help you gather what Apple asks for.</p>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Restore still not working?</h3>
+        <p>Email <a class="sup-mail" href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Subscription%20Help">hypersageai@gmail.com</a> with:</p>
+        <ul>
+          <li>The Apple&nbsp;Account email used for the purchase.</li>
+          <li>A screenshot of the subscription in iOS Settings, or your Apple receipt.</li>
+          <li>Your device model, iOS version and app version.</li>
+        </ul>
+        <p>Please don&rsquo;t send us passwords, card numbers or API secrets &mdash; we never need them.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Bugs & feedback -->
+<section id="report-a-bug">
+  <div class="container">
+    <span class="section-label">Feedback</span>
+    <h2 class="section-title">Report a bug or <span class="gradient-text-gold">request a feature</span></h2>
+    <p class="section-desc">Bug reports are read by the people who build the app. Detailed reports get fixed faster.</p>
+
+    <div class="sup-stack two wide">
+      <div class="feature-card sup-card">
+        <h3>From inside the app (preferred)</h3>
+        <p>Go to <span class="sup-path">Settings &rsaquo; Help &amp; Support &rsaquo; Send Feedback</span>, choose the type of feedback and describe what happened.</p>
+        <p>This route automatically attaches your device model, iOS version, app version and build number, which is usually what we need to reproduce a problem.</p>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>By email</h3>
+        <p>Write to <a class="sup-mail" href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Bug%20Report">hypersageai@gmail.com</a>. A good report includes:</p>
+        <ul>
+          <li>What you expected to happen, and what happened instead.</li>
+          <li>Step-by-step instructions to reproduce it.</li>
+          <li>The screen or feature involved, and a screenshot if you have one.</li>
+          <li>Device model, iOS version and app version (shown at the bottom of Help &amp; Support).</li>
+        </ul>
+        <p>Feature requests are welcome at the same address &mdash; tell us the problem you&rsquo;re trying to solve, not just the feature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Data -->
+<section id="data">
+  <div class="container">
+    <span class="section-label">Privacy</span>
+    <h2 class="section-title">Where your <span class="gradient-text-gold">data goes</span></h2>
+    <p class="section-desc">A plain-language summary. The complete, current policy is in the app under <span class="sup-path">Settings &rsaquo; Privacy Policy</span>, and it governs if the two ever differ.</p>
+
+    <div class="sup-stack two wide">
+
+      <div class="feature-card sup-card">
+        <h3>Stays on your device</h3>
+        <ul>
+          <li><strong>Exchange API keys and secrets</strong> are stored in the iOS Keychain on your iPhone, the same system that protects your saved passwords. We do not keep your exchange credentials on our servers.</li>
+          <li><strong>Your app PIN and biometric setting</strong> never leave the device.</li>
+          <li>Manually entered holdings and locally cached market data live on the device.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>If you create an account</h3>
+        <p>An account is optional. If you sign in with Apple, Google or an email address, sign-in is handled by <strong>Google Firebase Authentication</strong>, and app data such as your watchlist, price alerts, AI chat history, paper-trading records and profile can be stored in <strong>Google Cloud Firestore</strong> so it follows you between devices.</p>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Sent to third parties as you use the app</h3>
+        <ul>
+          <li><strong>Your AI questions</strong> are sent to OpenAI&rsquo;s API to be answered. Avoid typing anything into the chat you would not want processed by a third-party AI provider.</li>
+          <li><strong>Market data, charts and news</strong> come from providers including CoinGecko, Binance and TradingView. Requests go out from your device, so those providers may log your IP address under their own privacy policies.</li>
+          <li><strong>Connected exchanges and public blockchain addresses</strong> receive read requests for your balances.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Diagnostics</h3>
+        <p>We use <strong>Firebase Analytics</strong> for anonymous usage statistics and <strong>Firebase Crashlytics</strong> for crash and stability reports, so we can find and fix what breaks.</p>
+        <p>We do not sell your personal data.</p>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Deleting your data</h3>
+        <ul>
+          <li><strong>Disconnect an exchange or wallet</strong> at any time from <span class="sup-path">Settings &rsaquo; Linked Accounts</span>. Removing a connection removes its stored credentials.</li>
+          <li><strong>Delete your account</strong> from your profile screen in the app. This removes the account and its synced data.</li>
+          <li><strong>Delete the app</strong> to remove its local data from your iPhone.</li>
+          <li>To make a data access or deletion request by email &mdash; including under CCPA &mdash; write to <a class="sup-mail" href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Data%20Request">hypersageai@gmail.com</a>.</li>
+        </ul>
+      </div>
+
+      <div class="feature-card sup-card">
+        <h3>Deleting your account doesn&rsquo;t touch your money</h3>
+        <p>CryptoSage only ever reads from your exchange accounts and wallets. Removing a connection or deleting your CryptoSage account has no effect on the accounts themselves, your balances or your funds.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Scope -->
+<section id="scope">
+  <div class="container">
+    <span class="section-label">Good to know</span>
+    <h2 class="section-title">What CryptoSage <span class="gradient-text-gold">does not do</span></h2>
+    <p class="section-desc">So you know what to expect before you write in.</p>
+
+    <div class="sup-stack">
+      <div class="feature-card sup-card">
+        <ul>
+          <li><strong>It does not place real trades.</strong> Trading inside CryptoSage is paper trading: you practise with $100,000 in virtual funds, and orders are simulated against live market prices. No real order is ever sent to an exchange.</li>
+          <li><strong>It cannot move your money.</strong> Exchange and wallet connections are read-only. CryptoSage cannot withdraw, transfer or spend anything, and it never asks for withdrawal permissions.</li>
+          <li><strong>It is not a wallet.</strong> CryptoSage never holds your private keys or seed phrases, and cannot sign a transaction.</li>
+          <li><strong>It is not financial, investment or tax advice.</strong> Market data, AI answers and any analysis in the app are for information only. Past performance does not guarantee future results. Please do your own research and speak to a qualified professional before making a financial decision.</li>
+          <li><strong>We cannot recover exchange accounts.</strong> Lost exchange passwords, 2FA resets and locked exchange accounts have to go to that exchange&rsquo;s own support team.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Contact CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title">Still need <span class="gradient-text-gold">a hand?</span></h2>
+    <p class="section-desc" style="margin:14px auto 0">Email us and we&rsquo;ll get back to you, normally within 24&ndash;48 hours.</p>
+    <div class="hero-buttons">
+      <a href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Support%20Request" class="btn-gold">
+        hypersageai@gmail.com
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <p class="sup-meta">CryptoSage AI is published by HyperSage Studio. Support is provided in English.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="owl-logo-72.webp" alt="CryptoSage AI" width="30" height="30" loading="lazy" style="width:30px;height:30px;border-radius:50%"><span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span></a>
+        <p>An AI built around your portfolio. Knows what you hold, where you&rsquo;re exposed, and what to do about it.</p>
+      </div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a href="#first-steps">If the app isn&rsquo;t working</a></li><li><a href="#common-issues">Common issues</a></li><li><a href="#billing">Subscriptions &amp; refunds</a></li><li><a href="#report-a-bug">Report a bug</a></li><li><a href="#data">Where your data goes</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="index.html#features">Features</a></li><li><a href="index.html#exchanges">Exchanges</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="mailto:hypersageai@gmail.com?subject=CryptoSage%20Support%20Request">hypersageai@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="https://drvanus.github.io/hypersage-site/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">A HyperSage Studio App</a></p>
+      <p>&copy; 2026 CryptoSage AI. All rights reserved.</p>
+      <p>Not financial advice. Past performance does not guarantee future results.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav (same behaviour as the home page)
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
