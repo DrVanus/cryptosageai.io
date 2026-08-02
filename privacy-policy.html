@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — CryptoSage AI</title>
+  <meta name="description" content="CryptoSage AI privacy policy: exactly what data the app touches, what stays on your iPhone, and the names of every company that receives any of it.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cryptosageai.io/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy — CryptoSage AI">
+  <meta property="og:description" content="What data the app touches, what stays on your iPhone, and who receives any of it.">
+  <meta property="og:url" content="https://cryptosageai.io/privacy-policy.html">
+  <meta property="og:site_name" content="CryptoSage AI">
+  <meta property="og:image" content="https://cryptosageai.io/banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CryptoSage AI — Privacy Policy">
+  <meta name="twitter:description" content="What data the app touches, what stays on your iPhone, and who receives any of it.">
+  <meta name="twitter:image" content="https://cryptosageai.io/banner.jpg">
+  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+
+  <!-- Google Analytics GA4 — same property as the rest of the site; disclosed in "This website" below -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEYDD9LHM1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BEYDD9LHM1');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #010100;
+      --fg: #eeeeee;
+      --primary: #d09945;
+      --muted-fg: gray;
+      --border: rgba(208,153,69,0.12);
+      --card: rgba(255,255,255,0.02);
+    }
+    html { overflow-x: clip; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--fg); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: clip;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #f5d98e 0%, #d09945 50%, #b8860b 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      padding-bottom: 0.12em; margin-bottom: -0.12em;
+    }
+    .gradient-text-silver {
+      background: linear-gradient(135deg, #e8e8e8 0%, silver 50%, #a8a9ad 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      padding-bottom: 0.12em; margin-bottom: -0.12em;
+    }
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(1,1,0,0.7);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid var(--border);
+      transform: translateZ(0); will-change: transform;
+    }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.01em; }
+    .nav-logo img { width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 0 12px rgba(208,153,69,0.15); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--muted-fg); transition: color 0.2s; font-weight: 500; }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-links a.nav-cta {
+      padding: 8px 18px; background: linear-gradient(135deg, #e8b84b, #c48a2a);
+      color: #000000; font-weight: 700; font-size: 0.8rem; border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(208,153,69,0.3);
+    }
+    .nav-toggle { display: none; background: none; border: none; color: var(--fg); cursor: pointer; padding: 4px; }
+    .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(1,1,0,0.95); backdrop-filter: blur(16px);
+        padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border);
+      }
+      .nav-toggle { display: block; }
+    }
+
+    .legal-wrap { max-width: 780px; margin: 0 auto; padding: 130px 24px 80px; }
+    .legal-wrap h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+    .legal-updated { color: var(--muted-fg); font-size: 0.85rem; margin: 12px 0 36px; }
+    .legal-wrap h2 {
+      font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em;
+      margin: 44px 0 12px; padding-top: 20px; position: relative;
+    }
+    .legal-wrap h2::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 44px; height: 1px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+    .legal-wrap p, .legal-wrap li { color: var(--muted-fg); font-size: 0.95rem; line-height: 1.7; margin-bottom: 13px; }
+    .legal-wrap ul { padding-left: 22px; margin-bottom: 14px; }
+    .legal-wrap li { margin-bottom: 10px; }
+    .legal-wrap strong { color: var(--fg); font-weight: 600; }
+    .legal-wrap a { color: #d4b068; text-decoration: underline; text-underline-offset: 3px; }
+    .legal-wrap a:hover { color: #f0c65a; }
+    .legal-wrap code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em;
+      color: #d4b068; background: rgba(208,153,69,0.07);
+      border: 1px solid var(--border); border-radius: 6px; padding: 1px 7px;
+      -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    }
+    .legal-note {
+      background: rgba(208,153,69,0.06); border: 1px solid var(--border);
+      border-left: 3px solid var(--primary); border-radius: 0 10px 10px 0;
+      padding: 16px 18px; margin: 18px 0;
+    }
+    .legal-note p { margin-bottom: 0; color: var(--fg); }
+    @media (max-width: 600px) { .legal-wrap h1 { font-size: 2rem; } }
+
+    footer { border-top: 1px solid var(--border); padding: 48px 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-brand p { font-size: 0.82rem; color: var(--muted-fg); margin-top: 12px; max-width: 280px; line-height: 1.55; }
+    .footer-col h4 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(128,128,128,0.6); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { font-size: 0.82rem; color: var(--muted-fg); transition: color 0.2s; }
+    .footer-col a:hover { color: #d4b068; }
+    .footer-bottom {
+      margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.72rem; color: rgba(128,128,128,0.5);
+    }
+    @media (max-width: 767px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="owl-logo-72.webp" alt="CryptoSage AI" width="34" height="34" fetchpriority="high">
+      <span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#ai">AI</a>
+      <a href="index.html#exchanges">Exchanges</a>
+      <a href="index.html#features">Features</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Privacy%20Question" class="nav-cta">Email Us</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <h1>Privacy <span class="gradient-text-gold">Policy</span></h1>
+  <p class="legal-updated">Last updated: August 2, 2026</p>
+
+  <p>CryptoSage AI (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is an iOS app for tracking a crypto portfolio, reading market data and asking an AI about both. This policy describes exactly what data the app touches, what stays on your iPhone, and names the companies that receive any of it. The short version: <strong>we do not sell your data, the app shows no ads, and an account is optional.</strong></p>
+
+  <h2>1. What stays on your device</h2>
+  <ul>
+    <li><strong>Exchange API keys and secrets</strong> are stored in the iOS Keychain on your iPhone &mdash; the same system that protects your saved passwords. The app does not upload your exchange credentials to our servers.</li>
+    <li><strong>AI provider API keys you add yourself</strong> (see section 3) are also stored in the iOS Keychain.</li>
+    <li><strong>Your app-lock PIN and biometric setting</strong> never leave the device.</li>
+    <li><strong>Manually entered holdings, preferences and cached market data</strong> live on the device. If you never create an account, everything in section 2 stays on the device too.</li>
+  </ul>
+  <p>We never ask for, receive or store exchange passwords, seed phrases or private keys. Wallets are tracked by public address only.</p>
+
+  <h2>2. If you create an account (optional)</h2>
+  <p>You can use CryptoSage without an account. If you sign in &mdash; with Apple, Google or an email address and password &mdash; sign-in is handled by <strong>Google Firebase Authentication</strong>, so Google processes the sign-in and we receive your email address, a display name and an account ID.</p>
+  <p>With an account, app data syncs to <strong>Google Cloud Firestore</strong> so it follows you between devices. That synced data includes:</p>
+  <ul>
+    <li>your watchlist and favorites,</li>
+    <li>your price alerts, and the device push token needed to deliver them (section 7),</li>
+    <li>your AI chat conversations,</li>
+    <li>your paper-trading balances and simulated trade history,</li>
+    <li>your portfolio holdings and connection settings (never the API secrets themselves), and</li>
+    <li>your profile and any AI memory/personalization you set up.</li>
+  </ul>
+  <div class="legal-note"><p><strong>Plain statement:</strong> when you are signed in, your AI chat history and paper-trading records are stored on our servers (Google Cloud Firestore), not only on your phone. Signed out, they stay local.</p></div>
+
+  <h2>3. AI questions go to AI companies</h2>
+  <p>The AI features are not computed on your iPhone. Depending on the feature, your question and the context needed to answer it (for example a summary of your portfolio, or the coin being discussed) are sent to one of these providers:</p>
+  <ul>
+    <li><strong>OpenAI</strong> &mdash; answers the built-in AI chat and related per-user AI features.</li>
+    <li><strong>DeepSeek, OpenRouter or OpenAI</strong> &mdash; shared AI features such as market sentiment summaries, coin insights and price predictions are generated on our backend (Google Firebase Cloud Functions), which currently uses whichever of these providers is available, in that order.</li>
+    <li><strong>A provider you choose</strong> &mdash; if you connect your own API key in Settings (OpenAI, DeepSeek, xAI/Grok or OpenRouter are supported), those requests go directly from your device to that provider under your own account and their terms.</li>
+  </ul>
+  <p>What these companies do with text after it reaches them is governed by their own terms, not ours. We hold no zero-retention agreement with them, so we will not promise on their behalf that your words are discarded. Please don&rsquo;t type anything into the chat you would not want processed by a third-party AI provider.</p>
+
+  <h2>4. Market data, news and blockchains</h2>
+  <p>Prices, charts, news and on-chain balances are fetched by your device directly from the services that publish them, so those services see your IP address under their own privacy policies. The main ones are:</p>
+  <ul>
+    <li><strong>Market data and charts:</strong> CoinGecko, Binance, Coinbase, Kraken, KuCoin, Bybit, OKX, Gemini and TradingView.</li>
+    <li><strong>News:</strong> CryptoCompare, Google News and Yahoo Finance.</li>
+    <li><strong>Blockchain data</strong> for wallet addresses you track: public services such as Etherscan, Solscan and Ankr RPC endpoints.</li>
+    <li><strong>Your connected exchanges</strong> receive read-only requests for your balances and holdings.</li>
+  </ul>
+
+  <h2>5. Analytics and crash reports</h2>
+  <p>We use <strong>Google Firebase Analytics</strong> for usage statistics (which screens and features are used, device model, iOS version, session length) and <strong>Google Firebase Crashlytics</strong> for crash and stability reports. These events do not contain your portfolio contents, chat text, keys or credentials. The data is processed by Google under Google&rsquo;s terms.</p>
+  <p>Both are on by default. You can turn either off in the app under <code>Settings &rsaquo; Privacy &amp; Analytics</code>, and the app stops sending that data.</p>
+
+  <h2>6. Advertising: none</h2>
+  <p>The app shows no third-party ads and sends no data to advertising networks. To be fully transparent: the current build contains Google&rsquo;s Mobile Ads SDK, but it is switched off &mdash; it is never started, no ad is ever requested or shown, and no data flows to it. iOS may still show you Apple&rsquo;s standard App Tracking Transparency prompt; in the current app, allowing it enables nothing, and we do not track you across other companies&rsquo; apps or websites either way. If ads are ever introduced, this policy will be updated first.</p>
+
+  <h2>7. Notifications and price alerts</h2>
+  <p>Push notifications are optional and controlled by iOS. If you use price alerts while signed in, the alert definitions and your device&rsquo;s push token are stored on our backend so alerts can fire while the app is closed. Notifications are delivered through Apple&rsquo;s push service and Google&rsquo;s Firebase Cloud Messaging.</p>
+
+  <h2>8. Purchases</h2>
+  <p>Subscriptions are bought through Apple. Apple handles the payment and shares no card details with us; our backend receives the App&nbsp;Store receipt only to confirm which plan is active. Refunds are handled by Apple &mdash; see the <a href="support.html#billing">support page</a>.</p>
+
+  <h2>9. Security</h2>
+  <ul>
+    <li>Exchange and AI credentials are stored in the iOS Keychain, not in app files.</li>
+    <li>Network connections use HTTPS (TLS) encryption in transit.</li>
+    <li>Exchange connections are for read-only portfolio tracking; the app never asks for withdrawal or transfer permissions, and we recommend creating read-only API keys.</li>
+    <li>Optional Face&nbsp;ID / Touch&nbsp;ID app lock, enforced on your device.</li>
+  </ul>
+
+  <h2>10. Deleting your data</h2>
+  <ul>
+    <li><strong>Disconnect an exchange or wallet</strong> at any time from <code>Settings &rsaquo; Linked Accounts</code>; removing a connection removes its stored credentials from your device.</li>
+    <li><strong>Delete conversations</strong> from the AI chat screen; if you are signed in, this also removes the synced copy.</li>
+    <li><strong>Delete your account</strong> from inside the app. This deletes your synced data on our servers (Firestore) and the sign-in record itself.</li>
+    <li><strong>Delete the app</strong> to remove its local data from your iPhone.</li>
+    <li>Or email <a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Data%20Request">hypersageailabs@gmail.com</a> and we will do it for you.</li>
+  </ul>
+
+  <h2>11. Your rights (California, EEA/UK and elsewhere)</h2>
+  <p>Wherever you live, you can ask us what data we hold about you, ask for a copy, ask us to correct it, or ask us to delete it &mdash; the in-app tools above cover most of this instantly, and the email address below covers the rest. We do not sell personal information and we do not share it for cross-context behavioral advertising, so there is nothing to opt out of on that front. California residents may exercise CCPA rights, and EEA/UK residents GDPR rights (access, rectification, erasure, restriction, portability, objection), by emailing <a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Data%20Request">hypersageailabs@gmail.com</a> with &ldquo;Data Request&rdquo; in the subject line.</p>
+
+  <h2>12. Children</h2>
+  <p>CryptoSage is not intended for anyone under 18 and we do not knowingly collect information from children. If you believe a child has provided us personal information, email us and we will delete it.</p>
+
+  <h2>13. This website</h2>
+  <p>This website (cryptosageai.io) is a separate surface from the app, and it does two things worth naming:</p>
+  <ul>
+    <li>It uses <strong>Google Analytics</strong> to count visits, which processes your IP address and browser information under Google&rsquo;s terms.</li>
+    <li>If you submit your email in the <strong>&ldquo;Get Early Access&rdquo;</strong> form, that email address (with the time and your browser&rsquo;s user-agent string) is stored in our Google Cloud Firestore database and used only to contact you about CryptoSage. Email <a href="mailto:hypersageailabs@gmail.com?subject=Remove%20me%20from%20the%20list">hypersageailabs@gmail.com</a> to be removed.</li>
+  </ul>
+
+  <h2>14. Changes to this policy</h2>
+  <p>If we change what the app collects or who receives it, we will update this page and its date first. Significant changes will also be announced in the app.</p>
+
+  <h2>15. Contact</h2>
+  <p>Privacy questions and data requests: <a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Privacy%20Question">hypersageailabs@gmail.com</a>. A real person reads every message.</p>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="owl-logo-72.webp" alt="CryptoSage AI" width="30" height="30" loading="lazy" style="width:30px;height:30px;border-radius:50%"><span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span></a>
+        <p>An AI built around your portfolio. Knows what you hold, where you&rsquo;re exposed, and what to do about it.</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="index.html#features">Features</a></li><li><a href="index.html#exchanges">Exchanges</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="support.html">Support</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Support%20Request">hypersageailabs@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="https://drvanus.github.io/hypersage-site/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">A HyperSage Studio App</a></p>
+      <p>&copy; 2026 CryptoSage AI. All rights reserved.</p>
+      <p>Not financial advice. Past performance does not guarantee future results.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
