@@ -190,9 +190,10 @@
     <li>your price alerts, and the device push token needed to deliver them (section 7),</li>
     <li>your AI chat conversations,</li>
     <li>your paper-trading balances and simulated trade history,</li>
-    <li>your portfolio holdings and connection settings (never the API secrets themselves), and</li>
-    <li>your profile and any AI memory/personalization you set up.</li>
+    <li>your AI prediction-tracking history, and</li>
+    <li>your profile fields &mdash; display name, bio, <strong>phone number</strong> and avatar image &mdash; plus any AI memory or personalization you set up.</li>
   </ul>
+  <p>Your <strong>portfolio holdings, transactions and exchange connections do not sync</strong>. They stay on this device, and the exchange keys themselves stay in the iOS Keychain &mdash; they are never written to our servers, with or without an account.</p>
   <div class="legal-note"><p><strong>Plain statement:</strong> when you are signed in, your AI chat history and paper-trading records are stored on our servers (Google Cloud Firestore), not only on your phone. Signed out, they stay local.</p></div>
 
   <h2>3. AI questions go to AI companies</h2>
@@ -215,7 +216,7 @@
 
   <h2>5. Analytics and crash reports</h2>
   <p>We use <strong>Google Firebase Analytics</strong> for usage statistics (which screens and features are used, device model, iOS version, session length) and <strong>Google Firebase Crashlytics</strong> for crash and stability reports. These events do not contain your portfolio contents, chat text, keys or credentials. The data is processed by Google under Google&rsquo;s terms.</p>
-  <p>Both are on by default. You can turn either off in the app under <code>Settings &rsaquo; Privacy &amp; Analytics</code>, and the app stops sending that data.</p>
+  <p>Both are on by default. You can turn <strong>analytics</strong> off in the app under <code>Settings &rsaquo; Privacy &amp; Analytics</code>, and the app stops sending those events. <strong>Crash reporting has no separate switch in this build</strong>, so turning analytics off leaves Crashlytics running &mdash; we would rather say that than let the sentence above imply a control that is not there.</p>
 
   <h2>6. Advertising: none</h2>
   <p>The app shows no third-party ads and sends no data to advertising networks. To be fully transparent: the current build contains Google&rsquo;s Mobile Ads SDK, but it is switched off &mdash; it is never started, no ad is ever requested or shown, and no data flows to it. iOS may still show you Apple&rsquo;s standard App Tracking Transparency prompt; in the current app, allowing it enables nothing, and we do not track you across other companies&rsquo; apps or websites either way. If ads are ever introduced, this policy will be updated first.</p>
