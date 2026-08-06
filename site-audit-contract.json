@@ -1,0 +1,34 @@
+{
+  "schema": "static-site-audit-contract/v1",
+  "canonical_url": "https://cryptosageai.io/",
+  "approved_absolute_claims": {
+    "no_ads": {
+      "approved": true,
+      "evidence": [
+        "cryptosage-ios@f1914b1 — removed AdMob and the IDFA-enabled Analytics variant from the app target",
+        "cryptosage-ios/CryptoSage/PrivacyInfo.xcprivacy — device id purpose is NSPrivacyCollectedDataTypePurposeAppFunctionality, not ThirdPartyAdvertising; NSPrivacyTracking false",
+        "cryptosage-ios@2b16179 — removed the paywall's 'Ad-supported experience' and 'Ad-free experience' lines, the last copy asserting an ad SDK"
+      ]
+    }
+  },
+  "screenshots": [
+    {
+      "path": "app-market-dark.webp",
+      "source_revision": "cryptosage-ios build 8 (CFBundleVersion 8)",
+      "capture_command": "TEST_RUNNER_SITE_APPEARANCE=dark xcodebuild test -only-testing:CryptoSageUITests/MarketingScreenshots/testCaptureCore",
+      "journey": "market-tab/live-list"
+    },
+    {
+      "path": "app-portfolio-dark.webp",
+      "source_revision": "cryptosage-ios build 8 (CFBundleVersion 8)",
+      "capture_command": "TEST_RUNNER_SITE_APPEARANCE=dark xcodebuild test -only-testing:CryptoSageUITests/MarketingScreenshots/testCaptureStoreSet",
+      "journey": "demo-mode-armed/portfolio-allocation"
+    },
+    {
+      "path": "app-sentiment-sources-dark.webp",
+      "source_revision": "cryptosage-ios build 8 (CFBundleVersion 8)",
+      "capture_command": "TEST_RUNNER_SITE_APPEARANCE=dark xcodebuild test -only-testing:CryptoSageUITests/MarketingScreenshots/testCaptureSentimentOnAlternativeMe",
+      "journey": "home/sentiment-card/source-switched-to-alternative.me"
+    }
+  ]
+}
