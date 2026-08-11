@@ -1285,6 +1285,92 @@
       <p class="section-desc" style="margin:14px auto 0">Live web search, on-chain whales, sentiment, technicals &mdash; wired into every answer in real time.</p>
     </div>
 
+    <!-- Context pipeline: draws the sentence directly above it — the four named live
+         signals converging into one answer. Purely a restatement of on-page copy:
+         no numbers, no prices, no recommendation. aria-hidden because the same
+         sentence sits in the paragraph above for assistive tech. -->
+    <style>
+      #ai-compare .ctx-flow { max-width:620px; margin:44px auto 0; text-align:center; }
+      #ai-compare .ctx-sources { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+      #ai-compare .ctx-chip {
+        display:inline-flex; align-items:center; justify-content:center; gap:7px;
+        padding:9px 14px; border:1px solid rgba(208,153,69,0.25);
+        background:rgba(208,153,69,0.08); border-radius:999px;
+        font-size:0.78rem; font-weight:600; color:#d4b068; white-space:nowrap;
+      }
+      #ai-compare .ctx-chip svg { width:14px; height:14px; flex-shrink:0; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+      #ai-compare .ctx-fan { display:block; width:100%; height:56px; }
+      #ai-compare .ctx-fan path { fill:none; stroke:rgba(208,153,69,0.5); stroke-width:1.25; stroke-dasharray:3 5; stroke-linecap:round; }
+      #ai-compare .ctx-fan-2 { display:none; }
+      #ai-compare .ctx-core {
+        position:relative; display:inline-flex; align-items:center; gap:11px;
+        padding:8px 20px 8px 8px; border:1px solid rgba(208,153,69,0.35);
+        background:linear-gradient(180deg, rgba(208,153,69,0.10), rgba(255,255,255,0.02));
+        border-radius:999px; box-shadow:0 0 44px rgba(208,153,69,0.10); max-width:100%;
+      }
+      #ai-compare .ctx-core::before {
+        content:''; position:absolute; inset:-16px; border-radius:999px; z-index:-1;
+        background:radial-gradient(ellipse, rgba(208,153,69,0.18), transparent 70%);
+        pointer-events:none;
+      }
+      #ai-compare .ctx-dot {
+        width:34px; height:34px; flex-shrink:0; border-radius:50%;
+        display:inline-flex; align-items:center; justify-content:center;
+        background:linear-gradient(135deg,#e8b84b,#c48a2a); color:#000;
+      }
+      #ai-compare .ctx-dot svg { width:17px; height:17px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+      #ai-compare .ctx-core-label { font-size:0.95rem; font-weight:700; letter-spacing:-0.01em; }
+      #ai-compare .ctx-drop { display:block; margin:12px auto; width:14px; height:30px; }
+      #ai-compare .ctx-drop path { fill:none; stroke:rgba(208,153,69,0.5); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+      #ai-compare .ctx-out {
+        display:inline-block; padding:8px 18px; border:1px solid var(--border);
+        background:rgba(255,255,255,0.02); border-radius:999px;
+        font-size:0.82rem; color:var(--muted-fg);
+      }
+      /* Narrow: chips go 2x2, so the 4-ray fan swaps for the 2-ray one that
+         lines up with the two columns. */
+      @media (max-width: 639px) {
+        #ai-compare .ctx-sources { grid-template-columns:repeat(2,1fr); }
+        #ai-compare .ctx-fan-4 { display:none; }
+        #ai-compare .ctx-fan-2 { display:block; }
+        #ai-compare .ctx-chip { font-size:0.74rem; padding:8px 11px; }
+      }
+      /* Static frame is complete on its own — the dashes only drift. */
+      @media (prefers-reduced-motion: no-preference) {
+        #ai-compare .ctx-fan path { animation:ctx-drift 2.4s linear infinite; }
+        #ai-compare .ctx-fan path:nth-child(2) { animation-delay:-0.6s; }
+        #ai-compare .ctx-fan path:nth-child(3) { animation-delay:-1.2s; }
+        #ai-compare .ctx-fan path:nth-child(4) { animation-delay:-1.8s; }
+        #ai-compare .ctx-core::before { animation:ctx-breathe 5s ease-in-out infinite; }
+        @keyframes ctx-drift { to { stroke-dashoffset:-16; } }
+        @keyframes ctx-breathe { 0%,100% { opacity:0.55; } 50% { opacity:1; } }
+      }
+    </style>
+    <figure class="ctx-flow anim" aria-hidden="true">
+      <div class="ctx-sources">
+        <span class="ctx-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>Live web search</span>
+        <span class="ctx-chip"><svg viewBox="0 0 24 24"><path d="M12 3c-1.2 0-2.4.6-3 1.5A3.5 3.5 0 0 0 5 8c0 6 7 13 7 13s7-7 7-13a3.5 3.5 0 0 0-4-3.5C14.4 3.6 13.2 3 12 3z"/></svg>On-chain whales</span>
+        <span class="ctx-chip"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12l6-6"/></svg>Sentiment</span>
+        <span class="ctx-chip"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 12l4-5 4 3 5-6"/></svg>Technicals</span>
+      </div>
+      <svg class="ctx-fan ctx-fan-4" viewBox="0 0 100 40" preserveAspectRatio="none" focusable="false">
+        <path vector-effect="non-scaling-stroke" d="M12.5 0Q12.5 26 50 40"/>
+        <path vector-effect="non-scaling-stroke" d="M37.5 0Q37.5 30 50 40"/>
+        <path vector-effect="non-scaling-stroke" d="M62.5 0Q62.5 30 50 40"/>
+        <path vector-effect="non-scaling-stroke" d="M87.5 0Q87.5 26 50 40"/>
+      </svg>
+      <svg class="ctx-fan ctx-fan-2" viewBox="0 0 100 40" preserveAspectRatio="none" focusable="false">
+        <path vector-effect="non-scaling-stroke" d="M25 0Q25 28 50 40"/>
+        <path vector-effect="non-scaling-stroke" d="M75 0Q75 28 50 40"/>
+      </svg>
+      <div class="ctx-core">
+        <span class="ctx-dot"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+        <span class="ctx-core-label"><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span>
+      </div>
+      <svg class="ctx-drop" viewBox="0 0 14 30" focusable="false"><path d="M7 0v22"/><path d="M2 18l5 6 5-6"/></svg>
+      <figcaption class="ctx-out">wired into every answer in real time</figcaption>
+    </figure>
+
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:40px;" class="anim ai-smart-grid">
       <div class="feature-card" style="padding:22px;">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/><circle cx="12" cy="12" r="4"/></svg></div>
