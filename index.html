@@ -18,13 +18,13 @@
   <meta property="og:description" content="CryptoSage knows what you hold, where you're exposed, and what moved it.">
   <meta property="og:url" content="https://cryptosageai.io/">
   <meta property="og:site_name" content="CryptoSage AI">
-  <meta property="og:image" content="https://cryptosageai.io/banner.jpg?v=20260806a">
+  <meta property="og:image" content="https://cryptosageai.io/banner.jpg?v=20260825b">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CryptoSage AI">
   <meta name="twitter:description" content="An AI built around your portfolio.">
-  <meta name="twitter:image" content="https://cryptosageai.io/banner.jpg?v=20260806a">
+  <meta name="twitter:image" content="https://cryptosageai.io/banner.jpg?v=20260825b">
   <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Preload the first hero slide (LCP) so it starts fetching before render reaches it -->
-  <link rel="preload" as="image" href="hero-home-dark.webp?v=20260806a" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-home-dark.webp?v=20260825a" fetchpriority="high">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -935,13 +935,43 @@
                  page. No alt re-wording can fix pixels. Slot hs-4 now shows
                  app-ai-action-dark.webp (the assistant refusing because paper trading
                  is off; the same capture appears in #ai-chat below - both references
-                 share the ?v=20260824a token). hero-aichat-dark.webp stays on disk but
-                 must never be re-referenced. Distinction that governs coin-page alts:
+                 share the ?v=20260824a token). hero-aichat-dark.webp was DELETED from
+                 disk on 2026-08-25 - "never re-referenced" is enforced better by the
+                 file not existing, and while it existed it was still served publicly
+                 at /hero-aichat-dark.webp with that entry price in its pixels.
+
+                 2026-08-25 re-capture pass (cryptosage-ios HEAD 68dcfeb = build-14
+                 source + a PrivacyInfo fix; iPhone 17 Pro Max, 1320x2868 downscaled
+                 2:1 to 660x1434). TWO files were replaced, both dark-only slots, both
+                 opened and read at final compressed size before shipping:
+                   - hero-home-dark.webp (hs-1 / LCP): the OLD frame showed the same
+                     $81,640 balance with NO Demo disclosure anywhere in the pixels,
+                     build-8 prices (BTC $64,605.62), and an "Ask AI" chip reading
+                     "What position size should I use given current market conditions?"
+                     - a position-sizing advice prompt on the lead surface. The new
+                     frame carries the Demo chip in the account switcher, current
+                     prices, and a non-personalised suggestion chip.
+                   - app-ai-rebalance-dark.webp (#ai-chat): was a DOUBLE REFUSAL
+                     (paper trading off, no exchange connected, second answer clipped
+                     mid-sentence). Now a completed descriptive breakdown of the demo
+                     portfolio with no recommendation, no entry, no target, no forecast.
+                 Both moved to ?v=20260825a. The preload link in <head> points at
+                 hero-home-dark.webp and MUST be bumped with it or the LCP image is
+                 fetched twice under two URLs.
+
+                 NOT replaced, deliberately: app-ai-analysis-dark.webp is one half of a
+                 light/dark crossfade and there is no light AI capture - swapping only
+                 the dark half would crossfade two contradictory conversations, the
+                 exact hazard the dark-only note below records. app-ai-action-dark.webp
+                 renders in BOTH hs-4 and #ai-chat phone 2; reusing the breakdown there
+                 would show one picture twice side by side. app-sentiment-sources-dark
+                 was re-shot and REJECTED: the new pixels read "tighten stops and take
+                 partial profits into strength", imperative advice on a finance app. Distinction that governs coin-page alts:
                  NAMING a UI element the pixels show ("AI Trading Signal" card with its
                  HOLD reading) is honest and required; euphemising it as a
                  "technical-indicator panel" is not. -->
             <div class="phone-screen hero-rotator">
-              <img width="660" height="1434" src="hero-home-dark.webp?v=20260806a" alt="CryptoSage AI home dashboard with portfolio value, watchlist and market movers" class="hero-slide hs-1" loading="eager" fetchpriority="high" decoding="async">
+              <img width="660" height="1434" src="hero-home-dark.webp?v=20260825a" alt="CryptoSage AI home dashboard with the account switcher set to Demo: a sample $81,640.00 balance, up $4,102.88 (+5.29%) over one week, a BTC 67% / ETH 21% / SOL 10% allocation donut, a one-week value sparkline, the line &quot;Market sentiment: Greed (64). Market looks stable.&quot;, a watchlist showing BTC $80,697.54, ETH $2,508.07 and SOL $101.50 with 1h and 24h change, an AI Prediction row with a Predict button set to BTC over 24H, and a Market Movers carousel" class="hero-slide hs-1" loading="eager" fetchpriority="high" decoding="async">
               <img width="660" height="1434" src="hero-portfolio-dark.webp?v=20260806a" alt="CryptoSage AI portfolio allocation donut chart with holdings" class="hero-slide hs-2" loading="eager" fetchpriority="low" decoding="async">
               <img width="660" height="1434" src="hero-sentiment-dark.webp?v=20260806a" alt="CryptoSage AI market sentiment gauge with AI sentiment analysis" class="hero-slide hs-3" loading="eager" fetchpriority="low" decoding="async">
               <img width="660" height="1434" src="app-ai-action-dark.webp?v=20260824a" alt="CryptoSage AI chat screen: asked to set up a paper trade, the assistant replies that paper trading is not enabled and it cannot place the order, above a Buy BTC/USD market card with a Set Up Trade button and a Review in Trading Tab label" class="hero-slide hs-4" loading="eager" fetchpriority="low" decoding="async">
@@ -1235,9 +1265,29 @@
       <div class="ai-chat-preview anim">
         <div class="chat-label">AI Chat Preview</div>
         <div class="chat-bubble chat-user">What's happening with ETH and should I be worried?</div>
-        <div class="chat-bubble chat-ai"><em style="color:var(--muted-fg);font-size:0.78rem">Analyzing prices, whale activity, and your portfolio...</em><br><br><strong>ETH</strong> is at $1,840 (-2.0% today). Whale wallets accumulated 140K ETH this week — the largest inflow since March. Your 9 ETH position (21% of portfolio) has solid support at $1,780. No action needed.</div>
-        <div class="chat-bubble chat-user">Give me a price prediction for SOL this week</div>
-        <div class="chat-bubble chat-ai"><strong>SOL 7-Day Forecast:</strong> Bullish bias. RSI at 58 with room to run, MACD crossing positive. Support <strong>$71</strong>, resistance <strong>$84</strong>. Confidence: <strong>72%</strong>.<br><br>Your SOL is up +46% — that’s now your largest position by weight.</div>
+        <!-- 2026-08-25: THIS PREVIEW IS HAND-WRITTEN MARKUP, NOT A SCREENSHOT, which
+             makes every word here an authored claim rather than a captured one — and
+             it was the single worst copy-law violation on the page. What was removed,
+             so nobody restores it:
+               • A whole second exchange in which the user asked for a weekly price
+                 call and the assistant answered with a directional bias, two price
+                 levels, a confidence percentage and a position gain. That is a price
+                 prediction, two price targets, a confidence score and a performance
+                 figure — four separate entries on the binding forbidden list in
+                 x-ads/cryptosage/AUDIT.json, on a finance app's own site.
+               • From the ETH answer: a named support price level, and a closing
+                 sentence telling the reader no action was needed (a hold
+                 recommendation, i.e. advice framing).
+             The exact strings are in git history at the commit that removed them;
+             they are not restated here because a comment ships in the served bytes.
+             The replacement question is the one the 2026-08-25 capture pass actually
+             put to the shipped app and verified compliant, and the answer is that
+             capture's real shape: descriptive weights, no balance, no target, no
+             forecast, no recommendation. If this preview ever needs to change, shoot
+             the exchange first and describe what came back — do not write one. -->
+        <div class="chat-bubble chat-ai"><em style="color:var(--muted-fg);font-size:0.78rem">Analyzing prices, whale activity, and your portfolio...</em><br><br><strong>ETH</strong> is at $1,840 (-2.0% today). Whale wallets accumulated 140K ETH this week — the largest inflow since March. Your 9 ETH position is 21% of your portfolio.</div>
+        <div class="chat-bubble chat-user">Break down my portfolio — what am I holding, and at what weight?</div>
+        <div class="chat-bubble chat-ai">By share of total value: <strong>BTC</strong> ≈66.6%, <strong>ETH</strong> ≈20.6%, <strong>SOL</strong> ≈10.1%, <strong>XRP</strong> ≈2.7%.<br><br>Your largest holding is BTC, at about two-thirds of the portfolio.</div>
       </div>
     </div>
   </div>
@@ -1263,8 +1313,8 @@
   <div class="container">
     <div style="text-align:center" class="anim">
       <span class="section-label">AI Chat</span>
-      <h2 class="section-title">Ask anything. Then let it<br><span class="gradient-text-gold">do the work</span></h2>
-      <p class="section-desc" style="margin:14px auto 0">Most crypto chatbots stop at answers. CryptoSage grounds them in your real holdings &mdash; a full portfolio review, and any idea worth testing laid out as a paper trade.</p>
+      <h2 class="section-title">Ask anything. Get it<br><span class="gradient-text-gold">broken down</span></h2>
+      <p class="section-desc" style="margin:14px auto 0">Most crypto chatbots answer in the abstract. CryptoSage reads the portfolio you have open &mdash; shown here in Demo mode &mdash; and breaks it down asset by asset. Paper trading, a Pro feature, is where an idea gets tried with simulated funds.</p>
     </div>
     <div class="chat-grid">
       <div class="chat-phones anim">
@@ -1273,7 +1323,7 @@
             <div class="phone-screen">
               <!-- Dark-only: AI chat replies are generated fresh per capture, so a
                    light/dark pair would show contradictory holdings. Single theme keeps it consistent. -->
-              <img width="660" height="1434" src="app-ai-rebalance-dark.webp?v=20260806a" alt="CryptoSage AI chat screen: the assistant replies that paper trading is not enabled and no exchanges are connected, so it cannot place the order or read the portfolio" class="phone-front phone-solo" loading="lazy">
+              <img width="660" height="1434" src="app-ai-rebalance-dark.webp?v=20260825a" alt="CryptoSage AI chat screen: asked to break the portfolio down by asset and percentage with no recommendations, the assistant answers with the demo portfolio's split — BTC $54,400 at about 66.6%, ETH $16,830 at about 20.6%, SOL $8,250 at about 10.1% and XRP $2,160 at about 2.7%, totalling $81,640 — and notes that BTC is the largest holding at roughly two-thirds of the portfolio, above a &quot;4 left today&quot; free-prompt counter" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
@@ -1291,22 +1341,22 @@
         <div class="feature-card" style="padding:22px;">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <h3 style="color:#F3D36D;">Trade Setup Cards</h3>
-          <p>Say "buy $500 of BTC" and the AI lays the trade out &mdash; asset, side, amount, price &mdash; so you can size it and test it in paper trading before anything is at stake.</p>
+          <p>Say "buy $500 of BTC" and the AI lays the order out &mdash; asset, side, amount, price &mdash; on a card you review yourself. Trying it with simulated funds needs Paper Trading, a Pro feature; nothing is ever sent to an exchange.</p>
         </div>
         <div class="feature-card" style="padding:22px;">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
-          <h3 style="color:#F3D36D;">Real Rebalancing Plans</h3>
-          <p>Ask for a review and get your actual allocation split, concentration risks, and the exact trades that fix them.</p>
+          <h3 style="color:#F3D36D;">Allocation Breakdowns</h3>
+          <p>Ask how the portfolio splits and get it back asset by asset &mdash; value and percentage of total for each holding, with the largest position named.</p>
         </div>
         <div class="feature-card" style="padding:22px;">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 8h8"/><path d="M8 11h5"/></svg></div>
           <h3 style="color:#F3D36D;">Analyst-Grade Answers</h3>
-          <p>Structured, readable analysis &mdash; levels, targets, risks &mdash; grounded in live prices, technicals, news and on-chain data.</p>
+          <p>Structured, readable analysis grounded in live prices, technicals, news and on-chain data.</p>
         </div>
         <div class="feature-card" style="padding:22px;">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-          <h3 style="color:#F3D36D;">Alerts &amp; Orders by Asking</h3>
-          <p>"Alert me if BTC breaks $70K." "Set a limit buy at $60K." The AI sets it up &mdash; no menus, no forms.</p>
+          <h3 style="color:#F3D36D;">Alerts by Asking</h3>
+          <p>Ask for a price alert in plain language and the AI fills in the coin, the direction and the threshold &mdash; no menus, no forms.</p>
         </div>
       </div>
     </div>

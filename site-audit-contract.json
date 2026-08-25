@@ -29,6 +29,45 @@
       "source_revision": "cryptosage-ios build 8 (CFBundleVersion 8)",
       "capture_command": "TEST_RUNNER_SITE_APPEARANCE=dark xcodebuild test -only-testing:CryptoSageUITests/MarketingScreenshots/testCaptureSentimentOnAlternativeMe",
       "journey": "home/sentiment-card/source-switched-to-alternative.me"
+    },
+    {
+      "path": "hero-home-dark.webp",
+      "source_revision": "cryptosage-ios 68dcfeb (build-14 source + PrivacyInfo manifest fix; project still stamps MARKETING_VERSION 1.1 / CURRENT_PROJECT_VERSION 11)",
+      "capture_command": "xcodebuild test -only-testing:CryptoSageUITests/MarketingScreenshots/testCaptureHeroHome  # launch(demoData: true, proTier: true), Demo Mode button tapped, unscrolled",
+      "journey": "demo-mode-armed/home-dashboard-unscrolled",
+      "captured": "2026-08-25",
+      "device": "iPhone 17 Pro Max, iOS 26.5, status bar pinned 9:41; 1320x2868 downscaled 2:1 to 660x1434, WebP q82",
+      "replaces": "build-8 frame that showed the same $81,640 balance with NO Demo disclosure in the pixels, build-8 prices, and an 'Ask AI' chip reading 'What position size should I use given current market conditions?'",
+      "claim_notes": "Demo chip visible in the account switcher, so the $81,640 balance and the +5.29% week are disclosed as sample data. No price target, no entry, no countdown, no advice sentence. The 'AI Prediction' row is present and is named as such in the alt text — it renders a Predict button only, no target value."
+    },
+    {
+      "path": "app-ai-rebalance-dark.webp",
+      "source_revision": "cryptosage-ios 68dcfeb (build-14 source + PrivacyInfo manifest fix)",
+      "capture_command": "xcodebuild test -only-testing:CryptoSageUITests/MarketingScreenshots/testCaptureAIPortfolioBreakdown  # launch(demoData: true, proTier: true), asserts portfolio non-empty BEFORE asking",
+      "journey": "demo-mode-armed/ai-chat/descriptive-allocation-question",
+      "captured": "2026-08-25",
+      "device": "iPhone 17 Pro Max, iOS 26.5, status bar pinned 9:41; 1320x2868 downscaled 2:1 to 660x1434, WebP q90",
+      "replaces": "build-8 frame in which the assistant refused twice — paper trading not enabled, no exchanges connected — with the second answer clipped mid-sentence",
+      "claim_notes": "The question is deliberately descriptive ('Just the breakdown, no recommendations'). The same screen asked for a rebalance or a trade setup returns advice framing and entry prices, which COPY-LAW.md:42-44 forbids for this app — see the rejected testCaptureAITradeSetup / testCaptureAIActionCard poses. Answer self-discloses the word 'demo'.",
+      "known_cosmetic_defects": "In-app message timestamp reads 3:05 AM while the status bar is pinned to 9:41 (app uses real Date()); large empty area above the first bubble."
+    }
+  ],
+  "rejected_captures_2026_08_25": [
+    {
+      "path": "set_sentiment_altme.png",
+      "reason": "The alternative.me source attribution fix DID take, but the frame's AI Summary renders 'Crowd positioning is stretching; tighten stops and take partial profits into strength.' — imperative investment advice in legible pixels on a finance app. Also status-bar/content collision. This is a product-level string, not just a screenshot problem."
+    },
+    {
+      "path": "r0825_hero_home_01.png / r0825_hero_home_02.png",
+      "reason": "Status bar drawn directly over scrolled content (no scrim behind it on the home scroll view); 02 also shows 'Source · CryptoSage AI' self-attribution and a 3:04 AM wall-clock leak."
+    },
+    {
+      "path": "pt_00…pt_08.png",
+      "reason": "Paper-trading panel is locked behind Pro. SubscriptionManager.loadState() forces currentTier = .free and rewrites UserDefaults, so the harness -Subscription.CurrentTier argument is overwritten on every launch. Shooting this needs a StoreKit test configuration or a sandbox purchase."
+    },
+    {
+      "path": "disc_feed.png / disc_leaderboard.png",
+      "reason": "Valid build-14 compliance proof of the SampleCommunityNotice, but NOT marketing frames: the site deliberately removed every social/leaderboard claim on 2026-08-24 because the whole social layer is local-only. Wiring these back would re-open a closed claim. disc_leaderboard also asserts its disclosure over an empty list."
     }
   ]
 }

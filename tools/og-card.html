@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--
+  CryptoSage AI — social share card (og:image / twitter:image), 1200x630.
+
+  THIS FILE IS THE SOURCE OF banner.jpg. Edit it and re-render with
+  tools/render_og_card.mjs; never hand-paint the JPEG. The card it replaced
+  (Aug 6 2026) had no source at all, which is why five text retractions swept
+  the site and left the advice line "…and what to do about it", a $81,640
+  balance, a +5.29% week and an "Ask AI: What position size should I use…"
+  row alive in pixels for nineteen days. A repo-wide grep cannot see a JPEG.
+
+  CLAIM LAW FOR THIS CARD (CryptoSage is a finance app; this surface is
+  regulatory evidence — x-ads/cryptosage/AUDIT.json + x-ads/tools/COPY-LAW.md):
+    * no price digits, no balances, no percentages, no performance figure
+    * no prediction, price target, or countdown to a date
+    * no advice framing ("what to do about it", "what position size", "buy")
+    * no trading-execution claim
+    * banned words include "AI-Powered" and "unlimited"
+  Every string below is COPIED from a live post-retraction surface on
+  index.html — the wordmark from the nav lockup (index.html:884-887) and the
+  positioning line verbatim from og:description (index.html:19). Do not write
+  a new sentence here; change index.html first, then copy it across.
+
+  NO DEVICE SHOT ON PURPOSE. Both freshly captured frames (hero-home-dark.webp,
+  app-ai-rebalance-dark.webp) legibly render dollar balances and percentage
+  moves. On the page they are disclosed by a "Demo" chip and covered by
+  site-audit-contract.json; shrunk into a 1200x630 card the balance stays the
+  loudest thing on it while the disclosure chip becomes a smudge — which is the
+  exact defect this rebuild exists to remove.
+-->
+<title>CryptoSage AI — share card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Palette copied from index.html :root */
+  :root {
+    --bg: #010100;
+    --fg: #eeeeee;
+    --primary: #d09945;
+    --muted-fg: #8b8b8b;
+  }
+
+  html, body { width: 1200px; height: 630px; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Warm field — the same gold radial the site's hero paints behind its H1 */
+  .glow-a, .glow-b, .dots, .vignette, .seal-wash {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .glow-a {
+    background: radial-gradient(ellipse 780px 520px at 76% 44%,
+                rgba(208,153,69,0.22), transparent 68%);
+  }
+  .glow-b {
+    background: radial-gradient(ellipse 900px 620px at 6% 96%,
+                rgba(208,153,69,0.07), transparent 62%);
+  }
+  .dots {
+    background-image: radial-gradient(rgba(208,153,69,0.085) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity: 0.55;
+    -webkit-mask-image: radial-gradient(ellipse 900px 560px at 60% 50%, #000 10%, transparent 78%);
+            mask-image: radial-gradient(ellipse 900px 560px at 60% 50%, #000 10%, transparent 78%);
+  }
+  .vignette {
+    background: radial-gradient(ellipse 1150px 700px at 50% 50%, transparent 42%, rgba(0,0,0,0.72) 100%);
+  }
+
+  /* Brand watermark: the shipped hexagon owl seal, art only, carries no claim */
+  .watermark {
+    position: absolute;
+    right: -168px; top: 50%;
+    width: 660px; height: 660px;
+    transform: translateY(-50%);
+    background-image: var(--seal);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.13;
+    filter: saturate(1.25) contrast(1.05);
+    -webkit-mask-image: radial-gradient(circle at 46% 50%, #000 30%, transparent 70%);
+            mask-image: radial-gradient(circle at 46% 50%, #000 30%, transparent 70%);
+  }
+
+  /* Gradient type, lifted from .gradient-text-gold / .gradient-text-silver */
+  .g-gold {
+    background: linear-gradient(135deg, #f5d98e 0%, #d09945 50%, #b8860b 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .g-silver {
+    background: linear-gradient(135deg, #e8e8e8 0%, silver 50%, #a8a9ad 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px; height: 630px;
+    padding: 0 92px;
+    display: flex; flex-direction: column; justify-content: center;
+    align-items: flex-start;
+  }
+
+  .lockup { display: flex; align-items: center; gap: 26px; }
+  .seal {
+    width: 92px; height: 92px; border-radius: 50%;
+    background-image: var(--seal);
+    background-size: cover;
+    box-shadow: 0 0 0 1px rgba(208,153,69,0.32), 0 0 44px rgba(208,153,69,0.28);
+    flex: none;
+  }
+  .wordmark {
+    font-size: 62px; font-weight: 800; letter-spacing: -0.032em;
+    line-height: 1.05; white-space: nowrap;
+    padding-bottom: 0.1em; margin-bottom: -0.1em;   /* descender clip guard */
+  }
+
+  /* Two lines, broken by hand in the markup. `text-wrap: balance` was tried and
+     removed: it re-flowed the same sentence to three short lines when the font
+     size moved by 2px, so the composition was not reproducible. */
+  .line {
+    margin-top: 42px;
+    font-size: 36px; font-weight: 500; line-height: 1.46;
+    letter-spacing: -0.012em;
+    color: var(--fg);
+    white-space: pre-line;
+  }
+
+  .rule {
+    margin-top: 44px; width: 264px; height: 1px;
+    background: linear-gradient(90deg, rgba(208,153,69,0.62), rgba(208,153,69,0));
+  }
+  .domain {
+    margin-top: 22px;
+    font-size: 23px; font-weight: 600; letter-spacing: 0.01em;
+    color: var(--muted-fg);
+  }
+</style>
+</head>
+<body>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+  <div class="dots"></div>
+  <div class="watermark"></div>
+  <div class="vignette"></div>
+
+  <div class="card">
+    <!-- Product name: the nav lockup from index.html:886, same gold/silver split -->
+    <div class="lockup">
+      <div class="seal" role="img" aria-label="CryptoSage AI"></div>
+      <div class="wordmark"><span class="g-gold">Crypto</span><span class="g-silver">Sage</span><span class="g-gold"> AI</span></div>
+    </div>
+
+    <!-- Positioning line: VERBATIM og:description, index.html:19. The only edit
+         permitted here is where the line wraps. -->
+    <p class="line">CryptoSage knows what you hold,
+where you're exposed, and what moved it.</p>
+
+    <div class="rule"></div>
+    <div class="domain">cryptosageai.io</div>
+  </div>
+</body>
+</html>
