@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoSage AI — AI-Powered Crypto Portfolio Intelligence</title>
+  <!-- Title/og:title say what the app DOES, not what powers it. The old headline led on the
+       technology ("...-Powered"); that phrasing is banned for this app and was removed from
+       every surface on 2026-08-24 (x-ads/cryptosage/AUDIT.json forbidden_claims). Wording
+       here is the live ASC self-description: cryptosage-ios/store/listing.md App Review
+       notes §3 — "a portfolio tracker and market-research tool ... with an AI assistant that
+       explains markets and writes analysis". Sell the ACTIVITY, never a credential. -->
+  <title>CryptoSage AI — Crypto Portfolio Tracker and AI Market Analysis</title>
   <meta name="description" content="An AI built around your portfolio. Knows what you hold, where you're exposed, and what moved it.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cryptosageai.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CryptoSage AI — AI-Powered Crypto Portfolio Intelligence">
+  <meta property="og:title" content="CryptoSage AI — Crypto Portfolio Tracker and AI Market Analysis">
   <meta property="og:description" content="CryptoSage knows what you hold, where you're exposed, and what moved it.">
   <meta property="og:url" content="https://cryptosageai.io/">
   <meta property="og:site_name" content="CryptoSage AI">
@@ -899,7 +905,10 @@
     <div class="hero-layout">
       <div class="hero-text">
         <div class="platform-badge">Live on the App Store <span>·</span> iPhone</div>
-        <h1>AI-Powered Crypto<br><span class="shimmer-text">Portfolio Intelligence</span></h1>
+        <!-- H1 is the live App Store subtitle, verbatim in sense: "Your portfolio, explained"
+             (cryptosage-ios/store/listing.md ## Subtitle). Do not put the technology back in
+             the headline — see the note on <title>. -->
+        <h1>Your Crypto Portfolio,<br><span class="shimmer-text">Explained</span></h1>
         <p class="subtitle">CryptoSage knows what you hold, where you're exposed, and what moved it.</p>
         <div class="hero-buttons">
           <a href="https://apps.apple.com/us/app/id6792761331" class="btn-gold" target="_blank" rel="noopener">Download on the App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -909,15 +918,37 @@
       <div class="hero-screenshot">
         <div class="hero-phone-wrap">
           <div class="hero-phone-frame">
+            <!-- ALT TEXT IS A CLAIM. Screen readers speak it and search engines index
+                 it, so every alt on this page obeys the same rule as body copy: it
+                 describes what is VISIBLE in that capture and never frames the app as
+                 an adviser. Banned here exactly as in prose: "advisor/adviser",
+                 "investment guidance", "suggests rebalancing", "tells you what to buy",
+                 and "AI trading signal" as a recommendation (x-ads/cryptosage/AUDIT.json
+                 forbidden_claims[2]). The AI-chat captures show the assistant REFUSING
+                 (no exchange connected, paper trading off) - the alt says so, because an
+                 alt that narrates a rebalancing plan the picture does not contain is a
+                 false claim twice over. Re-read the .webp before you re-word an alt.
+                 2026-08-24: hero-aichat-dark.webp was CUT from this rotator. Its pixels
+                 render "Suggested BTC Add Setup / Entry: Around $64,500 to $65,000" -
+                 an entry-price trade recommendation with a Set Up Trade card and an
+                 $81,640 demo balance - on the lead surface of a finance app's marketing
+                 page. No alt re-wording can fix pixels. Slot hs-4 now shows
+                 app-ai-action-dark.webp (the assistant refusing because paper trading
+                 is off; the same capture appears in #ai-chat below - both references
+                 share the ?v=20260824a token). hero-aichat-dark.webp stays on disk but
+                 must never be re-referenced. Distinction that governs coin-page alts:
+                 NAMING a UI element the pixels show ("AI Trading Signal" card with its
+                 HOLD reading) is honest and required; euphemising it as a
+                 "technical-indicator panel" is not. -->
             <div class="phone-screen hero-rotator">
               <img width="660" height="1434" src="hero-home-dark.webp?v=20260806a" alt="CryptoSage AI home dashboard with portfolio value, watchlist and market movers" class="hero-slide hs-1" loading="eager" fetchpriority="high" decoding="async">
               <img width="660" height="1434" src="hero-portfolio-dark.webp?v=20260806a" alt="CryptoSage AI portfolio allocation donut chart with holdings" class="hero-slide hs-2" loading="eager" fetchpriority="low" decoding="async">
               <img width="660" height="1434" src="hero-sentiment-dark.webp?v=20260806a" alt="CryptoSage AI market sentiment gauge with AI sentiment analysis" class="hero-slide hs-3" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-aichat-dark.webp?v=20260806a" alt="CryptoSage AI chat staging a trade with a one-tap action card" class="hero-slide hs-4" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20260824a" alt="CryptoSage AI chat screen: asked to set up a paper trade, the assistant replies that paper trading is not enabled and it cannot place the order, above a Buy BTC/USD market card with a Set Up Trade button and a Review in Trading Tab label" class="hero-slide hs-4" loading="eager" fetchpriority="low" decoding="async">
               <img width="660" height="1434" src="hero-technicals-dark.webp?v=20260806a" alt="CryptoSage AI technical analysis chart with consensus gauge" class="hero-slide hs-5" loading="eager" fetchpriority="low" decoding="async">
               <img width="660" height="1434" src="hero-heatmap-dark.webp?v=20260806a" alt="CryptoSage AI market heat map treemap" class="hero-slide hs-6" loading="eager" fetchpriority="low" decoding="async">
               <img width="660" height="1434" src="hero-news-dark.webp?v=20260806a" alt="CryptoSage AI crypto news feed" class="hero-slide hs-7" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-coin-dark.webp?v=20260806a" alt="CryptoSage AI Bitcoin coin detail page with chart and AI trading signal" class="hero-slide hs-8" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-coin-dark.webp?v=20260806a" alt="CryptoSage AI Bitcoin coin page with price chart and an AI Trading Signal card showing a HOLD reading with low confidence on a bearish-to-bullish scale, footnoted as technical-indicator analysis, not financial advice" class="hero-slide hs-8" loading="eager" fetchpriority="low" decoding="async">
             </div>
           </div>
         </div>
@@ -958,7 +989,7 @@
       <div class="phone-card featured">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-trading-light.webp?v=20260806a" alt="CryptoSage AI BTC chart with order book and paper trading" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-trading-light.webp?v=20260806a" alt="CryptoSage AI BTC chart with an order book and a locked Paper Trading card offering practice with $100k virtual funds behind an Upgrade to Pro button" class="phone-back" loading="lazy">
             <img width="660" height="1434" src="app-trading-dark.webp?v=20260806a" alt="CryptoSage AI BTC chart (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
@@ -975,7 +1006,7 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-portfolio-light.webp?v=20260806a" alt="CryptoSage AI portfolio allocation pie with open orders and active bots" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-portfolio-light.webp?v=20260806a" alt="CryptoSage AI portfolio screen with total value, a one-week value chart, a BTC, ETH and SOL allocation donut, an open orders row and a bots card labelled Demo and Sample" class="phone-back" loading="lazy">
             <img width="660" height="1434" src="app-portfolio-dark.webp?v=20260806a" alt="CryptoSage AI portfolio allocation (dark theme)" class="phone-front phone-fade-3" loading="lazy">
           </div>
         </div>
@@ -992,8 +1023,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-ai-analysis-light.webp?v=20260806a" alt="CryptoSage AI chat analyzing Bitcoin with the user's portfolio concentration and P/L in context" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-ai-analysis-dark.webp?v=20260806a" alt="CryptoSage AI portfolio-aware market analysis (dark theme)" class="phone-front phone-fade-4" loading="lazy">
+            <img width="660" height="1434" src="app-ai-analysis-light.webp?v=20260806a" alt="CryptoSage AI chat screen: asked to set up a $500 Bitcoin market buy, the assistant replies it cannot place a live buy with no exchange connected, then lists prediction, sentiment, market regime and risk context" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ai-analysis-dark.webp?v=20260806a" alt="CryptoSage AI chat answer on Bitcoin market conditions, with the assistant saying it cannot place a live market buy without a connected exchange (dark theme)" class="phone-front phone-fade-4" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1130,13 +1161,20 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-sentiment-deriv-light.webp?v=20260806a" alt="CryptoSage AI sentiment timeline and derivatives positioning with funding rates and long/short ratios" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-sentiment-deriv-dark.webp?v=20260806a" alt="CryptoSage AI sentiment timeline and derivatives (dark theme)" class="phone-front phone-fade-12" loading="lazy">
+            <!-- Pixel-verified 2026-08-24: these two captures show the HOME screen —
+                 watchlist rows, an expanded BTC AI forecast card, market movers and the
+                 market sentiment card with BTC funding-rate and long/short chips. They
+                 do NOT show the sentiment-timeline/derivatives detail screen the old
+                 alts claimed. Alt and caption describe the pixels; the open-interest
+                 feature claim lives on the feature card below, proven from
+                 cryptosage-ios MarketSentimentDetailView.swift / AIPricePredictionService.swift:2977. -->
+            <img width="660" height="1434" src="app-sentiment-deriv-light.webp?v=20260806a" alt="CryptoSage AI home screen with watchlist rows, a Bitcoin AI forecast card, market movers, and a market sentiment card carrying BTC funding-rate and long/short chips" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-deriv-dark.webp?v=20260806a" alt="CryptoSage AI home screen with sentiment card and funding and long/short chips (dark theme)" class="phone-front phone-fade-12" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
           <div class="phone-tag">Positioning</div>
-          <p>Funding, long/short and open interest &mdash; how the crowd is actually leaning.</p>
+          <p>Funding and long/short, live on the sentiment card &mdash; how the crowd is leaning.</p>
         </div>
       </div>
     </div>
@@ -1235,7 +1273,7 @@
             <div class="phone-screen">
               <!-- Dark-only: AI chat replies are generated fresh per capture, so a
                    light/dark pair would show contradictory holdings. Single theme keeps it consistent. -->
-              <img width="660" height="1434" src="app-ai-rebalance-dark.webp?v=20260806a" alt="CryptoSage AI chat reviewing portfolio allocation, overexposure risks and a rebalancing plan" class="phone-front phone-solo" loading="lazy">
+              <img width="660" height="1434" src="app-ai-rebalance-dark.webp?v=20260806a" alt="CryptoSage AI chat screen: the assistant replies that paper trading is not enabled and no exchanges are connected, so it cannot place the order or read the portfolio" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
@@ -1244,7 +1282,7 @@
             <div class="phone-screen">
               <!-- Dark-only: AI chat replies are generated fresh per capture, so a
                    light/dark pair would show contradictory holdings. Single theme keeps it consistent. -->
-              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20260806a" alt="CryptoSage AI chat turning a portfolio rebalance into a staged trade, reviewed in the Trading tab" class="phone-front phone-solo" loading="lazy">
+              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20260824a" alt="CryptoSage AI chat screen: the assistant replies that paper trading is not enabled, above a Buy BTC/USD market card with a Set Up Trade button and a Review in Trading Tab label" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
@@ -1434,7 +1472,7 @@
           <tr><td>Sentiment &amp; whale intelligence</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
                     <tr><td>Paper trading simulator</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-p">TEST</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
           <tr><td>AI portfolio risk analysis</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-p">LTD</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
-          <tr><td>AI-powered portfolio &amp; market insights</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
+          <tr><td>AI portfolio &amp; market analysis</td><td class="hl"><span class="ck ck-g">&#10003;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td><td><span class="ck ck-n">&#10005;</span></td></tr>
                   </tbody>
       </table>
     </div>
@@ -1471,19 +1509,24 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-ta-chart-light.webp?v=20260806a" alt="CryptoSage AI native BTC chart with volume, RSI and MACD indicator panes" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-ta-chart-dark.webp?v=20260806a" alt="CryptoSage AI chart with RSI and MACD (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+            <!-- Pixel-verified 2026-08-24: these two captures show the TRADING screen —
+                 native line chart with in-chart volume, the Indicators picker, a locked
+                 Paper Trading card and the order book. No RSI/MACD oscillator panes are
+                 visible; the panes appear only in the TradingView capture two phones
+                 over. Alt and caption describe the pixels. -->
+            <img width="660" height="1434" src="app-ta-chart-light.webp?v=20260806a" alt="CryptoSage AI native BTC chart with volume, an indicator picker, a locked Paper Trading card and a live order book" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ta-chart-dark.webp?v=20260806a" alt="CryptoSage AI native BTC chart with volume and order book (dark theme)" class="phone-front phone-fade-1" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
-          <div class="phone-tag">RSI + MACD</div>
-          <p>Oscillators in their own panes, live on the native chart.</p>
+          <div class="phone-tag">Native Chart</div>
+          <p>Volume and an indicator picker, live on the native chart.</p>
         </div>
       </div>
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-ta-technicals-light.webp?v=20260806a" alt="CryptoSage AI technicals consensus gauge with overall, moving average and oscillator buy/sell readings" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ta-technicals-light.webp?v=20260806a" alt="CryptoSage AI technicals consensus gauge with overall, moving-average and oscillator dials on a strong-sell to strong-buy scale" class="phone-back" loading="lazy">
             <img width="660" height="1434" src="app-ta-technicals-dark.webp?v=20260806a" alt="CryptoSage AI technicals consensus gauge (dark theme)" class="phone-front phone-fade-6" loading="lazy">
           </div>
         </div>
@@ -1650,13 +1693,16 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-heatmap-bar-light.webp?v=20260806a" alt="CryptoSage AI bar heat map ranking coins by percent change" class="phone-back" loading="lazy">
+            <!-- Pixel-verified 2026-08-24: the bar view draws one column per coin in
+                 market-cap order (BTC, ETH, XRP, BNB, SOL...), colored by 24h change —
+                 it does not rank/sort by percent move. Alt and caption say what it shows. -->
+            <img width="660" height="1434" src="app-heatmap-bar-light.webp?v=20260806a" alt="CryptoSage AI bar heat map with a column per coin colored by 24h change" class="phone-back" loading="lazy">
             <img width="660" height="1434" src="app-heatmap-bar-dark.webp?v=20260806a" alt="CryptoSage AI bar heat map (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
           <div class="phone-tag">Bars</div>
-          <p>Ranked by move &mdash; winners and losers, sorted.</p>
+          <p>A column per coin, colored by move &mdash; winners and losers at a glance.</p>
         </div>
       </div>
     </div>
@@ -1702,7 +1748,7 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img width="660" height="1434" src="app-coin-light.webp?v=20260806a" alt="CryptoSage AI Bitcoin coin page with price chart, AI trading signal and key levels" class="phone-back" loading="lazy">
+              <img width="660" height="1434" src="app-coin-light.webp?v=20260806a" alt="CryptoSage AI Bitcoin coin page with price chart, an AI Trading Signal card showing a HOLD reading with low confidence on a bearish-to-bullish scale footnoted as not financial advice, and a Key Levels section" class="phone-back" loading="lazy">
               <img width="660" height="1434" src="app-coin-dark.webp?v=20260806a" alt="CryptoSage AI coin detail page (dark theme)" class="phone-front phone-fade-6" loading="lazy">
             </div>
           </div>
@@ -1734,7 +1780,11 @@
     <div style="text-align:center" class="anim">
       <span class="section-label">Connect</span>
       <h2 class="section-title">Your Exchanges, <span class="gradient-text-gold">One Dashboard</span></h2>
-      <p class="section-desc" style="margin:14px auto 0">Import holdings from every major exchange with read-only API keys or OAuth. Keys are encrypted in the iOS Keychain and never leave your device.</p>
+      <!-- "never leave your device" was wrong in the strict sense (an API key rides
+           every signed request to the exchange it belongs to). The provable absolute is
+           privacy-policy.html §2: keys stay in the iOS Keychain and are never written
+           to OUR servers. Say that. -->
+      <p class="section-desc" style="margin:14px auto 0">Import holdings from every major exchange with read-only API keys or OAuth. Keys are encrypted in the iOS Keychain and are never sent to our servers.</p>
     </div>
     <div class="exchanges-pills anim">
       <span class="exchange-pill">Coinbase</span>
@@ -1780,8 +1830,15 @@
       </div>
       <div class="feature-card anim anim-d2">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
-        <h3>Paper Trading & Leaderboard</h3>
-        <p>Practice with $100K in virtual funds using market, limit, and stop orders at live prices. Compete globally ranked by P&L, Sharpe ratio, and win rate.</p>
+        <!-- The global leaderboard claim was removed 2026-08-24. The whole social layer is
+             LOCAL-ONLY in build 14: SocialService, LeaderboardEngine, CopyTradingManager and
+             LivePerformanceTracker contain zero URLSession and zero Firestore between them,
+             and every rank, profile and "+X% this week" figure is generated on device by
+             generateDemoUsers / generateDemoBots (cryptosage-ios/CryptoSage/Social/Views/
+             Components/SampleCommunityNotice.swift:5-16). The app labels those screens
+             "Sample community". The site may not sell them as real competition. -->
+        <h3>Paper Trading</h3>
+        <p>Practice with $100K in virtual funds using market, limit, and stop orders at live prices.</p>
       </div>
       <div class="feature-card anim anim-d3">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12l7-7"/><path d="M16 2h6v6"/></svg></div>
@@ -1796,7 +1853,7 @@
       <div class="feature-card anim anim-d1">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         <h3>Smart Alerts</h3>
-        <p>Price, whale movement, RSI, volume spike, and AI-powered alerts delivered to your phone, Discord, and Telegram. Set your own or let AI suggest thresholds.</p>
+        <p>Price, whale movement, RSI, volume spike, and AI alerts delivered to your phone, Discord, and Telegram. Set your own or let AI suggest thresholds.</p>
       </div>
       <div class="feature-card anim anim-d2">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg></div>
@@ -1866,7 +1923,14 @@
       <div class="pricing-toggle-wrap">
         <div class="pricing-toggle">
           <button class="toggle-btn active" id="toggleMonthly" onclick="setPricing('monthly')">Monthly</button>
-          <button class="toggle-btn" id="toggleYearly" onclick="setPricing('yearly')">Yearly <span class="toggle-save">Save up to 30%</span></button>
+          <!-- "Save up to 49%" is COMPUTED from the live App Store prices, not chosen.
+               Pro:     $59.99/yr vs 12 x $9.99  = $119.88 -> 49.96% saved (the "up to").
+               Premium: $179.99/yr vs 12 x $19.99 = $239.88 -> 24.97% saved.
+               Rounded DOWN so the badge can never overstate. Prices from
+               cryptosage-ios/store/listing.md:151-153 (App Review notes §8, a mirror of
+               live ASC). If a price moves, recompute here or delete the badge — the old
+               "Save up to 30%" was true of neither tier. -->
+          <button class="toggle-btn" id="toggleYearly" onclick="setPricing('yearly')">Yearly <span class="toggle-save">Save up to 49%</span></button>
         </div>
       </div>
     </div>
@@ -1876,11 +1940,11 @@
         <div class="price-amount gradient-text-gold">$0</div><div class="price-period">forever</div>
         <ul class="price-features">
           <li>AI Chat (5/day)</li><li>AI Predictions (3/day, top 5 coins)</li>
-          <li>Portfolio tracking & insights</li><li>Watchlist & market movers</li>
+          <li>Portfolio tracking</li><li>Watchlist & market movers</li>
           <li>3 price alerts</li><li>Exchange &amp; wallet connections</li>
           <li class="off">Paper trading</li><li class="off">Whale tracking</li><li class="off">Tax reports</li>
         </ul>
-        <a href="#signup" class="btn-outline">Sign Up Free</a>
+        <a href="https://apps.apple.com/us/app/id6792761331" class="btn-outline" target="_blank" rel="noopener">Download Free</a>
       </div>
       <div class="price-card featured anim">
         <div class="price-badge">Most Popular</div>
@@ -1888,22 +1952,31 @@
         <div class="price-amount gradient-text-gold">$9.99</div><div class="price-period">/month</div>
         <ul class="price-features">
           <li>AI Chat (30/day, all coins)</li><li>AI Predictions (15/day, all coins)</li>
-          <li>Paper Trading ($100K virtual)</li><li>Leaderboard & competition</li>
+          <li>Paper Trading ($100K virtual)</li><li>Advanced alerts (RSI, volume, % move)</li>
           <li>Whale tracking & smart money</li><li>Unlimited price alerts</li>
-          <li>Tax reports (2,500 txns)</li><li>AI risk reports</li><li>Ad-free</li>
+          <li>Tax reports (2,500 txns)</li><li>AI risk reports</li><li>AI portfolio insights (5/day)</li>
         </ul>
-        <a href="#signup" class="btn-gold">Start Pro</a>
+        <a href="https://apps.apple.com/us/app/id6792761331" class="btn-gold" target="_blank" rel="noopener">Get Pro</a>
       </div>
       <div class="price-card anim">
         <h3>Premium</h3><p class="price-sub">Everything unlocked</p>
         <div class="price-amount gradient-text-gold">$19.99</div><div class="price-period">/month</div>
         <ul class="price-features">
-          <li>Unlimited AI Chat (premium model)</li><li>AI Predictions (50/day)</li>
-          <li>Trading Bots (DCA, Grid, Signal)</li><li>Copy trading & marketplace</li>
-          <li>Derivatives simulation</li><li>DeFi yield optimization</li>
+          <!-- NOT "Unlimited AI Chat". aiPromptsPerDay returns 100 for Premium and
+               canSendAIPrompt enforces it with no exemption (cryptosage-ios/CryptoSage/
+               SubscriptionManager.swift:85-103); the binary dropped "Unlimited" from twelve
+               surfaces on 2026-08-19 and the number is the claim. "Unlimited price alerts"
+               (Pro card) and "Unlimited tax transactions" below ARE true — maxPriceAlerts
+               and maxTaxTransactions are Int.max on those tiers (:156-168). Copy trading and
+               the bot marketplace were removed: local-only sample data, see the note on the
+               Paper Trading card. "Derivatives tools", not "simulation" — closePosition
+               passes forceAllowClose:true, so that path is not simulation-only. -->
+          <li>AI Chat (100/day, premium model)</li><li>AI Predictions (50/day)</li>
+          <li>Paper trading bots (DCA, Grid, Signal)</li><li>Derivatives tools</li>
+          <li>DeFi yield optimization</li>
           <li>Unlimited tax transactions</li><li>Advanced AI insights (30/day)</li><li>Early access features</li>
         </ul>
-        <a href="#signup" class="btn-gold">Go Premium</a>
+        <a href="https://apps.apple.com/us/app/id6792761331" class="btn-gold" target="_blank" rel="noopener">Get Premium</a>
       </div>
     </div>
   </div>
@@ -1922,10 +1995,24 @@
       <div class="faq-item"><button class="faq-q">What is CryptoSage AI?<span class="faq-icon">+</span></button><div class="faq-a"><p>An iOS app that combines portfolio tracking across every major exchange with an AI that actually knows what you hold. Plus paper trading, whale tracking, charting, taxes, and 30+ live data tools &mdash; all in one place.</p></div></div>
       <div class="faq-item"><button class="faq-q">How is the AI different from ChatGPT?<span class="faq-icon">+</span></button><div class="faq-a"><p>Unlike generic chatbots, CryptoSage AI has real-time access to your portfolio data, live prices, technical indicators, on-chain metrics, and 30+ specialized tools. Answers are based on YOUR holdings and current market conditions — not generic knowledge.</p></div></div>
       <div class="faq-item"><button class="faq-q">Which exchanges can I connect?<span class="faq-icon">+</span></button><div class="faq-a"><p>Coinbase, Binance, Kraken, KuCoin, Bybit, OKX, Gemini, Bitget, Crypto.com, and more. OAuth or read-only API keys stored in your iOS Keychain. Plus wallet address tracking across major chains, including Ledger and Trezor hardware wallets.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How does paper trading work?<span class="faq-icon">+</span></button><div class="faq-a"><p>Pro subscribers get $100,000 in virtual funds at live market prices. Place market, limit, and stop orders. Compete on the leaderboard by return, Sharpe ratio, and win rate. Premium adds trading bots and copy trading.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How does paper trading work?<span class="faq-icon">+</span></button><div class="faq-a"><p>Pro subscribers get $100,000 in virtual funds at live market prices. Place market, limit, and stop orders. Premium adds paper trading bots (DCA, Grid and Signal). The community screens in the app &mdash; leaderboard, profiles and the bot marketplace &mdash; are labelled &ldquo;Sample community&rdquo; inside the app: those profiles and results are examples, not real traders.</p></div></div>
       <div class="faq-item"><button class="faq-q">How many coins are supported?<span class="faq-icon">+</span></button><div class="faq-a"><p>Thousands of cryptocurrencies via CoinGecko and Binance data feeds, plus stocks and commodities. Track DeFi positions on major protocols, NFT collections, and hardware wallets across major chains.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Is my data safe?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. Local-first architecture — data stays on your device. API keys encrypted in iOS Keychain with TLS 1.3. No passwords stored, no data sold, read-only permissions by default. GDPR and CCPA compliant.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Does CryptoSage give financial advice?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. CryptoSage provides data-driven insights, AI predictions, and analysis tools — but never recommends specific trades or guarantees returns. All information is educational and informational only.</p></div></div>
+      <!-- 2026-08-24: both answers below were re-aligned to the legal pages; keep them
+           in lockstep with privacy-policy.html and terms.html.
+           Data-safety: the old absolute "data stays on your device" contradicted
+           privacy-policy.html §2 (with an account, AI chats and paper-trading records
+           sync to Firestore — the policy's own "Plain statement"). "TLS 1.3" and "GDPR
+           and CCPA compliant" overstated the policy's "HTTPS (TLS)" and "you may
+           exercise GDPR/CCPA rights". What stays absolute is what the policy makes
+           absolute: holdings/connections don't sync (§2), keys stay in the Keychain and
+           are never written to our servers (§2), no selling (§1, §9).
+           Advice: the old "never recommends specific trades" was false — the app's own
+           AI suggests trade setups (terms.html Assumption of Risk: "Even when the AI
+           suggests a trade..."), and shipped captures render "Suggested BTC Add Setup".
+           Say what the legal pages say: information only, not advice, trades are
+           user-initiated. Never write an absolute negative about recommendations. -->
+      <div class="faq-item"><button class="faq-q">Is my data safe?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. Local-first design: your portfolio holdings and exchange connections stay on your device, and API keys live in the iOS Keychain — they are never sent to our servers. We never ask for exchange passwords, seed phrases or private keys, we recommend read-only API keys, we do not sell your data, and connections use HTTPS (TLS). If you create an account, synced data is described in the Privacy Policy, where you can also exercise your GDPR and CCPA rights.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Does CryptoSage give financial advice?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. Market data, AI answers, predictions and analysis in the app are for information and education only — CryptoSage is not a registered investment adviser and creates no fiduciary relationship. All trades, including paper trades, are initiated by you, and past performance does not guarantee future results.</p></div></div>
     </div>
   </div>
 </section>
@@ -2051,11 +2138,22 @@
     }, { passive: true });
   }
 
-  // Pricing toggle
+  // Pricing toggle.
+  // These are the four LIVE App Store prices, not derived figures:
+  //   com.dee.cryptosage.pro.monthly     $9.99/mo
+  //   com.dee.cryptosage.pro.annual      $59.99/yr
+  //   com.dee.cryptosage.premium.monthly $19.99/mo
+  //   com.dee.cryptosage.premium.annual  $179.99/yr
+  // Source: cryptosage-ios/store/listing.md:151-153 (App Review notes §8, mirrored from
+  // ASC). The yearly row previously showed a per-month figure ($6.99 / $14.99) that
+  // matched no product Apple sells. Do NOT re-derive a monthly-equivalent here: quote the
+  // amount the customer is actually charged. Note SubscriptionTier's hardcoded "$89.99"
+  // Pro annual literal is STALE and is never displayed (the paywall reads StoreKit) —
+  // fleet/state/review-2026-08-14/audit.json:536.
   var monthlyPrices = ['$0', '$9.99', '$19.99'];
-  var yearlyPrices = ['$0', '$6.99', '$14.99'];
+  var yearlyPrices = ['$0', '$59.99', '$179.99'];
   var monthlyPeriods = ['forever', '/month', '/month'];
-  var yearlyPeriods = ['forever', '/month (billed yearly)', '/month (billed yearly)'];
+  var yearlyPeriods = ['forever', '/year', '/year'];
   function setPricing(mode) {
     var cards = document.querySelectorAll('.price-card');
     var prices = mode === 'yearly' ? yearlyPrices : monthlyPrices;

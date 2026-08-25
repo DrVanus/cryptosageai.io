@@ -1006,7 +1006,13 @@
         <ul>
           <li>If a reply stalls, close the chat and try again &mdash; the request may have timed out.</li>
           <li>How many questions you can ask, and which model answers them, depends on your plan.</li>
-          <li>The assistant is informational. It does not place orders and it is not financial advice.</li>
+          <!-- 2026-08-24: was "It does not place orders" — false as an absolute: with
+               paper trading enabled the assistant places PAPER orders (its own screens
+               say "I can help you place that $500 BTC buy ... as a paper trade
+               instantly"). The only live-order path in the app is the Premium
+               derivatives close-position/leverage flow (DerivativesBotView, not the
+               chat) — named in "What CryptoSage does not do" below. Scope the claim. -->
+          <li>The assistant is informational. Trade ideas it sets up go to paper trading for your review &mdash; the assistant cannot send a live order to an exchange &mdash; and it is not financial advice.</li>
         </ul>
       </div>
 
@@ -1171,7 +1177,7 @@
 
       <div class="feature-card sup-card">
         <h3>Deleting your account doesn&rsquo;t touch your money</h3>
-        <p>CryptoSage only ever reads from your exchange accounts and wallets. Removing a connection or deleting your CryptoSage account has no effect on the accounts themselves, your balances or your funds.</p>
+        <p>Removing a connection or deleting your CryptoSage account has no effect on the accounts themselves, your balances or your funds. CryptoSage never asks for withdrawal or transfer permissions and cannot move money off an exchange.</p>
       </div>
 
     </div>
@@ -1190,8 +1196,18 @@
     <div class="sup-stack">
       <div class="feature-card sup-card">
         <ul>
-          <li><strong>It does not place real trades.</strong> Trading inside CryptoSage is paper trading: you practise with $100,000 in virtual funds, and orders are simulated against live market prices. No real order is ever sent to an exchange.</li>
-          <li><strong>It cannot move your money.</strong> Exchange and wallet connections are read-only. CryptoSage cannot withdraw, transfer or spend anything, and it never asks for withdrawal permissions.</li>
+          <!-- 2026-08-24: the first bullet used to close with an absolute negative — that an
+               order from this app never reaches an exchange. index.html shipped and RETRACTED
+               that same sentence in commit 777f338 and it survived here. It is false as an
+               absolute: submitMarketOrder's
+               guard is `AppConfig.liveTradingEnabled || forceAllowClose` and closePosition
+               passes forceAllowClose: true, so it signs and POSTs /fapi/v1/order; setLeverage
+               has no such guard at all (cryptosage-ios/CryptoSage/FuturesTradingExecutionService.swift:
+               1058,1063,590,363-397). Reachable from DerivativesBotView.swift:209. Keep this
+               bullet describing the DEFAULT and naming the exception; never write an absolute
+               negative about order placement again. -->
+          <li><strong>Trading inside CryptoSage is paper trading.</strong> You practise with $100,000 in virtual funds, and orders are simulated against live market prices. Ordinary live order placement is switched off in the app. The one exception: if you connect Binance Futures API keys that carry trading permission, the Premium derivatives tools can close an open futures position and change leverage on your real account. Connect read-only keys if you do not want that.</li>
+          <li><strong>It cannot move your money off an exchange.</strong> CryptoSage never asks for withdrawal or transfer permissions, so it cannot withdraw, transfer or spend your funds. Connections are for portfolio tracking, aside from the derivatives exception above.</li>
           <li><strong>It is not a wallet.</strong> CryptoSage never holds your private keys or seed phrases, and cannot sign a transaction.</li>
           <li><strong>It is not financial, investment or tax advice.</strong> Market data, AI answers and any analysis in the app are for information only. Past performance does not guarantee future results. Please do your own research and speak to a qualified professional before making a financial decision.</li>
           <li><strong>We cannot recover exchange accounts.</strong> Lost exchange passwords, 2FA resets and locked exchange accounts have to go to that exchange&rsquo;s own support team.</li>
@@ -1230,7 +1246,7 @@
       <div class="footer-col"><h4>Product</h4><ul><li><a href="index.html#features">Features</a></li><li><a href="index.html#exchanges">Exchanges</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Support%20Request">hypersageailabs@gmail.com</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p><a href="https://drvanus.github.io/hypersage-site/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">A HyperSage Studio App</a></p>
+      <p><a href="https://hypersage.ai/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">A HyperSage Studio App</a></p>
       <p>&copy; 2026 CryptoSage AI. All rights reserved.</p>
       <p>Not financial advice. Past performance does not guarantee future results.</p>
     </div>
