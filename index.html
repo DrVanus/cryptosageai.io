@@ -2012,9 +2012,12 @@
         <h3>Premium</h3><p class="price-sub">Everything unlocked</p>
         <div class="price-amount gradient-text-gold">$19.99</div><div class="price-period">/month</div>
         <ul class="price-features">
-          <!-- NOT "Unlimited AI Chat". aiPromptsPerDay returns 100 for Premium and
+          <!-- Do NOT restore the retired unlimited-AI-chat wording here (the exact
+                   string is in x-ads/cryptosage/AUDIT.json forbidden_claims, and is not
+                   repeated in this comment because an HTML comment is served to every
+                   visitor). aiPromptsPerDay returns 100 for Premium and
                canSendAIPrompt enforces it with no exemption (cryptosage-ios/CryptoSage/
-               SubscriptionManager.swift:85-103); the binary dropped "Unlimited" from twelve
+               SubscriptionManager.swift:85-103); the binary dropped that wording from twelve
                surfaces on 2026-08-19 and the number is the claim. "Unlimited price alerts"
                (Pro card) and "Unlimited tax transactions" below ARE true — maxPriceAlerts
                and maxTaxTransactions are Int.max on those tiers (:156-168). Copy trading and
