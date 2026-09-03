@@ -219,7 +219,7 @@
   <p>Both are on by default. You can turn <strong>analytics</strong> off in the app under <code>Settings &rsaquo; Privacy &amp; Analytics</code>, and the app stops sending those events. <strong>Crash reporting has no separate switch in this build</strong>, so turning analytics off leaves Crashlytics running &mdash; we would rather say that than let the sentence above imply a control that is not there.</p>
 
   <h2>6. Advertising: none</h2>
-  <p>The app shows no third-party ads and sends no data to advertising networks. To be fully transparent: the current build contains Google&rsquo;s Mobile Ads SDK, but it is switched off &mdash; it is never started, no ad is ever requested or shown, and no data flows to it. iOS may still show you Apple&rsquo;s standard App Tracking Transparency prompt; in the current app, allowing it enables nothing, and we do not track you across other companies&rsquo; apps or websites either way. If ads are ever introduced, this policy will be updated first.</p>
+  <p>The app shows no third-party ads and sends no data to advertising networks. Google&rsquo;s Mobile Ads SDK and the advertising identifier were removed: the current build links no advertising SDK, requests no ads, and shows no App Tracking Transparency prompt. We do not track you across other companies&rsquo; apps or websites. If ads are ever introduced, this policy will be updated first.</p>
 
   <h2>7. Notifications and price alerts</h2>
   <p>Push notifications are optional and controlled by iOS. If you use price alerts while signed in, the alert definitions and your device&rsquo;s push token are stored on our backend so alerts can fire while the app is closed. Notifications are delivered through Apple&rsquo;s push service and Google&rsquo;s Firebase Cloud Messaging.</p>
@@ -254,7 +254,7 @@
   <p>This website (cryptosageai.io) is a separate surface from the app, and it does two things worth naming:</p>
   <ul>
     <li>It uses <strong>Google Analytics</strong> to count visits, which processes your IP address and browser information under Google&rsquo;s terms.</li>
-    <li>If you submit your email in the <strong>&ldquo;Get Early Access&rdquo;</strong> form, that email address (with the time and your browser&rsquo;s user-agent string) is stored in our Google Cloud Firestore database and used only to contact you about CryptoSage. Email <a href="mailto:hypersageailabs@gmail.com?subject=Remove%20me%20from%20the%20list">hypersageailabs@gmail.com</a> to be removed.</li>
+    <li>If you submit your email in the <strong>&ldquo;Keep me posted&rdquo;</strong> form at the bottom of the home page, that email address (with the time and your browser&rsquo;s user-agent string) is stored in our Google Cloud Firestore database and used only to contact you about CryptoSage. Email <a href="mailto:hypersageailabs@gmail.com?subject=Remove%20me%20from%20the%20list">hypersageailabs@gmail.com</a> to be removed.</li>
   </ul>
 
   <h2>14. Changes to this policy</h2>
