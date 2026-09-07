@@ -965,8 +965,12 @@
                  exact hazard the dark-only note below records. app-ai-action-dark.webp
                  renders in BOTH hs-4 and #ai-chat phone 2; reusing the breakdown there
                  would show one picture twice side by side. app-sentiment-sources-dark
-                 was re-shot and REJECTED: the new pixels read "tighten stops and take
-                 partial profits into strength", imperative advice on a finance app. Distinction that governs coin-page alts:
+                 was re-shot and REJECTED: the new pixels rendered an imperative trade
+                 instruction, which a finance app must not publish. The sentence itself is
+                 deliberately NOT reproduced here — an HTML comment is served to every
+                 visitor, so quoting a rejected claim republishes it on a page whose own
+                 footer reads "Not financial advice." (Same rule as the Premium card
+                 comment below.) Distinction that governs coin-page alts:
                  NAMING a UI element the pixels show ("AI Trading Signal" card with its
                  HOLD reading) is honest and required; euphemising it as a
                  "technical-indicator panel" is not. -->
@@ -2027,7 +2031,15 @@
           <li>AI Chat (100/day, premium model)</li><li>AI Predictions (50/day)</li>
           <li>Paper trading bots (DCA, Grid, Signal)</li><li>Derivatives tools</li>
           <li>DeFi yield optimization</li>
-          <li>Unlimited tax transactions</li><li>Advanced AI insights (30/day)</li><li>Early access features</li>
+          <!-- TWO COUNTERS, NOT ONE (2026-09-07). This read "Advanced AI insights
+               (30/day)" as a single line directly under the Pro card's "AI portfolio
+               insights (5/day)", so the two cards read as one ladder and 30 looked like
+               the Premium ceiling for the SAME counter. It is not: 30 is
+               coinInsightsPerDay (SubscriptionManager.swift:122-128, free 2 / pro 10 /
+               premium 30) while portfolioInsightsPerDay is free 0 / pro 5 / premium 20
+               (:131-137). Read as a ladder the old line overstated the enforced Premium
+               portfolio ceiling by 50%. Each number now names the counter it comes from. -->
+          <li>Unlimited tax transactions</li><li>AI coin insights (30/day)</li><li>AI portfolio insights (20/day)</li><li>Early access features</li>
         </ul>
         <a href="https://apps.apple.com/us/app/id6792761331" class="btn-gold" target="_blank" rel="noopener">Get Premium</a>
       </div>
