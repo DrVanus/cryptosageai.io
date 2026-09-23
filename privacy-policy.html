@@ -169,7 +169,7 @@
 
 <main class="legal-wrap">
   <h1>Privacy <span class="gradient-text-gold">Policy</span></h1>
-  <p class="legal-updated">Last updated: September 19, 2026</p>
+  <p class="legal-updated">Last updated: September 22, 2026</p>
 
   <p>CryptoSage AI (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is an iOS app for tracking a crypto portfolio, reading market data and asking an AI about both. This policy describes exactly what data the app touches, what stays on your iPhone, and names the companies that receive any of it. The short version: <strong>we do not sell your data, the app shows no ads, and an account is optional.</strong></p>
 
@@ -197,13 +197,17 @@
   <div class="legal-note"><p><strong>Plain statement:</strong> when you are signed in, your AI chat history and paper-trading records are stored on our servers (Google Cloud Firestore), not only on your phone. Signed out, they stay local.</p></div>
 
   <h2>3. AI questions go to AI companies</h2>
-  <p>The AI features are not computed on your iPhone. Depending on the feature, your question and the context needed to answer it (for example a summary of your portfolio, or the coin being discussed) are sent to one of these providers:</p>
+  <p>Starting with version 1.3.8, CryptoSage asks for explicit <strong>AI Data Sharing</strong> permission and names the recipients before a personal AI request leaves your device. Declining keeps these requests off. Markets, charts and local portfolio tools remain available.</p>
+  <p>The AI features are not computed on your iPhone. With permission, your question, recent conversation since your last sharing change, saved AI profile and memories, and relevant app context (such as your watchlist or paper-trading activity) can be sent to these services:</p>
   <ul>
     <li><strong>OpenAI</strong> &mdash; answers the built-in AI chat and related per-user AI features.</li>
-    <li><strong>DeepSeek, OpenRouter or OpenAI</strong> &mdash; shared AI features such as market sentiment summaries, coin insights and price predictions are generated on our backend (Google Firebase Cloud Functions), which currently uses whichever of these providers is available, in that order.</li>
-    <li><strong>A provider you choose</strong> &mdash; if you connect your own API key in Settings (OpenAI, DeepSeek, xAI/Grok or OpenRouter are supported), those requests go directly from your device to that provider under your own account and their terms.</li>
+    <li><strong>DeepSeek, OpenRouter or OpenAI</strong> &mdash; features routed through our backend (Google Firebase Cloud Functions), including chat, market sentiment summaries, coin insights and price predictions. The backend uses whichever of these providers is configured. Shared market summaries and predictions use public market information.</li>
+    <li><strong>A provider you choose</strong> &mdash; if you connect your own API key in Settings (OpenAI, DeepSeek, xAI/Grok or OpenRouter are supported), those requests go directly from your device to that provider under your own account and their terms. Configured custom endpoints are also named in the permission screen; changing recipients requires another decision.</li>
+    <li><strong>Tavily</strong> &mdash; search queries and article links when AI uses web research, through our backend or your configured search account.</li>
   </ul>
-  <p><strong>Screenshots in the AI chat.</strong> If you attach screenshots or photos to a chat message, they are sent with that one message through our backend (Google Firebase Cloud Functions) to OpenAI so the assistant can read them. We do not store them on our servers, and they are not sent again with later messages. The copy in your chat history stays on your iPhone: when your conversations sync, the image itself is not uploaded, only its file name.</p>
+  <p><strong>Real-portfolio sharing is a separate, optional choice and is off until you explicitly enable it.</strong> Holdings, balances, transactions and profit/loss are included in portfolio context and AI portfolio insights only when this option is on. An older default-on setting does not grant permission. Paper and demo data do not need the real-portfolio option, but sending simulated data to an AI provider still requires general AI permission.</p>
+  <p>Change or revoke permission in <code>Settings &rsaquo; Privacy &amp; Analytics</code>. Each sharing change starts a new outgoing history window: older messages stay visible in your conversation but are not sent again as history. Turning off portfolio sharing stops AI portfolio insights and excludes real-portfolio context from new requests. Revocation stops future sharing; it cannot recall data already sent or delete existing local or synced conversations.</p>
+  <p><strong>Screenshots in the AI chat.</strong> If you attach screenshots or photos to a chat message and give separate screenshot-sharing permission, they are sent with that one message through our backend (Google Firebase Cloud Functions) to OpenAI so the assistant can read them. We do not store them on our servers, and they are not sent again with later messages. The copy in your chat history stays on your iPhone: when your conversations sync, the image itself is not uploaded, only its file name.</p>
   <p>What these companies do with text and images after they reach them is governed by their own terms, not ours. We hold no zero-retention agreement with them, so we will not promise on their behalf that your words or screenshots are discarded. Please don&rsquo;t type or attach anything to the chat you would not want processed by a third-party AI provider &mdash; crop out account numbers, API keys and balances you would rather keep private.</p>
 
   <h2>4. Market data, news and blockchains</h2>
@@ -212,7 +216,7 @@
     <li><strong>Market data and charts:</strong> CoinGecko, Binance, Coinbase, Kraken, KuCoin, Bybit, OKX, Gemini and TradingView.</li>
     <li><strong>News:</strong> the crypto publishers whose feeds the app reads directly (Cointelegraph, Decrypt, CoinDesk, The Defiant, The Block, CryptoSlate, Bitcoin Magazine, Bitcoin.com News, CryptoPotato, BeInCrypto and Crypto Briefing; their sites also serve the article images), plus CryptoCompare, Google News and Yahoo Finance.</li>
     <li><strong>Blockchain data</strong> for wallet addresses you track: public services such as Etherscan, Solscan and Ankr RPC endpoints.</li>
-    <li><strong>Your connected exchanges</strong> receive requests for your balances and holdings. These are read requests, with one exception: in the Premium derivatives tools, with Binance Futures keys you have given trading permission, closing a position or changing leverage sends an instruction you triggered.</li>
+    <li><strong>Your connected exchanges</strong> receive read-only requests for your balances and holdings. Live orders and changes to exchange positions or leverage are disabled in this version.</li>
   </ul>
 
   <h2>5. Analytics and crash reports</h2>

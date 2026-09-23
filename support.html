@@ -973,7 +973,6 @@
         <p>Open <span class="sup-path">Settings &rsaquo; Linked Accounts</span> and check the status of each connection.</p>
         <ul>
           <li>Use <strong>Test Connection</strong> to see the exact error a connection is returning.</li>
-          <li>OAuth connections (such as Coinbase, Kraken and Gemini) use tokens that expire. Disconnect and reconnect to re-authorise.</li>
           <li>API-key connections stop working if the key was revoked or rotated on the exchange, or if the key has an IP allow-list that blocks mobile networks.</li>
           <li>Holdings you entered by hand, and stocks and ETFs added manually, do not sync from an exchange &mdash; they update in price only.</li>
         </ul>
@@ -1006,12 +1005,7 @@
         <ul>
           <li>If a reply stalls, close the chat and try again &mdash; the request may have timed out.</li>
           <li>How many questions you can ask, and which model answers them, depends on your plan.</li>
-          <!-- 2026-08-24: was "It does not place orders" — false as an absolute: with
-               paper trading enabled the assistant places PAPER orders (its own screens
-               say "I can help you place that $500 BTC buy ... as a paper trade
-               instantly"). The only live-order path in the app is the Premium
-               derivatives close-position/leverage flow (DerivativesBotView, not the
-               chat) — named in "What CryptoSage does not do" below. Scope the claim. -->
+          <!-- 2026-09-23: verified in source for 1.3.7 b48 (3eda07c) and 1.3.8 b50 (10126d9): trading keys are written only by TradingCredentialsSetupView, reached only through TradingAPIKeysView, which SettingsView links only under #if DEBUG. App Store builds therefore cannot sign a live futures request (close, leverage, margin). Re-check this before shipping any build that exposes trading keys. -->
           <li>The assistant is informational. Trade ideas it sets up go to paper trading for your review &mdash; the assistant cannot send a live order to an exchange &mdash; and it is not financial advice.</li>
         </ul>
       </div>
@@ -1196,17 +1190,8 @@
     <div class="sup-stack">
       <div class="feature-card sup-card">
         <ul>
-          <!-- 2026-08-24: the first bullet used to close with an absolute negative — that an
-               order from this app never reaches an exchange. index.html shipped and RETRACTED
-               that same sentence in commit 777f338 and it survived here. It is false as an
-               absolute: submitMarketOrder's
-               guard is `AppConfig.liveTradingEnabled || forceAllowClose` and closePosition
-               passes forceAllowClose: true, so it signs and POSTs /fapi/v1/order; setLeverage
-               has no such guard at all (cryptosage-ios/CryptoSage/FuturesTradingExecutionService.swift:
-               1058,1063,590,363-397). Reachable from DerivativesBotView.swift:209. Keep this
-               bullet describing the DEFAULT and naming the exception; never write an absolute
-               negative about order placement again. -->
-          <li><strong>Trading inside CryptoSage is paper trading.</strong> You practise with $100,000 in virtual funds, and orders are simulated against live market prices. Ordinary live order placement is switched off in the app. The one exception: if you connect Binance Futures API keys that carry trading permission, the Premium derivatives tools can close an open futures position and change leverage on your real account. Connect read-only keys if you do not want that.</li>
+          <!-- 2026-09-23: verified in source for 1.3.7 b48 (3eda07c) and 1.3.8 b50 (10126d9): trading keys are written only by TradingCredentialsSetupView, reached only through TradingAPIKeysView, which SettingsView links only under #if DEBUG. App Store builds therefore cannot sign a live futures request (close, leverage, margin). Re-check this before shipping any build that exposes trading keys. -->
+          <li><strong>Trading inside CryptoSage is paper trading.</strong> You practise with $100,000 in virtual funds, and orders are simulated against live market prices. Live order placement is switched off in the app, and so are changes to exchange positions or leverage: App Store builds have no screen for entering trading-enabled exchange keys. Connect read-only keys for portfolio tracking.</li>
           <li><strong>It cannot move your money off an exchange.</strong> CryptoSage never asks for withdrawal or transfer permissions, so it cannot withdraw, transfer or spend your funds. Connections are for portfolio tracking, aside from the derivatives exception above.</li>
           <li><strong>It is not a wallet.</strong> CryptoSage never holds your private keys or seed phrases, and cannot sign a transaction.</li>
           <li><strong>It is not financial, investment or tax advice.</strong> Market data, AI answers and any analysis in the app are for information only. Past performance does not guarantee future results. Please do your own research and speak to a qualified professional before making a financial decision.</li>
