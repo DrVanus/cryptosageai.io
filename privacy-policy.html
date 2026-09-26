@@ -169,7 +169,7 @@
 
 <main class="legal-wrap">
   <h1>Privacy <span class="gradient-text-gold">Policy</span></h1>
-  <p class="legal-updated">Last updated: September 23, 2026</p>
+  <p class="legal-updated">Last updated: September 25, 2026</p>
 
   <p>CryptoSage AI (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is an iOS app for tracking a crypto portfolio, reading market data and asking an AI about both. This policy describes exactly what data the app touches, what stays on your iPhone, and names the companies that receive any of it. The short version: <strong>we do not sell your data, the app shows no ads, and an account is optional.</strong></p>
 
@@ -183,7 +183,7 @@
   <p>We never ask for, receive or store exchange passwords, seed phrases or private keys. Wallets are tracked by public address only.</p>
 
   <h2>2. If you create an account (optional)</h2>
-  <p>You can use CryptoSage without an account. If you sign in &mdash; with Apple, Google or an email address and password &mdash; sign-in is handled by <strong>Google Firebase Authentication</strong>, so Google processes the sign-in and we receive your email address, a display name and an account ID.</p>
+  <p>You can use CryptoSage without an account. If you sign in &mdash; with Apple, Google or an email address and password &mdash; sign-in is handled by <strong>Google Firebase Authentication</strong>, so Google processes the sign-in and we receive your email address, a display name and an account ID. Using AI chat without an account can create an anonymous Firebase sign-in (a random account ID with no email or name) so our backend can rate-limit requests.</p>
   <p>With an account, app data syncs to <strong>Google Cloud Firestore</strong> so it follows you between devices. That synced data includes:</p>
   <ul>
     <li>your watchlist and favorites,</li>
@@ -198,10 +198,10 @@
 
   <h2>3. AI questions go to AI companies</h2>
   <p>Starting with version 1.3.8, CryptoSage asks for explicit <strong>AI Data Sharing</strong> permission and names the recipients before a personal AI request leaves your device. Declining keeps these requests off. Markets, charts and local portfolio tools remain available.</p>
-  <p>The AI features are not computed on your iPhone. With permission, your question, recent conversation since your last sharing change, saved AI profile and memories, and relevant app context (such as your watchlist or paper-trading activity) can be sent to these services:</p>
+  <p>The AI features are not computed on your iPhone. With permission, an AI chat question is sent with your recent conversation since your last sharing change, your saved AI profile, memories and watchlist, your paper-trading activity, your price alerts, and your app settings (plan, display currency, region, local time and time zone, and trading-pair preferences such as favorite and recent pairs and preferred exchanges). Real holdings, balances, transactions and profit/loss are added only when you separately turn on portfolio sharing (below). These services receive it:</p>
   <ul>
-    <li><strong>OpenAI</strong> &mdash; powers our built-in AI chat (including its second-opinion check on questions about a coin), AI portfolio insights and screenshot reading. In this built-in service, apart from web research below, your question, conversation, AI profile and memories, watchlist, paper trades and portfolio go to OpenAI only, through our backend (Google Firebase Cloud Functions). Saved personal API keys can use a different route, as explained below.</li>
-    <li><strong>DeepSeek, with OpenAI as a backup</strong> &mdash; our backend uses these providers for shared market features: sentiment summaries, coin insights, price predictions, trading signals and Fear &amp; Greed commentary. These backend requests contain public market figures only — never your question, conversation, profile, watchlist, paper trades or portfolio — and the same result is shown to every user. Within our built-in service, OpenRouter is only a backup route for these public-market requests and receives none of your personal data.</li>
+    <li><strong>OpenAI</strong> &mdash; powers our built-in AI chat (including its second-opinion check on questions about a coin), AI portfolio insights and screenshot reading. In this built-in service, apart from web research below, your question, conversation, AI profile and memories, watchlist, paper trades, price alerts, app settings and, only with portfolio sharing on, your portfolio go to OpenAI only, through our backend (Google Firebase Cloud Functions). Saved personal API keys can use a different route, as explained below.</li>
+    <li><strong>DeepSeek, OpenRouter or OpenAI</strong> &mdash; our backend uses DeepSeek first, with OpenRouter and OpenAI as backups, for shared market features: sentiment summaries, coin insights, price predictions, trading signals and Fear &amp; Greed commentary. These backend requests contain public market figures only &mdash; never your question, conversation, profile, watchlist, paper trades, price alerts, app settings or portfolio &mdash; and the same result is shown to every user. Within our built-in service, DeepSeek and OpenRouter receive none of your personal data.</li>
     <li><strong>Tavily</strong> &mdash; built-in web research. When server web search is on, the text of a research question, or a search phrase the AI writes from it, is sent through our backend to Tavily to find current web results. Web search stays switched off on our servers unless Tavily has agreed in writing to use that text only to answer the search and not to train on it.</li>
     <li><strong>Your own API key</strong> &mdash; this App Store version has no setting for adding one. If a key saved by an earlier version is still on this iPhone, requests can fall back to that provider directly from this device under your own account. Depending on the saved key, OpenAI, DeepSeek, xAI (Grok) or OpenRouter can receive your question, conversation and permitted context; a saved Tavily key can send a web-research query directly to Tavily. The permission screen names these recipients before anything is sent. These direct requests use your provider account and its terms, rather than our built-in OpenAI-only route or server web-search switch.</li>
   </ul>
@@ -221,7 +221,7 @@
   </ul>
 
   <h2>5. Analytics and crash reports</h2>
-  <p>We use <strong>Google Firebase Analytics</strong> for usage statistics (which screens and features are used, device model, iOS version, session length) and <strong>Google Firebase Crashlytics</strong> for crash and stability reports. These events do not contain your portfolio contents, chat text, keys or credentials. The data is processed by Google under Google&rsquo;s terms.</p>
+  <p>We use <strong>Google Firebase Analytics</strong> for usage statistics (which screens and features are used, the coin symbols you open or trade inside the app, how many exchanges you have connected, device model, iOS version, session length) and <strong>Google Firebase Crashlytics</strong> for crash and stability reports. These events do not contain your portfolio contents, chat text, keys or credentials. The data is processed by Google under Google&rsquo;s terms.</p>
   <p>Both are on by default. You can turn <strong>analytics</strong> off in the app under <code>Settings &rsaquo; Privacy &amp; Analytics</code>, and the app stops sending those events. <strong>Crash reporting has no separate switch in this build</strong>, so turning analytics off leaves Crashlytics running &mdash; we would rather say that than let the sentence above imply a control that is not there.</p>
 
   <h2>6. Advertising: none</h2>
@@ -243,9 +243,9 @@
 
   <h2>10. Deleting your data</h2>
   <ul>
-    <li><strong>Disconnect an exchange or wallet</strong> at any time from <code>Settings &rsaquo; Linked Accounts</code>; removing a connection removes its stored credentials from your device.</li>
-    <li><strong>Delete conversations</strong> from the AI chat screen; if you are signed in, this also removes the synced copy.</li>
-    <li><strong>Delete your account</strong> from inside the app. This deletes your synced data on our servers (Firestore) and the sign-in record itself.</li>
+    <li><strong>Disconnect an exchange or wallet</strong> at any time from <code>Settings &rsaquo; Exchanges &amp; Wallets</code>; removing a connection removes its stored credentials from your device.</li>
+    <li><strong>Delete conversations</strong> from the AI chat screen to remove them from your iPhone. If a conversation had already synced while you were signed in, deleting it in the app does not delete the cloud copy &mdash; delete your account or email us and we will remove it.</li>
+    <li><strong>Delete your account</strong> from inside the app (<code>Settings &rsaquo; your profile &rsaquo; Delete Account</code>). This deletes your synced data on our servers (Firestore) and the sign-in record itself.</li>
     <li><strong>Delete the app</strong> to remove its local data from your iPhone.</li>
     <li>Or email <a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Data%20Request">hypersageailabs@gmail.com</a> and we will do it for you.</li>
   </ul>
