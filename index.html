@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Preload the first hero slide (LCP) so it starts fetching before render reaches it -->
-  <link rel="preload" as="image" href="hero-home-dark.webp?v=20260825a" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-home-dark.webp?v=20261001a" fetchpriority="high">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -940,6 +940,20 @@
                  file not existing, and while it existed it was still served publicly
                  at /hero-aichat-dark.webp with that entry price in its pixels.
 
+                 2026-10-01 re-capture pass: every slot except
+                 app-prediction-analysis-dark re-shot from CryptoSage 1.3.12 (60) source
+                 (release-1.3.12 adb2068 + the build-60 paper-history patch) on fresh
+                 iPhone 17 Pro Max simulators, 1320x2868 downscaled 2:1. Portfolio frames
+                 use the store set's declared illustrative ledger (store-capture
+                 transactions.json, sha256 6368d243...), never Demo mode. Subscriber frames
+                 use Apple's local StoreKit test purchase. Sentiment source is
+                 alternative.me on every frame. AI chat stays dark-only (the light AI run hit
+                 the daily prompt limit; the light half of the analysis crossfade reuses the
+                 dark frame). app-prediction-analysis-dark is still the 2026-08-06 frame:
+                 the prediction route refuses to capture while every horizon reads Neutral.
+                 Slot-to-capture map: cryptosage-ios store/site/slots.json on
+                 claude/site-shots-1312. All ?v= tokens moved to 20261001a with the preload.
+
                  2026-08-25 re-capture pass (cryptosage-ios HEAD 68dcfeb = build-14
                  source + a PrivacyInfo fix; iPhone 17 Pro Max, 1320x2868 downscaled
                  2:1 to 660x1434). TWO files were replaced, both dark-only slots, both
@@ -975,14 +989,14 @@
                  HOLD reading) is honest and required; euphemising it as a
                  "technical-indicator panel" is not. -->
             <div class="phone-screen hero-rotator">
-              <img width="660" height="1434" src="hero-home-dark.webp?v=20260825a" alt="CryptoSage AI home dashboard with the account switcher set to Demo: a sample $81,640.00 balance, up $4,102.88 (+5.29%) over one week, a BTC 67% / ETH 21% / SOL 10% allocation donut, a one-week value sparkline, the line &quot;Market sentiment: Greed (64). Market looks stable.&quot;, a watchlist showing BTC $80,697.54, ETH $2,508.07 and SOL $101.50 with 1h and 24h change, an AI Prediction row with a Predict button set to BTC over 24H, and a Market Movers carousel" class="hero-slide hs-1" loading="eager" fetchpriority="high" decoding="async">
-              <img width="660" height="1434" src="hero-portfolio-dark.webp?v=20260806a" alt="CryptoSage AI portfolio allocation donut chart with holdings" class="hero-slide hs-2" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-sentiment-dark.webp?v=20260806a" alt="CryptoSage AI market sentiment gauge with AI sentiment analysis" class="hero-slide hs-3" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20260824a" alt="CryptoSage AI chat screen: asked to set up a paper trade, the assistant replies that paper trading is not enabled and it cannot place the order, above a Buy BTC/USD market card with a Set Up Trade button and a Review in Trading Tab label" class="hero-slide hs-4" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-technicals-dark.webp?v=20260806a" alt="CryptoSage AI technical analysis chart with consensus gauge" class="hero-slide hs-5" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-heatmap-dark.webp?v=20260806a" alt="CryptoSage AI market heat map treemap" class="hero-slide hs-6" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-news-dark.webp?v=20260806a" alt="CryptoSage AI crypto news feed" class="hero-slide hs-7" loading="eager" fetchpriority="low" decoding="async">
-              <img width="660" height="1434" src="hero-coin-dark.webp?v=20260806a" alt="CryptoSage AI Bitcoin coin page with price chart and an AI Trading Signal card showing a HOLD reading with low confidence on a bearish-to-bullish scale, footnoted as technical-indicator analysis, not financial advice" class="hero-slide hs-8" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-home-dark.webp?v=20261001a" alt="CryptoSage AI home screen in Portfolio mode with an illustrative portfolio: a $64,976.08 balance, a one-week value line, a BTC 65% / ETH 25% / BNB 6% / SOL 4% allocation ring, an Ask AI suggestion, Portfolio Insights, and a watchlist of BTC, ETH and AAPL with sparklines" class="hero-slide hs-1" loading="eager" fetchpriority="high" decoding="async">
+              <img width="660" height="1434" src="hero-portfolio-dark.webp?v=20261001a" alt="CryptoSage AI portfolio screen with an illustrative portfolio: total value, one-week and total return, top and worst 24h movers, and a four-asset allocation pie" class="hero-slide hs-2" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-sentiment-dark.webp?v=20261001a" alt="CryptoSage AI market sentiment screen with a Fear and Greed gauge reading 74 (Greed), a sentiment timeline and a written sentiment analysis" class="hero-slide hs-3" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20261001a" alt="CryptoSage AI chat screen: asked how limit orders work, the assistant explains them; asked to prepare a limit sell draft for 0.25 SOL at $95.25, it says it cannot execute trades and shows a Sell SOL/USD limit card with a Set Up Trade button for review in the Trading tab" class="hero-slide hs-4" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-technicals-dark.webp?v=20261001a" alt="CryptoSage AI Bitcoin technicals screen with a consensus gauge, a CryptoSage AI reading with its confidence, trend, volatility and indicator groups for moving averages and oscillators" class="hero-slide hs-5" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-heatmap-dark.webp?v=20261001a" alt="CryptoSage AI home screen with the market sentiment card and a treemap market heat map sized by market cap and colored by 24h change" class="hero-slide hs-6" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-news-dark.webp?v=20261001a" alt="CryptoSage AI crypto news feed with category chips and article cards from crypto outlets" class="hero-slide hs-7" loading="eager" fetchpriority="low" decoding="async">
+              <img width="660" height="1434" src="hero-coin-dark.webp?v=20261001a" alt="CryptoSage AI Bitcoin coin page with a candlestick chart, EMA 50 and RSI 14, an overview summary and a Trading Signal card showing a HOLD reading with medium confidence on a bearish-to-bullish scale" class="hero-slide hs-8" loading="eager" fetchpriority="low" decoding="async">
             </div>
           </div>
         </div>
@@ -1006,8 +1020,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-market-light.webp?v=20260806a" alt="CryptoSage AI live market list with sparklines and 24h change" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-market-dark.webp?v=20260806a" alt="CryptoSage AI live market list (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+            <img width="660" height="1434" src="app-market-light.webp?v=20261001a" alt="CryptoSage AI live market list with 7-day sparklines, price, 24h change and volume" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-market-dark.webp?v=20261001a" alt="CryptoSage AI live market list (dark theme)" class="phone-front phone-fade-1" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1023,8 +1037,8 @@
       <div class="phone-card featured">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-trading-light.webp?v=20260806a" alt="CryptoSage AI BTC chart with an order book and a locked Paper Trading card offering practice with $100k virtual funds behind an Upgrade to Pro button" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-trading-dark.webp?v=20260806a" alt="CryptoSage AI BTC chart (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img width="660" height="1434" src="app-trading-light.webp?v=20261001a" alt="CryptoSage AI Trading screen: a BTC candlestick chart with EMA 50 and RSI 14, a buy and sell order form, and a live order book" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-trading-dark.webp?v=20261001a" alt="CryptoSage AI Trading screen with BTC chart, order form and order book (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1040,8 +1054,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-portfolio-light.webp?v=20260806a" alt="CryptoSage AI portfolio screen with total value, a one-week value chart, a BTC, ETH and SOL allocation donut, an open orders row and a bots card labelled Demo and Sample" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-portfolio-dark.webp?v=20260806a" alt="CryptoSage AI portfolio allocation (dark theme)" class="phone-front phone-fade-3" loading="lazy">
+            <img width="660" height="1434" src="app-portfolio-light.webp?v=20261001a" alt="CryptoSage AI portfolio screen with an illustrative portfolio: total value, one-week and total return, a one-week value line chart, DeFi and Tax tiles, a Transactions row and holdings" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-portfolio-dark.webp?v=20261001a" alt="CryptoSage AI portfolio value chart and holdings (dark theme)" class="phone-front phone-fade-3" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1049,7 +1063,7 @@
             <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M21 12a9 9 0 1 1-9-9"/></svg>
             Full Portfolio
           </div>
-          <p>Allocation pie, open orders, running bots, DeFi and taxes &mdash; every position in one view.</p>
+          <p>Value chart, allocation, cost basis, DeFi and taxes &mdash; every position in one view.</p>
         </div>
       </div>
 
@@ -1057,8 +1071,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-ai-analysis-light.webp?v=20260806a" alt="CryptoSage AI chat screen: asked to set up a $500 Bitcoin market buy, the assistant replies it cannot place a live buy with no exchange connected, then lists prediction, sentiment, market regime and risk context" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-ai-analysis-dark.webp?v=20260806a" alt="CryptoSage AI chat answer on Bitcoin market conditions, with the assistant saying it cannot place a live market buy without a connected exchange (dark theme)" class="phone-front phone-fade-4" loading="lazy">
+            <img width="660" height="1434" src="app-ai-analysis-light.webp?v=20261001a" alt="CryptoSage AI chat screen: asked to explain watchlists, charts and technical signals in three short sentences, the assistant answers in plain language" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ai-analysis-dark.webp?v=20261001a" alt="CryptoSage AI chat answer explaining watchlists, charts and technical signals (dark theme)" class="phone-front phone-fade-4" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1101,7 +1115,7 @@
             <div class="phone-screen">
               <!-- Dark-only: prediction screens generate fresh data per capture, so the
                    light/dark pair would show mismatched forecasts. Single theme keeps it consistent. -->
-              <img width="660" height="1434" src="app-prediction-detail-dark.webp?v=20260806a" alt="CryptoSage AI Bitcoin price prediction with target, confidence ring and timeframes" class="phone-front phone-solo" loading="lazy">
+              <img width="660" height="1434" src="app-prediction-detail-dark.webp?v=20261001a" alt="CryptoSage AI home screen with a Bitcoin 24-hour forecast card showing the historical and forecast price line, the target, expiry time and confidence, labelled Neutral" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
@@ -1171,8 +1185,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-sentiment-sources-light.webp?v=20260806a" alt="CryptoSage AI market sentiment card with the alternative.me Fear and Greed feed selected as source" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-sentiment-sources-dark.webp?v=20260806a" alt="CryptoSage AI sentiment card with alternative.me source (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-sources-light.webp?v=20261001a" alt="CryptoSage AI market sentiment card reading 74 (Greed) with the alternative.me Fear and Greed feed selected as source, above the market heat map" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-sources-dark.webp?v=20261001a" alt="CryptoSage AI sentiment card with alternative.me source (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1183,8 +1197,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-sentiment-detail-light.webp?v=20260806a" alt="CryptoSage AI full sentiment analysis with large Fear and Greed gauge and AI explanation" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-sentiment-detail-dark.webp?v=20260806a" alt="CryptoSage AI full sentiment analysis (dark theme)" class="phone-front phone-fade-7" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-detail-light.webp?v=20261001a" alt="CryptoSage AI full market sentiment screen with a large Fear and Greed gauge, a sentiment timeline and a written analysis" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-detail-dark.webp?v=20261001a" alt="CryptoSage AI full sentiment analysis (dark theme)" class="phone-front phone-fade-7" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1202,8 +1216,8 @@
                  alts claimed. Alt and caption describe the pixels; the open-interest
                  feature claim lives on the feature card below, proven from
                  cryptosage-ios MarketSentimentDetailView.swift / AIPricePredictionService.swift:2977. -->
-            <img width="660" height="1434" src="app-sentiment-deriv-light.webp?v=20260806a" alt="CryptoSage AI home screen with watchlist rows, a Bitcoin AI forecast card, market movers, and a market sentiment card carrying BTC funding-rate and long/short chips" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-sentiment-deriv-dark.webp?v=20260806a" alt="CryptoSage AI home screen with sentiment card and funding and long/short chips (dark theme)" class="phone-front phone-fade-12" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-deriv-light.webp?v=20261001a" alt="CryptoSage AI home screen with watchlist rows, the AI Prediction card, market movers, and the market sentiment card with yesterday, last-week and last-month readings" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-sentiment-deriv-dark.webp?v=20261001a" alt="CryptoSage AI home screen with watchlist, AI Prediction, market movers and sentiment (dark theme)" class="phone-front phone-fade-12" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1318,7 +1332,7 @@
     <div style="text-align:center" class="anim">
       <span class="section-label">AI Chat</span>
       <h2 class="section-title">Ask anything. Get it<br><span class="gradient-text-gold">broken down</span></h2>
-      <p class="section-desc" style="margin:14px auto 0">Most crypto chatbots answer in the abstract. CryptoSage reads the portfolio you have open &mdash; shown here in Demo mode &mdash; and breaks it down asset by asset. Paper trading, a Pro feature, is where an idea gets tried with simulated funds.</p>
+      <p class="section-desc" style="margin:14px auto 0">Most crypto chatbots answer in the abstract. Ask it to explain an order type, draft a trade for you to review, or set a price alert in plain words. Paper trading, a Pro feature, is where an idea gets tried with simulated funds.</p>
     </div>
     <div class="chat-grid">
       <div class="chat-phones anim">
@@ -1327,7 +1341,7 @@
             <div class="phone-screen">
               <!-- Dark-only: AI chat replies are generated fresh per capture, so a
                    light/dark pair would show contradictory holdings. Single theme keeps it consistent. -->
-              <img width="660" height="1434" src="app-ai-rebalance-dark.webp?v=20260825a" alt="CryptoSage AI chat screen: asked to break the portfolio down by asset and percentage with no recommendations, the assistant answers with the demo portfolio's split — BTC $54,400 at about 66.6%, ETH $16,830 at about 20.6%, SOL $8,250 at about 10.1% and XRP $2,160 at about 2.7%, totalling $81,640 — and notes that BTC is the largest holding at roughly two-thirds of the portfolio, above a &quot;4 left today&quot; free-prompt counter" class="phone-front phone-solo" loading="lazy">
+              <img width="660" height="1434" src="app-ai-rebalance-dark.webp?v=20261001a" alt="CryptoSage AI chat screen: asked to prepare an alert if SOL falls below $95.24, the assistant replies that the alert is ready to review, above an Alert Suggestion card with Not Now and Create Alert buttons" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
@@ -1336,7 +1350,7 @@
             <div class="phone-screen">
               <!-- Dark-only: AI chat replies are generated fresh per capture, so a
                    light/dark pair would show contradictory holdings. Single theme keeps it consistent. -->
-              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20260824a" alt="CryptoSage AI chat screen: the assistant replies that paper trading is not enabled, above a Buy BTC/USD market card with a Set Up Trade button and a Review in Trading Tab label" class="phone-front phone-solo" loading="lazy">
+              <img width="660" height="1434" src="app-ai-action-dark.webp?v=20261001a" alt="CryptoSage AI chat screen: asked how limit orders work, the assistant explains them; asked to prepare a limit sell draft for 0.25 SOL at $95.25, it says it cannot execute trades and shows a Sell SOL/USD limit card with a Set Up Trade button for review in the Trading tab" class="phone-front phone-solo" loading="lazy">
             </div>
           </div>
         </div>
@@ -1568,8 +1582,8 @@
                  Paper Trading card and the order book. No RSI/MACD oscillator panes are
                  visible; the panes appear only in the TradingView capture two phones
                  over. Alt and caption describe the pixels. -->
-            <img width="660" height="1434" src="app-ta-chart-light.webp?v=20260806a" alt="CryptoSage AI native BTC chart with volume, an indicator picker, a locked Paper Trading card and a live order book" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-ta-chart-dark.webp?v=20260806a" alt="CryptoSage AI native BTC chart with volume and order book (dark theme)" class="phone-front phone-fade-1" loading="lazy">
+            <img width="660" height="1434" src="app-ta-chart-light.webp?v=20261001a" alt="CryptoSage AI native BTC candlestick chart with EMA 50, RSI 14 and volume, an overview summary and a Trading Signal card" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ta-chart-dark.webp?v=20261001a" alt="CryptoSage AI native BTC chart with EMA and RSI (dark theme)" class="phone-front phone-fade-1" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1580,8 +1594,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-ta-technicals-light.webp?v=20260806a" alt="CryptoSage AI technicals consensus gauge with overall, moving-average and oscillator dials on a strong-sell to strong-buy scale" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-ta-technicals-dark.webp?v=20260806a" alt="CryptoSage AI technicals consensus gauge (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+            <img width="660" height="1434" src="app-ta-technicals-light.webp?v=20261001a" alt="CryptoSage AI technicals consensus gauge with a CryptoSage AI reading and moving-average and oscillator dials on a strong-sell to strong-buy scale" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ta-technicals-dark.webp?v=20261001a" alt="CryptoSage AI technicals consensus gauge (dark theme)" class="phone-front phone-fade-6" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1592,8 +1606,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-ta-tradingview-light.webp?v=20260806a" alt="CryptoSage AI TradingView candlestick chart with RSI and MACD studies applied" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-ta-tradingview-dark.webp?v=20260806a" alt="CryptoSage AI TradingView chart with studies (dark theme)" class="phone-front phone-fade-11" loading="lazy">
+            <img width="660" height="1434" src="app-ta-tradingview-light.webp?v=20261001a" alt="CryptoSage AI TradingView candlestick chart of BTC over three months inside the coin page" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-ta-tradingview-dark.webp?v=20261001a" alt="CryptoSage AI TradingView chart (dark theme)" class="phone-front phone-fade-11" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1680,16 +1694,16 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img width="660" height="1434" src="app-news-light.webp?v=20260806a" alt="CryptoSage AI crypto news feed with category chips and article cards from top outlets" class="phone-back" loading="lazy">
-              <img width="660" height="1434" src="app-news-dark.webp?v=20260806a" alt="CryptoSage AI crypto news feed (dark theme)" class="phone-front phone-fade-4" loading="lazy">
+              <img width="660" height="1434" src="app-news-light.webp?v=20261001a" alt="CryptoSage AI crypto news feed with category chips and article cards from top outlets" class="phone-back" loading="lazy">
+              <img width="660" height="1434" src="app-news-dark.webp?v=20261001a" alt="CryptoSage AI crypto news feed (dark theme)" class="phone-front phone-fade-4" loading="lazy">
             </div>
           </div>
         </div>
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img width="660" height="1434" src="app-news-bitcoin-light.webp?v=20260806a" alt="CryptoSage AI news feed filtered to the Bitcoin category" class="phone-back" loading="lazy">
-              <img width="660" height="1434" src="app-news-bitcoin-dark.webp?v=20260806a" alt="CryptoSage AI Bitcoin news filter (dark theme)" class="phone-front phone-fade-9" loading="lazy">
+              <img width="660" height="1434" src="app-news-bitcoin-light.webp?v=20261001a" alt="CryptoSage AI news feed filtered to the Bitcoin category" class="phone-back" loading="lazy">
+              <img width="660" height="1434" src="app-news-bitcoin-dark.webp?v=20261001a" alt="CryptoSage AI Bitcoin news filter (dark theme)" class="phone-front phone-fade-9" loading="lazy">
             </div>
           </div>
         </div>
@@ -1723,8 +1737,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-heatmap-light.webp?v=20260806a" alt="CryptoSage AI treemap heat map sized by market cap and colored by 24h change" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-heatmap-dark.webp?v=20260806a" alt="CryptoSage AI treemap heat map (dark theme)" class="phone-front phone-fade-5" loading="lazy">
+            <img width="660" height="1434" src="app-heatmap-light.webp?v=20261001a" alt="CryptoSage AI treemap heat map sized by market cap and colored by 24h change, under the market sentiment card" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-heatmap-dark.webp?v=20261001a" alt="CryptoSage AI treemap heat map (dark theme)" class="phone-front phone-fade-5" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1735,8 +1749,8 @@
       <div class="phone-card">
         <div class="hero-phone-frame">
           <div class="phone-screen">
-            <img width="660" height="1434" src="app-heatmap-grid-light.webp?v=20260806a" alt="CryptoSage AI grid heat map with equal tiles per coin" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-heatmap-grid-dark.webp?v=20260806a" alt="CryptoSage AI grid heat map (dark theme)" class="phone-front phone-fade-10" loading="lazy">
+            <img width="660" height="1434" src="app-heatmap-grid-light.webp?v=20261001a" alt="CryptoSage AI grid heat map with equal tiles per coin" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-heatmap-grid-dark.webp?v=20261001a" alt="CryptoSage AI grid heat map (dark theme)" class="phone-front phone-fade-10" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1750,8 +1764,8 @@
             <!-- Pixel-verified 2026-08-24: the bar view draws one column per coin in
                  market-cap order (BTC, ETH, XRP, BNB, SOL...), colored by 24h change —
                  it does not rank/sort by percent move. Alt and caption say what it shows. -->
-            <img width="660" height="1434" src="app-heatmap-bar-light.webp?v=20260806a" alt="CryptoSage AI bar heat map with a column per coin colored by 24h change" class="phone-back" loading="lazy">
-            <img width="660" height="1434" src="app-heatmap-bar-dark.webp?v=20260806a" alt="CryptoSage AI bar heat map (dark theme)" class="phone-front phone-fade-2" loading="lazy">
+            <img width="660" height="1434" src="app-heatmap-bar-light.webp?v=20261001a" alt="CryptoSage AI bar heat map with a column per coin colored by 24h change" class="phone-back" loading="lazy">
+            <img width="660" height="1434" src="app-heatmap-bar-dark.webp?v=20261001a" alt="CryptoSage AI bar heat map (dark theme)" class="phone-front phone-fade-2" loading="lazy">
           </div>
         </div>
         <div class="phone-caption">
@@ -1802,8 +1816,8 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img width="660" height="1434" src="app-coin-light.webp?v=20260806a" alt="CryptoSage AI Bitcoin coin page with price chart, an AI Trading Signal card showing a HOLD reading with low confidence on a bearish-to-bullish scale footnoted as not financial advice, and a Key Levels section" class="phone-back" loading="lazy">
-              <img width="660" height="1434" src="app-coin-dark.webp?v=20260806a" alt="CryptoSage AI coin detail page (dark theme)" class="phone-front phone-fade-6" loading="lazy">
+              <img width="660" height="1434" src="app-coin-light.webp?v=20261001a" alt="CryptoSage AI Bitcoin coin page with a candlestick chart, EMA 50 and RSI 14, an overview summary and a Trading Signal card showing a HOLD reading with medium confidence on a bearish-to-bullish scale" class="phone-back" loading="lazy">
+              <img width="660" height="1434" src="app-coin-dark.webp?v=20261001a" alt="CryptoSage AI coin detail page (dark theme)" class="phone-front phone-fade-6" loading="lazy">
             </div>
           </div>
         </div>
@@ -1814,8 +1828,8 @@
         <div class="phone-card">
           <div class="hero-phone-frame">
             <div class="phone-screen">
-              <img width="660" height="1434" src="app-alerts-light.webp?v=20260806a" alt="CryptoSage AI price alerts with AI market monitoring" class="phone-back" loading="lazy">
-              <img width="660" height="1434" src="app-alerts-dark.webp?v=20260806a" alt="CryptoSage AI smart alerts (dark theme)" class="phone-front phone-fade-11" loading="lazy">
+              <img width="660" height="1434" src="app-alerts-light.webp?v=20261001a" alt="CryptoSage AI New Alert screen: a standard price alert for BTC with a live price, a price target, above or below, and quick target presets" class="phone-back" loading="lazy">
+              <img width="660" height="1434" src="app-alerts-dark.webp?v=20261001a" alt="CryptoSage AI new price alert (dark theme)" class="phone-front phone-fade-11" loading="lazy">
             </div>
           </div>
         </div>
