@@ -1,0 +1,111 @@
+{
+  "schema": "deployment-handoff-contract/v2",
+  "max_age_seconds": 86400,
+  "surfaces": [
+    {
+      "id": "marketing",
+      "source_path": "index.html",
+      "url": "https://cryptosageai.io/",
+      "allowed_final_hosts": [
+        "cryptosageai.io"
+      ],
+      "comparison": "exact",
+      "expected_statuses": [
+        200
+      ],
+      "expected_identity": {
+        "title_contains": [
+          "CryptoSage"
+        ]
+      }
+    },
+    {
+      "id": "support",
+      "source_path": "support.html",
+      "url": "https://cryptosageai.io/support.html",
+      "allowed_final_hosts": [
+        "cryptosageai.io"
+      ],
+      "comparison": "exact",
+      "expected_statuses": [
+        200
+      ],
+      "expected_identity": {
+        "title_contains": [
+          "Support"
+        ]
+      }
+    },
+    {
+      "id": "privacy",
+      "source_path": "privacy-policy.html",
+      "url": "https://cryptosageai.io/privacy-policy.html",
+      "allowed_final_hosts": [
+        "cryptosageai.io"
+      ],
+      "comparison": "exact",
+      "expected_statuses": [
+        200
+      ],
+      "expected_identity": {
+        "title_contains": [
+          "Privacy"
+        ]
+      }
+    },
+    {
+      "id": "terms",
+      "source_path": "terms.html",
+      "url": "https://cryptosageai.io/terms.html",
+      "allowed_final_hosts": [
+        "cryptosageai.io"
+      ],
+      "comparison": "exact",
+      "expected_statuses": [
+        200
+      ],
+      "expected_identity": {
+        "title_contains": [
+          "Terms"
+        ]
+      }
+    },
+    {
+      "id": "not-found",
+      "source_path": "404.html",
+      "url": "https://cryptosageai.io/404.html",
+      "allowed_final_hosts": [
+        "cryptosageai.io"
+      ],
+      "comparison": "exact",
+      "expected_statuses": [
+        200
+      ],
+      "expected_identity": {
+        "title_contains": [
+          "CryptoSage"
+        ]
+      }
+    }
+  ],
+  "handoffs": [
+    {
+      "id": "app-store-download",
+      "source_surface": "marketing",
+      "cta_text": "Download on the App Store",
+      "destination_url": "https://apps.apple.com/us/app/id6792761331",
+      "allowed_final_hosts": [
+        "apps.apple.com"
+      ],
+      "expected_statuses": [
+        200
+      ],
+      "require_meta_refresh": false,
+      "expected_identity": {
+        "title_contains": [
+          "CryptoSage"
+        ]
+      }
+    }
+  ]
+}

@@ -32,15 +32,12 @@
   exact defect this rebuild exists to remove.
 -->
 <title>CryptoSage AI — share card</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   /* Palette copied from index.html :root */
   :root {
-    --bg: #010100;
+    --bg: #090e12;
     --fg: #eeeeee;
     --primary: #d09945;
     --muted-fg: #8b8b8b;
@@ -62,7 +59,7 @@
   }
   .glow-a {
     background: radial-gradient(ellipse 780px 520px at 76% 44%,
-                rgba(208,153,69,0.22), transparent 68%);
+                rgba(56,118,123,0.4), transparent 68%);
   }
   .glow-b {
     background: radial-gradient(ellipse 900px 620px at 6% 96%,
@@ -148,9 +145,10 @@
     font-size: 23px; font-weight: 600; letter-spacing: 0.01em;
     color: var(--muted-fg);
   }
-</style>
+.watermark { opacity:.07; } .orbit { position:absolute; left:690px; top:25px; width:580px; height:580px; border:1px solid rgba(221,190,133,.3); border-radius:50%; } .orbit:after {content:"";position:absolute;inset:60px;border:1px dashed rgba(221,190,133,.2);border-radius:50%;} </style>
+<link rel="stylesheet" href="../fonts.css?v=20261030a">
 </head>
-<body>
+<body><div class="orbit" aria-hidden="true"></div>
   <div class="glow-a"></div>
   <div class="glow-b"></div>
   <div class="dots"></div>

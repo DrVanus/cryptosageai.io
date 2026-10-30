@@ -12,11 +12,11 @@
   <meta property="og:description" content="Fix a problem, restore a subscription, report a bug, or reach a human at hypersageailabs@gmail.com.">
   <meta property="og:url" content="https://cryptosageai.io/support.html">
   <meta property="og:site_name" content="CryptoSage AI">
-  <meta property="og:image" content="https://cryptosageai.io/banner.jpg?v=20260825b">
+  <meta property="og:image" content="https://cryptosageai.io/banner.jpg?v=20261030a">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CryptoSage AI — Support">
   <meta name="twitter:description" content="Help, troubleshooting, billing and privacy for CryptoSage AI.">
-  <meta name="twitter:image" content="https://cryptosageai.io/banner.jpg?v=20260825b">
+  <meta name="twitter:image" content="https://cryptosageai.io/banner.jpg?v=20261030a">
   <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
@@ -30,10 +30,6 @@
     gtag('js', new Date());
     gtag('config', 'G-BEYDD9LHM1');
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -53,7 +49,7 @@
       --radius: 0.625rem;
     }
 
-    /* overflow-x: clip clips horizontal overflow WITHOUT turning <html>/<body> into a
+    /* overflow-x: clip clips horizontal overflow WITHOUT turning the document into a
        scroll container — plain overflow-x:hidden does, which causes janky/stuttery
        scrolling in Chromium-based browsers (notably Brave). scroll-behavior:smooth is
        intentionally NOT set here: it stutters on anchor jumps in Brave. Smooth anchor
@@ -686,8 +682,8 @@
       display: flex; align-items: flex-start; gap: 8px;
     }
     .price-features li::before { content: '\2713'; color: var(--primary); font-weight: 700; flex-shrink: 0; }
-    .price-features li.off { color: rgba(128,128,128,0.4); text-decoration: line-through; }
-    .price-features li.off::before { content: '\2715'; color: rgba(128,128,128,0.3); }
+    .price-features li.off { color: var(--muted-fg); text-decoration: line-through; }
+    .price-features li.off::before { content: '\2715'; color: var(--muted-fg); }
     .price-card .btn-gold, .price-card .btn-outline { width: 100%; justify-content: center; margin-top: 24px; }
 
     /* ── FAQ ── */
@@ -727,13 +723,13 @@
       width: 300px; outline: none; transition: border-color 0.2s;
     }
     .signup-form input:focus { border-color: var(--primary); }
-    .signup-form input::placeholder { color: rgba(128,128,128,0.5); }
+    .signup-form input::placeholder { color: var(--muted-fg); }
 
     /* ── Footer ── */
     footer { border-top: 1px solid var(--border); padding: 48px 0; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
     .footer-brand p { font-size: 0.82rem; color: var(--muted-fg); margin-top: 12px; max-width: 280px; line-height: 1.55; }
-    .footer-col h4 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(128,128,128,0.6); margin-bottom: 14px; }
+    .footer-col h4 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted-fg); margin-bottom: 14px; }
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 8px; }
     .footer-col a { font-size: 0.82rem; color: var(--muted-fg); transition: color 0.2s; }
@@ -741,7 +737,7 @@
     .footer-bottom {
       margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
       display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.72rem; color: rgba(128,128,128,0.5);
+      font-size: 0.72rem; color: var(--muted-fg);
     }
 
     /* ── Responsive ── */
@@ -815,7 +811,7 @@
     .ck-g { background:linear-gradient(135deg,rgba(208,153,69,0.28),rgba(208,153,69,0.14)); color:#F3D36D; box-shadow:0 0 10px rgba(208,153,69,0.15); font-size:0.85rem; }
     .ck-y { background:rgba(74,200,120,0.15); color:#4ac878; font-size:0.8rem; }
     .ck-n { background:rgba(200,74,74,0.08); color:#c84a4a; font-size:0.68rem; }
-    .ck-p { background:rgba(255,255,255,0.04); color:#777; font-size:0.48rem; font-weight:700; }
+    .ck-p { background:rgba(255,255,255,0.04); color:var(--muted-fg); font-size:0.48rem; font-weight:700; }
 
     /* Large phone / small tablet (max-width: 767px) */
     @media (max-width: 767px) {
@@ -848,11 +844,18 @@
       .container { padding: 0 16px; }
     }
   </style>
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#090e12">
+  <link rel="stylesheet" href="/site-polish.css?v=20261030a">
+  <link rel="stylesheet" href="/site-legal.css?v=20261030a">
+  <link rel="stylesheet" href="/site-accessibility.css?v=20261030a">
+<link rel="stylesheet" href="fonts.css?v=20261030a">
 </head>
-<body>
+<body class="support-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- Navbar -->
-<nav class="navbar">
+<nav class="navbar" aria-label="Main navigation">
   <div class="container">
     <a href="index.html" class="nav-logo">
       <img src="owl-logo-72.webp" alt="CryptoSage AI" width="34" height="34" fetchpriority="high">
@@ -865,11 +868,12 @@
       <a href="index.html#faq">FAQ</a>
       <a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Support%20Request" class="nav-cta">Email Support</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
       <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
     </button>
   </div>
 </nav>
+<main id="main-content" tabindex="-1">
 
 <!-- Page-scoped styling, in the same per-section <style> pattern index.html uses -->
 <style>
@@ -1220,12 +1224,14 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo"><img src="owl-logo-72.webp" alt="CryptoSage AI" width="30" height="30" loading="lazy" style="width:30px;height:30px;border-radius:50%"><span><span class="gradient-text-gold">Crypto</span><span class="gradient-text-silver">Sage</span> AI</span></a>
-        <p>An AI built around your portfolio. Knows what you hold, where you&rsquo;re exposed, and what to do about it.</p>
+        <p>An AI built around your portfolio. Knows what you hold, where you&rsquo;re exposed, and what moved it.</p>
       </div>
       <div class="footer-col"><h4>Support</h4><ul><li><a href="#first-steps">If the app isn&rsquo;t working</a></li><li><a href="#common-issues">Common issues</a></li><li><a href="#billing">Subscriptions &amp; refunds</a></li><li><a href="#report-a-bug">Report a bug</a></li><li><a href="#data">Where your data goes</a></li></ul></div>
       <div class="footer-col"><h4>Product</h4><ul><li><a href="index.html#features">Features</a></li><li><a href="index.html#exchanges">Exchanges</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="mailto:hypersageailabs@gmail.com?subject=CryptoSage%20Support%20Request">hypersageailabs@gmail.com</a></li></ul></div>
@@ -1238,15 +1244,7 @@
   </div>
 </footer>
 
-<script>
-  // Mobile nav (same behaviour as the home page)
-  document.getElementById('navToggle').addEventListener('click', function() {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-  document.querySelectorAll('.nav-links a').forEach(function(a) {
-    a.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); });
-  });
-</script>
+<script src="/site-behavior.js?v=20261030a" defer></script>
 
 </body>
 </html>

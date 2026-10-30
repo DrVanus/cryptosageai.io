@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-30",
+  "site_baseline_commit": "6e3500a",
+  "updated_count": 17,
+  "latest_app_source_evidence": {
+    "version": "1.3.14",
+    "build": "67",
+    "capture_commit": "2e9b849",
+    "handoff_commit": "1653df5",
+    "note": "Native capture receipts bind accepted source images to build 67. Fleet current.json independently records 1.3.14 READY_FOR_DISTRIBUTION and build 67 VALID; no App Store assets changed."
+  },
+  "rules": [
+    "These are genuine native screenshots, not reconstructed UI.",
+    "Live figures and screenshot receipt visible_text can differ because prices refresh between pixel capture and accessibility extraction. Alt text describes the pixels without quoting volatile figures.",
+    "Keep the dark and light variants separate; do not crossfade captures from different app versions.",
+    "All new portfolio images use the app's visible Demo state; captions must identify Demo data.",
+    "No simulator was booted and no app build or install was needed for this website refresh."
+  ],
+  "excluded_build67_candidates": [
+    {
+      "capture": "ai/ai_allocation_answer_dark.png",
+      "reason": "Shows AI consent sheet, not a completed conversation."
+    },
+    {
+      "capture": "alerts/alerts_list_REQUIRES_CONFIGURED_ALERT_REVIEW_dark.png",
+      "reason": "Empty alert list."
+    },
+    {
+      "capture": "technicals/* and trading/* and tradingview/*",
+      "reason": "Free-user trading lock occupies much of the frame; names do not reliably describe the visible selected chart."
+    },
+    {
+      "capture": "market/market_sol_chart_dark.png",
+      "reason": "Retain existing coin capture pending a separately reviewed current coin screenshot; no need to introduce different-coin copy mismatch."
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "hero-home-dark.webp",
+      "sha256": "f543b95c72e8f26fd1d325e6b32e0767ea31cba13b5b2e6c3cd5b6f09adc5872",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:43:31Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/home/home_hero_dark.png",
+      "source_capture_sha256": "a527230b25f1a2ff046e7cc02ef79d9aff2ec2125812b5655c8d5448471164d6",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Demo",
+      "alt": "CryptoSage AI Home in Demo mode, showing a sample portfolio value, allocation, watchlist, market movers and AI prediction controls."
+    },
+    {
+      "file": "hero-portfolio-dark.webp",
+      "sha256": "067ce676f3de6fe11a4f8d99c079f30bd35a9e64e3ddd9fa8650932dcc8dcbfd",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:44:02Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/portfolio/portfolio_allocation_dark.png",
+      "source_capture_sha256": "e5814362f6d0e99c4763ff8c910bec5903a23fcfc78f0b8b192cf70c3a0cafb5",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Demo",
+      "alt": "CryptoSage AI Demo portfolio with an allocation ring, top and worst movers, demo open orders and bots, and holdings."
+    },
+    {
+      "file": "app-portfolio-dark.webp",
+      "sha256": "f83225935853fcec17cf79d46fc34a814bd94252d7c3f1b2f7e2ce572761f273",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:44:10Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/portfolio/portfolio_line_dark.png",
+      "source_capture_sha256": "ad57c99c87d9865636a7a7c8598357688213f035256e69b661ff45f84b7e5d7b",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Demo",
+      "alt": "CryptoSage AI Demo portfolio with a one-week value chart, allocation, demo open orders and bots, DeFi and Tax shortcuts, and holdings."
+    },
+    {
+      "file": "app-market-dark.webp",
+      "sha256": "0752b8dd9b3e34d9fa33b5aa8fbbb2133af3e2857fd06417c24571c540c3eed4",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:45:13Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/market/market_list_dark.png",
+      "source_capture_sha256": "73b1ac10e8d33f6063d4288916984d7c5ac52f44488eba2c1296392c052a7278",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI market list with cryptocurrency prices, seven-day sparklines, market caps and 24-hour changes."
+    },
+    {
+      "file": "hero-heatmap-dark.webp",
+      "sha256": "427b5aa08881051be4864f231e1379b2f7b1ca36cc7fd800dd3854293a8370e6",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:54:56Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/heatmap/heatmap_treemap_dark.png",
+      "source_capture_sha256": "cc4092d50dd823e65a42fc2087377f807c086a84d7ac09eedfe709f69e9df81d",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Home showing a 24-hour cryptocurrency treemap and a news feed."
+    },
+    {
+      "file": "app-heatmap-dark.webp",
+      "sha256": "427b5aa08881051be4864f231e1379b2f7b1ca36cc7fd800dd3854293a8370e6",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:54:56Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/heatmap/heatmap_treemap_dark.png",
+      "source_capture_sha256": "cc4092d50dd823e65a42fc2087377f807c086a84d7ac09eedfe709f69e9df81d",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Home showing the 24-hour cryptocurrency treemap with green and red market changes."
+    },
+    {
+      "file": "app-heatmap-grid-dark.webp",
+      "sha256": "e48f1e947d3789e44748572de8deb0b34d9e4478ab40f478ea4f25b3d6310cd3",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:55:54Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/heatmap/heatmap_grid_dark.png",
+      "source_capture_sha256": "63f06a048c713d44b81290415b0ebdbff40e64b5d4b5cc5aee01cce03f813809",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Home showing the 24-hour cryptocurrency heatmap in grid view."
+    },
+    {
+      "file": "app-heatmap-bar-dark.webp",
+      "sha256": "4f50c4249351c4f4d8c3ffadf6b8f38955f9cb201884b91c3bf396e75f43043f",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:56:55Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/heatmap/heatmap_bar_dark.png",
+      "source_capture_sha256": "bd9291edd91251a02bd121c18b0513651b2e2427dc55b04f1c4855bc31edfb8e",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Home showing the 24-hour cryptocurrency heatmap in bar view."
+    },
+    {
+      "file": "hero-news-dark.webp",
+      "sha256": "bf6ae06484ccb2318134854d7ce14515d6e74fa2ca8984b464598d27e512d6fe",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:57:24Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/news/news_all_dark.png",
+      "source_capture_sha256": "947f90043cc64b73b356df1528b28d4e4deb7af996aa0b7a2d24eafb7706e138",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI news feed with publisher names, article ages and cryptocurrency topic filters."
+    },
+    {
+      "file": "app-news-dark.webp",
+      "sha256": "bf6ae06484ccb2318134854d7ce14515d6e74fa2ca8984b464598d27e512d6fe",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:57:24Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/news/news_all_dark.png",
+      "source_capture_sha256": "947f90043cc64b73b356df1528b28d4e4deb7af996aa0b7a2d24eafb7706e138",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI news feed showing articles from named publishers and filters for cryptocurrency topics."
+    },
+    {
+      "file": "app-news-bitcoin-dark.webp",
+      "sha256": "4015378530986638ce8abe04736899c06de53c989449a0784e45f25ad6d64d6c",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:57:32Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/news/news_bitcoin_dark.png",
+      "source_capture_sha256": "83b965d050de039f43af8738ea945c416dff761324dc9aa70c2c365abdc91dbc",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI news feed with the Bitcoin topic selected and publisher attribution on each article."
+    },
+    {
+      "file": "hero-sentiment-dark.webp",
+      "sha256": "adfa917bbe81d30c6247c99e699ac5410346450977d53de06c6f191c9a9e4ff8",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:49:44Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/sentiment/sentiment_detail_opening_dark.png",
+      "source_capture_sha256": "8deaf68e7089b7bc9421503d46ed38651bfb0fc55dd63748f6f10b9c5ad22028",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Market Sentiment screen with a Fear and Greed gauge, sentiment timeline and market summary."
+    },
+    {
+      "file": "app-sentiment-detail-dark.webp",
+      "sha256": "adfa917bbe81d30c6247c99e699ac5410346450977d53de06c6f191c9a9e4ff8",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:49:44Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/sentiment/sentiment_detail_opening_dark.png",
+      "source_capture_sha256": "8deaf68e7089b7bc9421503d46ed38651bfb0fc55dd63748f6f10b9c5ad22028",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Market Sentiment screen showing the Fear and Greed gauge, sentiment timeline and market summary."
+    },
+    {
+      "file": "app-sentiment-sources-dark.webp",
+      "sha256": "80731c2016a6821dba4272890ac1287bda2c0ee81eb405a192987a9a93cebf28",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:48:48Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/sentiment/sentiment_home_altme_dark.png",
+      "source_capture_sha256": "ee96dc25ca89e8d54110e78d33ea0fec640fefc7969532ae15d55df75b4672dc",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Home showing the Fear and Greed gauge with alternative.me selected as its source, prior sentiment readings and the 24-hour market heatmap."
+    },
+    {
+      "file": "app-sentiment-deriv-dark.webp",
+      "sha256": "f3069bf4b0d650f9ce7211a447195e840538557d2c2c1cc70afca4a27310f2da",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T16:53:27Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/sentiment/sentiment_derivatives_dark.png",
+      "source_capture_sha256": "15cb51e06caceff02983addd6f31063ad9feff6848999147ceca2b10265979a3",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI derivatives-positioning table with funding rates, long-to-short ratios and open interest, beneath a market sentiment summary."
+    },
+    {
+      "file": "app-prediction-analysis-dark.webp",
+      "sha256": "c9489d9b6bcce5c88b741ba30d73ca9d4f7bb0aaac65eaf2a4ae47fe64315eff",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T17:07:55Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/prediction/prediction_analysis_dark.png",
+      "source_capture_sha256": "818ccdb492cfb4ad9d3ac4e0d46ce093b1dd635bf1cee8b65b4ab361a1f042e2",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Bitcoin Price Prediction detail with a Neutral forecast, low confidence, a price trajectory chart and a projected price range."
+    },
+    {
+      "file": "app-prediction-detail-dark.webp",
+      "sha256": "49cfe1b2c2fb282d7c620a597aab049ed109de3724c6b7347a48eba175180a4b",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-10T17:05:20Z",
+      "app_version": "1.3.14",
+      "app_build": "67",
+      "source_commit": "2e9b849",
+      "source_repo": "cryptosage-ios",
+      "source_capture": "work/cs1314-20261010/evidence/captures/b67pm-2e9b849/dark/prediction/prediction_result_bearish_dark.png",
+      "source_capture_sha256": "4a74328c511d246eea8eafe957dc3fb3e0cee88895c1d0bf6692d6bda69e4211",
+      "source_dimensions": [
+        1320,
+        2868
+      ],
+      "transformation": "Lanczos resize to 50%; WebP quality 90. No content edits or status-bar retouching.",
+      "appearance": "dark",
+      "review": "Native pixels visually reviewed 2026-10-30. Accepted for the stated alt text.",
+      "data_mode": "Captured market data; illustrative historical screen",
+      "alt": "CryptoSage AI Home with a Neutral Bitcoin forecast card showing a historical line, projected target, expiry and low confidence."
+    },
+    {
+      "file": "app-ai-action-dark.webp",
+      "sha256": "73608e725816717c48e81cabc44acad0ed9d5b7195619bdef41a63db02426c69",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ai-analysis-dark.webp",
+      "sha256": "bf6f109ee5a021ae63beb2e150823fb8772a214184d30eb770005c988cc09073",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ai-analysis-light.webp",
+      "sha256": "bf6f109ee5a021ae63beb2e150823fb8772a214184d30eb770005c988cc09073",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture.",
+      "duplicate_of": "app-ai-analysis-dark.webp",
+      "usage": "Do not use as a light appearance; original light capture failed and this is byte-identical to dark."
+    },
+    {
+      "file": "app-ai-rebalance-dark.webp",
+      "sha256": "c52d5a3accfedd923b82cb5cfd037d08eb896ef8f1b5bab48890c8183f3aeaa7",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-alerts-dark.webp",
+      "sha256": "60240f624eea2b694f2b990ff26e56fcd0c66b74ca59dc14064e83790e931500",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-alerts-light.webp",
+      "sha256": "79c663c98746d5b739774943ae331bf2b8f8a935e0cb4b307fd707d41beb0781",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-coin-dark.webp",
+      "sha256": "2ecda975d5ed33f2f22e74b2918dd3c005d70c5d0fe5d8354d928d50b2f24e59",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-coin-light.webp",
+      "sha256": "02999bf95b86e7d04216355d35c66b4ac3dffedfd14ddae51fd3ddde17d2c5f8",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-heatmap-bar-light.webp",
+      "sha256": "347723a8dea8ea3a1d262a34078a47ccdd1dd6f7c1e9c6a18c611f4b5d1c510b",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-heatmap-grid-light.webp",
+      "sha256": "3daeef1016966b1549829a0094df9b39886c0d13950ee0666ec08a692db1fb94",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-heatmap-light.webp",
+      "sha256": "dbf72db20ef42c62d7fa6b6549db41c32f82a52c1520b3182da3720aaf23f118",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-market-light.webp",
+      "sha256": "1727325746402bdf945a01f8feab2d0f51ce3235952bb98451fe21b66b845290",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-news-bitcoin-light.webp",
+      "sha256": "103ea8c010068974e79657448936bd7ad4176665ade4e6b9c29a732fd58e1cdd",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-news-light.webp",
+      "sha256": "8236d5cea01113f4c81798a20b9bf2ec8e50d546348a1549ff35c0515159c404",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-portfolio-light.webp",
+      "sha256": "e44e9cc27985188504339143531e2e8152a493f7df48767b910da76b5d3cbe2c",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-sentiment-deriv-light.webp",
+      "sha256": "6e5ffceaa7ccf797d8f5042e4ebd0cbd04b8303ca10df318e83a015cb88a92ad",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-sentiment-detail-light.webp",
+      "sha256": "831af053af72f27cf1c594f5970ffa8414be2ee989fc32bed41cb8b2fc0a5aa6",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-sentiment-sources-light.webp",
+      "sha256": "125997c4042d065d951b614ca1b85ed86ea221598ab2abd34d1d757a3140c98e",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ta-chart-dark.webp",
+      "sha256": "162a468bdd4c02296c5820343bf446330d8f4d46e62af643ec5207f32f69c4ee",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ta-chart-light.webp",
+      "sha256": "9f66fa67fffbccc2f7efac2c5012b8a9bb281b274ed861df2493b45983c930da",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ta-technicals-dark.webp",
+      "sha256": "48a36143f19a40139244de53fef198ee70bce3d293ff4dc332bba2e82d31ae9f",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ta-technicals-light.webp",
+      "sha256": "eceb76fcd5e24767e8b52274879bed29728c06b9adaefd8de111f00438431530",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ta-tradingview-dark.webp",
+      "sha256": "84e910d6c92e7245ea62e42ac7d08ce03bd4f29cfd6c51d8fb86d3d4a0857b9e",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-ta-tradingview-light.webp",
+      "sha256": "0b472faff76e3f09afe0ad212b17eab89fd9c37a3bcdd273c455de522cda934e",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-trading-dark.webp",
+      "sha256": "fd6ba7c9e71c5c1b29d707f1bcfc121f9d55d77bbbaa6ce9636e5354e8929027",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "app-trading-light.webp",
+      "sha256": "9e6c7053bfbb0382b3b512985758dec008c3469e799cbd293f8440a7b3eb193b",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "light",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "hero-coin-dark.webp",
+      "sha256": "2ecda975d5ed33f2f22e74b2918dd3c005d70c5d0fe5d8354d928d50b2f24e59",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    },
+    {
+      "file": "hero-technicals-dark.webp",
+      "sha256": "48a36143f19a40139244de53fef198ee70bce3d293ff4dc332bba2e82d31ae9f",
+      "dimensions": [
+        660,
+        1434
+      ],
+      "capture_date": "2026-10-01 (date declared by original export)",
+      "app_version": "1.3.12",
+      "app_build": "60",
+      "appearance": "dark",
+      "provenance": "Retained Oct 1 website export, commit 182b849. Source declared in original index comment as native app 1.3.12 (60), fresh iPhone 17 Pro Max.",
+      "review": "Retained existing capture; not claimed to be a new capture."
+    }
+  ]
+}

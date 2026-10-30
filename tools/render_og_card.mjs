@@ -13,7 +13,7 @@
  * 404.html). Facebook, X, Slack, iMessage and LinkedIn all cache og:image by
  * URL; a page that references it with no token serves the old card forever.
  */
-import { chromium } from '/Users/dee/Developer/DrVanus/cortana-openai-wrapper/node_modules/playwright/index.mjs';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE ? process.env.PLAYWRIGHT_MODULE + '/index.mjs' : 'playwright');
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
